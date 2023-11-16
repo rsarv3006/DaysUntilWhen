@@ -7,22 +7,117 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		789815A32B05D4F5002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
+		789815A42B05D52A002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
 		78BB45162B047501000EA9F5 /* DaysUntilApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45152B047501000EA9F5 /* DaysUntilApp.swift */; };
 		78BB45182B047501000EA9F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45172B047501000EA9F5 /* ContentView.swift */; };
 		78BB451A2B047503000EA9F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78BB45192B047503000EA9F5 /* Assets.xcassets */; };
 		78BB451D2B047503000EA9F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78BB451C2B047503000EA9F5 /* Preview Assets.xcassets */; };
+		78BB452A2B049C58000EA9F5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB45292B049C57000EA9F5 /* WidgetKit.framework */; };
+		78BB452C2B049C58000EA9F5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB452B2B049C58000EA9F5 /* SwiftUI.framework */; };
+		78BB452F2B049C58000EA9F5 /* DaysUntilWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB452E2B049C58000EA9F5 /* DaysUntilWidgetBundle.swift */; };
+		78BB45312B049C58000EA9F5 /* DaysUntilWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45302B049C58000EA9F5 /* DaysUntilWidgetLiveActivity.swift */; };
+		78BB45332B049C58000EA9F5 /* DaysUntilWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45322B049C58000EA9F5 /* DaysUntilWidget.swift */; };
+		78BB45352B049C58000EA9F5 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45342B049C58000EA9F5 /* AppIntent.swift */; };
+		78BB45372B049C59000EA9F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78BB45362B049C59000EA9F5 /* Assets.xcassets */; };
+		78BB453B2B049C59000EA9F5 /* DaysUntilWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 78BB45272B049C57000EA9F5 /* DaysUntilWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		78BB45412B049E27000EA9F5 /* DaysUntilWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45402B049E27000EA9F5 /* DaysUntilWidgetEntryView.swift */; };
+		78BB454A2B049EA1000EA9F5 /* Holidays.h in Headers */ = {isa = PBXBuildFile; fileRef = 78BB45492B049EA1000EA9F5 /* Holidays.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78BB454D2B049EA1000EA9F5 /* Holidays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB45472B049EA1000EA9F5 /* Holidays.framework */; };
+		78BB454E2B049EA1000EA9F5 /* Holidays.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB45472B049EA1000EA9F5 /* Holidays.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		78BB45542B049EBD000EA9F5 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
+		78BB45562B049EFB000EA9F5 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
+		78BB45582B049F31000EA9F5 /* HolidaysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45572B049F31000EA9F5 /* HolidaysList.swift */; };
+		78BB45592B049FB3000EA9F5 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
+		78BB455A2B049FC1000EA9F5 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
+		78BB455B2B049FC5000EA9F5 /* HolidaysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45572B049F31000EA9F5 /* HolidaysList.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		78BB45392B049C59000EA9F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78BB450A2B047501000EA9F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78BB45262B049C57000EA9F5;
+			remoteInfo = DaysUntilWidgetExtension;
+		};
+		78BB454B2B049EA1000EA9F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78BB450A2B047501000EA9F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78BB45462B049EA1000EA9F5;
+			remoteInfo = Holidays;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		78BB453F2B049C59000EA9F5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				78BB453B2B049C59000EA9F5 /* DaysUntilWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78BB45522B049EA1000EA9F5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				78BB454E2B049EA1000EA9F5 /* Holidays.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		789815A22B05D4F5002AF275 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		78BB45122B047501000EA9F5 /* DaysUntil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaysUntil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78BB45152B047501000EA9F5 /* DaysUntilApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilApp.swift; sourceTree = "<group>"; };
 		78BB45172B047501000EA9F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		78BB45192B047503000EA9F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78BB451C2B047503000EA9F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		78BB45272B049C57000EA9F5 /* DaysUntilWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaysUntilWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		78BB45292B049C57000EA9F5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		78BB452B2B049C58000EA9F5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		78BB452E2B049C58000EA9F5 /* DaysUntilWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilWidgetBundle.swift; sourceTree = "<group>"; };
+		78BB45302B049C58000EA9F5 /* DaysUntilWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		78BB45322B049C58000EA9F5 /* DaysUntilWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilWidget.swift; sourceTree = "<group>"; };
+		78BB45342B049C58000EA9F5 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		78BB45362B049C59000EA9F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		78BB45382B049C59000EA9F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78BB45402B049E27000EA9F5 /* DaysUntilWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilWidgetEntryView.swift; sourceTree = "<group>"; };
+		78BB45472B049EA1000EA9F5 /* Holidays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Holidays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78BB45492B049EA1000EA9F5 /* Holidays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Holidays.h; sourceTree = "<group>"; };
+		78BB45532B049EBD000EA9F5 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
+		78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayVariant.swift; sourceTree = "<group>"; };
+		78BB45572B049F31000EA9F5 /* HolidaysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		78BB450F2B047501000EA9F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78BB454D2B049EA1000EA9F5 /* Holidays.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78BB45242B049C57000EA9F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78BB452C2B049C58000EA9F5 /* SwiftUI.framework in Frameworks */,
+				78BB452A2B049C58000EA9F5 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78BB45442B049EA1000EA9F5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,6 +131,9 @@
 			isa = PBXGroup;
 			children = (
 				78BB45142B047501000EA9F5 /* DaysUntil */,
+				78BB452D2B049C58000EA9F5 /* DaysUntilWidget */,
+				78BB45482B049EA1000EA9F5 /* Holidays */,
+				78BB45282B049C57000EA9F5 /* Frameworks */,
 				78BB45132B047501000EA9F5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				78BB45122B047501000EA9F5 /* DaysUntil.app */,
+				78BB45272B049C57000EA9F5 /* DaysUntilWidgetExtension.appex */,
+				78BB45472B049EA1000EA9F5 /* Holidays.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,7 +167,53 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		78BB45282B049C57000EA9F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78BB45292B049C57000EA9F5 /* WidgetKit.framework */,
+				78BB452B2B049C58000EA9F5 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78BB452D2B049C58000EA9F5 /* DaysUntilWidget */ = {
+			isa = PBXGroup;
+			children = (
+				78BB452E2B049C58000EA9F5 /* DaysUntilWidgetBundle.swift */,
+				78BB45302B049C58000EA9F5 /* DaysUntilWidgetLiveActivity.swift */,
+				78BB45322B049C58000EA9F5 /* DaysUntilWidget.swift */,
+				78BB45342B049C58000EA9F5 /* AppIntent.swift */,
+				78BB45362B049C59000EA9F5 /* Assets.xcassets */,
+				78BB45382B049C59000EA9F5 /* Info.plist */,
+				78BB45402B049E27000EA9F5 /* DaysUntilWidgetEntryView.swift */,
+			);
+			path = DaysUntilWidget;
+			sourceTree = "<group>";
+		};
+		78BB45482B049EA1000EA9F5 /* Holidays */ = {
+			isa = PBXGroup;
+			children = (
+				78BB45492B049EA1000EA9F5 /* Holidays.h */,
+				78BB45532B049EBD000EA9F5 /* Holiday.swift */,
+				78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */,
+				78BB45572B049F31000EA9F5 /* HolidaysList.swift */,
+				789815A22B05D4F5002AF275 /* Utils.swift */,
+			);
+			path = Holidays;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		78BB45422B049EA1000EA9F5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78BB454A2B049EA1000EA9F5 /* Holidays.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		78BB45112B047501000EA9F5 /* DaysUntil */ = {
@@ -77,15 +223,54 @@
 				78BB450E2B047501000EA9F5 /* Sources */,
 				78BB450F2B047501000EA9F5 /* Frameworks */,
 				78BB45102B047501000EA9F5 /* Resources */,
+				78BB453F2B049C59000EA9F5 /* Embed Foundation Extensions */,
+				78BB45522B049EA1000EA9F5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				78BB453A2B049C59000EA9F5 /* PBXTargetDependency */,
+				78BB454C2B049EA1000EA9F5 /* PBXTargetDependency */,
 			);
 			name = DaysUntil;
 			productName = DaysUntil;
 			productReference = 78BB45122B047501000EA9F5 /* DaysUntil.app */;
 			productType = "com.apple.product-type.application";
+		};
+		78BB45262B049C57000EA9F5 /* DaysUntilWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78BB453C2B049C59000EA9F5 /* Build configuration list for PBXNativeTarget "DaysUntilWidgetExtension" */;
+			buildPhases = (
+				78BB45232B049C57000EA9F5 /* Sources */,
+				78BB45242B049C57000EA9F5 /* Frameworks */,
+				78BB45252B049C57000EA9F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DaysUntilWidgetExtension;
+			productName = DaysUntilWidgetExtension;
+			productReference = 78BB45272B049C57000EA9F5 /* DaysUntilWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		78BB45462B049EA1000EA9F5 /* Holidays */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78BB454F2B049EA1000EA9F5 /* Build configuration list for PBXNativeTarget "Holidays" */;
+			buildPhases = (
+				78BB45422B049EA1000EA9F5 /* Headers */,
+				78BB45432B049EA1000EA9F5 /* Sources */,
+				78BB45442B049EA1000EA9F5 /* Frameworks */,
+				78BB45452B049EA1000EA9F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Holidays;
+			productName = Holidays;
+			productReference = 78BB45472B049EA1000EA9F5 /* Holidays.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -99,6 +284,13 @@
 				TargetAttributes = {
 					78BB45112B047501000EA9F5 = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					78BB45262B049C57000EA9F5 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					78BB45462B049EA1000EA9F5 = {
+						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -116,6 +308,8 @@
 			projectRoot = "";
 			targets = (
 				78BB45112B047501000EA9F5 /* DaysUntil */,
+				78BB45262B049C57000EA9F5 /* DaysUntilWidgetExtension */,
+				78BB45462B049EA1000EA9F5 /* Holidays */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +321,21 @@
 			files = (
 				78BB451D2B047503000EA9F5 /* Preview Assets.xcassets in Resources */,
 				78BB451A2B047503000EA9F5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78BB45252B049C57000EA9F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78BB45372B049C59000EA9F5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78BB45452B049EA1000EA9F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +351,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		78BB45232B049C57000EA9F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78BB455A2B049FC1000EA9F5 /* HolidayVariant.swift in Sources */,
+				78BB45592B049FB3000EA9F5 /* Holiday.swift in Sources */,
+				789815A42B05D52A002AF275 /* Utils.swift in Sources */,
+				78BB45312B049C58000EA9F5 /* DaysUntilWidgetLiveActivity.swift in Sources */,
+				78BB45352B049C58000EA9F5 /* AppIntent.swift in Sources */,
+				78BB45332B049C58000EA9F5 /* DaysUntilWidget.swift in Sources */,
+				78BB452F2B049C58000EA9F5 /* DaysUntilWidgetBundle.swift in Sources */,
+				78BB455B2B049FC5000EA9F5 /* HolidaysList.swift in Sources */,
+				78BB45412B049E27000EA9F5 /* DaysUntilWidgetEntryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78BB45432B049EA1000EA9F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78BB45562B049EFB000EA9F5 /* HolidayVariant.swift in Sources */,
+				78BB45542B049EBD000EA9F5 /* Holiday.swift in Sources */,
+				78BB45582B049F31000EA9F5 /* HolidaysList.swift in Sources */,
+				789815A32B05D4F5002AF275 /* Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78BB453A2B049C59000EA9F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78BB45262B049C57000EA9F5 /* DaysUntilWidgetExtension */;
+			targetProxy = 78BB45392B049C59000EA9F5 /* PBXContainerItemProxy */;
+		};
+		78BB454C2B049EA1000EA9F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78BB45462B049EA1000EA9F5 /* Holidays */;
+			targetProxy = 78BB454B2B049EA1000EA9F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		78BB451E2B047503000EA9F5 /* Debug */ = {
@@ -267,6 +516,7 @@
 		78BB45212B047503000EA9F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +546,7 @@
 		78BB45222B047503000EA9F5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -322,6 +573,129 @@
 			};
 			name = Release;
 		};
+		78BB453D2B049C59000EA9F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4QGR522B9M;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DaysUntilWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DaysUntilWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.DaysUntil.DaysUntilWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78BB453E2B049C59000EA9F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4QGR522B9M;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DaysUntilWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DaysUntilWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.DaysUntil.DaysUntilWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		78BB45502B049EA1000EA9F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4QGR522B9M;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.Holidays;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		78BB45512B049EA1000EA9F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4QGR522B9M;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.Holidays;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -339,6 +713,24 @@
 			buildConfigurations = (
 				78BB45212B047503000EA9F5 /* Debug */,
 				78BB45222B047503000EA9F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78BB453C2B049C59000EA9F5 /* Build configuration list for PBXNativeTarget "DaysUntilWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78BB453D2B049C59000EA9F5 /* Debug */,
+				78BB453E2B049C59000EA9F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78BB454F2B049EA1000EA9F5 /* Build configuration list for PBXNativeTarget "Holidays" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78BB45502B049EA1000EA9F5 /* Debug */,
+				78BB45512B049EA1000EA9F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
