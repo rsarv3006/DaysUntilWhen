@@ -10,8 +10,6 @@ import WidgetKit
 
 struct DaysUntilWidgetEntryView: View {
     var entry: Provider.Entry
-    var background: BackgroundOption
-    var text: TextOption
    
     private var daysUntilHoliday: Int {
         return HolidaysUtils.daysUntil(entry.date, entry.holiday.date) ?? 0
@@ -23,27 +21,27 @@ struct DaysUntilWidgetEntryView: View {
                 Text("\(daysUntilHoliday)")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundStyle(text.color ?? .primary)
+                    .foregroundStyle(entry.text.color ?? .primary)
                 Text("Days until")
-                    .foregroundStyle(text.color ?? .primary)
+                    .foregroundStyle(entry.text.color ?? .primary)
                 Text(entry.holiday.name)
                     .font(.title2)
                     .fontWeight(.bold)
-                    .foregroundStyle(text.color ?? .primary)
+                    .foregroundStyle(entry.text.color ?? .primary)
             } else {
-                Text(entry.holiday.dayOfMessage)
+                Text(entry.holiday.dayOfGreeting)
                     .font(.title2)
                     .fontWeight(.bold)
-                    .foregroundStyle(text.color ?? .primary)
+                    .foregroundStyle(entry.text.color ?? .primary)
             }
         }
         .containerBackground(for: .widget) {
-            if let backgroundImage = background.image {
+            if let backgroundImage = entry.background.image {
                 backgroundImage
                     .resizable()
                     .aspectRatio(contentMode: .fill)
             } else if let backgroundColor =
-                        background.color {
+                        entry.background.color {
                 backgroundColor
             }
         }
@@ -53,8 +51,8 @@ struct DaysUntilWidgetEntryView: View {
 #Preview(as: .systemSmall) {
     DaysUntilWidget()
 } timeline: {
-    SimpleEntry(date: .now, holiday: HolidaysList[0])
-    SimpleEntry(date: .tomorrow, holiday: HolidaysList[0])
-    SimpleEntry(date: DateComponents(calendar: .current, year: 2023, month: 12, day: 25).date!, holiday: HolidaysList[0])
+    SimpleEntry(date: .now, holiday: HolidaysList[0], background: BackgroundOptionsList[0], text: TextOptionsList[0])
+    SimpleEntry(date: .tomorrow, holiday: HolidaysList[0], background: BackgroundOptionsList[0], text: TextOptionsList[0])
+    SimpleEntry(date: .christmas!, holiday: HolidaysList[0], background: BackgroundOptionsList[0], text: TextOptionsList[0])
 }
 

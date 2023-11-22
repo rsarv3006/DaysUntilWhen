@@ -12,6 +12,7 @@ enum TextOptionId: String {
     case ChristmasWhite
     case ChristmasGreen
 }
+
 struct TextOption: Identifiable {
     let id: TextOptionId
     let optionName: String

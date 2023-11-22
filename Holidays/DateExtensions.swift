@@ -15,4 +15,8 @@ extension Date {
     static var currentYear: Int {
         return Calendar.current.component(.year, from: Date())
     }
+    
+    static var christmas: Date? {
+        return DateComponents(calendar: .current, year: Date.currentYear, month: 12, day: 25).date
+    }
 }

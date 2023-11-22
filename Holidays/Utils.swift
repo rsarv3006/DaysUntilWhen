@@ -19,5 +19,25 @@ struct HolidaysUtils {
         
         return components.day
     }
+   
+    static func isHolidayInFuture(_ currentDate: Date, _ holidayDate: Date?) -> Bool {
+        guard let holidayDate else { return false }
+        
+        if currentDate <= holidayDate {
+            return true
+        }
+        
+        return false
+    }
     
+    static func getHolidayDate(_ currentDate: Date, _ holidayMonth: Int, _ holidayDay: Int) -> Date? {
+        let holidayCurrentYear = DateComponents(calendar: .current, year: Date.currentYear, month: holidayMonth, day: holidayDay).date
+        let isHolidayCurrentYearInFuture = self.isHolidayInFuture(currentDate, holidayCurrentYear)
+        
+        if isHolidayCurrentYearInFuture {
+            return holidayCurrentYear
+        } else {
+            return DateComponents(calendar: .current, year: Date.currentYear + 1, month: holidayMonth, day: holidayDay).date
+        }
+    }
 }

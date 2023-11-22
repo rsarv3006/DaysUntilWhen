@@ -11,7 +11,10 @@ let HolidaysList: [Holiday] = [
     Holiday(
         id: .christmas,
         name: "Christmas",
-        date: DateComponents(calendar: .current, year: Date.currentYear, month: 12, day: 25).date,
+        date: HolidaysUtils.getHolidayDate(Date(), 12, 25),
         description: "The day we celebrate the birth of Jesus Christ", 
-        dayOfMessage: "Merry Christmas!")
+        dayOfGreeting: "Merry Christmas!",
+        defaultBackgroundOptionIndex: 0,
+        defaultTextOptionIndex: 0
+    )
 ]

@@ -29,8 +29,8 @@ struct WidgetPickers: View {
                     Text(background.optionName)
                 }
             }
-            Spacer()
         }
+        
         HStack {
             Text("Text:")
             Picker("Selected Text Color", selection: $selectedText) {

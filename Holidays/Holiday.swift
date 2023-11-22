@@ -12,7 +12,11 @@ struct Holiday: Identifiable {
     let name: String
     let date: Date?
     let description: String
-    let dayOfMessage: String
+    let dayOfGreeting: String
+    
+    // UI
+    let defaultBackgroundOptionIndex: Int
+    let defaultTextOptionIndex: Int
 }
 
 extension Holiday: Hashable {}
