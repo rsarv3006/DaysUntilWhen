@@ -11,6 +11,7 @@ let HolidaysList: [Holiday] = [
     Holiday(
         id: .christmas,
         name: "Christmas",
-        date: DateComponents(calendar: .current, year: 2023, month: 12, day: 25).date,
-        description: "The day we celebrate the birth of Jesus Christ")
+        date: DateComponents(calendar: .current, year: Date.currentYear, month: 12, day: 25).date,
+        description: "The day we celebrate the birth of Jesus Christ", 
+        dayOfMessage: "Merry Christmas!")
 ]

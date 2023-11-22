@@ -7,9 +7,12 @@
 
 import Foundation
 
-struct Holiday {
+struct Holiday: Identifiable {
     let id: HolidayVariant
     let name: String
     let date: Date?
     let description: String
+    let dayOfMessage: String
 }
+
+extension Holiday: Hashable {}
