@@ -19,4 +19,8 @@ extension Date {
     static var christmas: Date? {
         return DateComponents(calendar: .current, year: Date.currentYear, month: 12, day: 25).date
     }
+    
+    static var dayAfterChristmas: Date? {
+        return DateComponents(calendar: .current, year: Date.currentYear, month: 12, day: 26).date
+    }
 }

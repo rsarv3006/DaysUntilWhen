@@ -9,4 +9,5 @@ import Foundation
 
 enum HolidayVariant {
     case christmas
+    case newYears
 }

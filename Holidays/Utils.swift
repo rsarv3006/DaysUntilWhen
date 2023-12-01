@@ -19,7 +19,7 @@ struct HolidaysUtils {
         
         return components.day
     }
-   
+    
     static func isHolidayInFuture(_ currentDate: Date, _ holidayDate: Date?) -> Bool {
         guard let holidayDate else { return false }
         
@@ -39,5 +39,17 @@ struct HolidaysUtils {
         } else {
             return DateComponents(calendar: .current, year: Date.currentYear + 1, month: holidayMonth, day: holidayDay).date
         }
+    }
+    
+    static func getDefaultHolidayIndex(currentDate: Date) -> Int {
+        let christmasDate = DateComponents(calendar: .current, year: Date.currentYear, month: 12, day: 25).date
+        let newYearsDate = DateComponents(calendar: .current, year: Date.currentYear + 1, month: 1, day: 1).date
+        
+        if HolidaysUtils.isHolidayInFuture(currentDate, christmasDate) {
+            return 0
+        } else if HolidaysUtils.isHolidayInFuture(currentDate, newYearsDate) {
+            return 1
+        }
+        return 0
     }
 }

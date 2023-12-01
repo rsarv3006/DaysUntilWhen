@@ -30,7 +30,7 @@ struct DaysUntilWidgetEntryView: View {
                     .foregroundStyle(entry.text.color ?? .primary)
             } else {
                 Text(entry.holiday.dayOfGreeting)
-                    .font(.system(size: 25))
+                    .font(.system(size: 24))
                     .fontWeight(.bold)
                     .foregroundStyle(entry.text.color ?? .primary)
             }

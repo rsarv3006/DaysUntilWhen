@@ -16,5 +16,6 @@ let HolidaysList: [Holiday] = [
         dayOfGreeting: "Merry Christmas!",
         defaultBackgroundOptionIndex: 0,
         defaultTextOptionIndex: 0
-    )
+    ),
+    Holiday(id: .newYears, name: "New Years", date: HolidaysUtils.getHolidayDate(Date(), 1, 1), description: "First day of the new year!", dayOfGreeting: "Happy New Year", defaultBackgroundOptionIndex: 1, defaultTextOptionIndex: 1)
 ]

@@ -8,10 +8,12 @@
 import SwiftUI
 import WidgetKit
 
+let DEFAULT_HOLIDAY = HolidaysUtils.getDefaultHolidayIndex(currentDate: Date())
+
 struct ContentView: View {
-    @AppStorage(DefaultsKey.selectedHolidayIndex.rawValue, store: AppGroup.daysUntilWhen.defaults) var selectedHolidayIndex: Int = 0
-    @AppStorage(DefaultsKey.selectedBackgroundIndex.rawValue, store: AppGroup.daysUntilWhen.defaults) var selectedBackgroundIndex: Int = 0
-    @AppStorage(DefaultsKey.selectedTextIndex.rawValue, store: AppGroup.daysUntilWhen.defaults) var selectedTextIndex: Int = 0
+    @AppStorage(DefaultsKey.selectedHolidayIndex.rawValue, store: AppGroup.daysUntilWhen.defaults) var selectedHolidayIndex: Int = DEFAULT_HOLIDAY
+    @AppStorage(DefaultsKey.selectedBackgroundIndex.rawValue, store: AppGroup.daysUntilWhen.defaults) var selectedBackgroundIndex: Int = HolidaysList[DEFAULT_HOLIDAY].defaultBackgroundOptionIndex
+    @AppStorage(DefaultsKey.selectedTextIndex.rawValue, store: AppGroup.daysUntilWhen.defaults) var selectedTextIndex: Int = HolidaysList[DEFAULT_HOLIDAY].defaultTextOptionIndex
     
     @State private var selectedHoliday: Holiday = HolidaysList[0]
     @State private var selectedBackground: BackgroundOption = BackgroundOptionsList[0]

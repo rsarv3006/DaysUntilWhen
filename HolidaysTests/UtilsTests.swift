@@ -41,6 +41,14 @@ final class Utils: XCTestCase {
         XCTAssertEqual(calculatedInterval, 0)
     }
     
+    func testDaysUntilDayAfter() throws {
+        let currentDate = DateComponents(calendar: .current, year: 2023, month: 12, day: 26).date
+        let holiday = DateComponents(calendar: .current, year: 2023, month: 12, day: 25).date
+        
+        let calculatedInterval = HolidaysUtils.daysUntil(currentDate!, holiday)
+        XCTAssertEqual(calculatedInterval, -1)
+    }
+    
     func testIsHolidayInFutureForHolidayInFuture() throws {
          let currentDate = DateComponents(calendar: .current, year: 2023, month: 11, day: 25).date!
         let holiday = DateComponents(calendar: .current, year: 2023, month: 12, day: 25).date
@@ -84,6 +92,34 @@ final class Utils: XCTestCase {
         
         let calculatedHolidayDate = HolidaysUtils.getHolidayDate(currentDate, 12, 25)
         XCTAssertEqual(holidayDate, calculatedHolidayDate)
+    }
+    
+    func testGetDefaultHolidayIndex() throws {
+        let currentDate = DateComponents(calendar: .current, year: 2023, month: 11, day: 25).date!
+        
+        let calculatedHolidayIndex = HolidaysUtils.getDefaultHolidayIndex(currentDate: currentDate)
+        XCTAssertEqual(calculatedHolidayIndex, 0)
+    }
+    
+    func testGetDefaultHolidayIndexChristmasDay() throws {
+        let currentDate = DateComponents(calendar: .current, year: 2023, month: 12, day: 25).date!
+        
+        let calculatedHolidayIndex = HolidaysUtils.getDefaultHolidayIndex(currentDate: currentDate)
+        XCTAssertEqual(calculatedHolidayIndex, 0)
+    }
+    
+    func testGetDefaultHolidayIndexDayAfterChristmas() throws {
+        let currentDate = DateComponents(calendar: .current, year: 2023, month: 12, day: 26).date!
+        
+        let calculatedHolidayIndex = HolidaysUtils.getDefaultHolidayIndex(currentDate: currentDate)
+        XCTAssertEqual(calculatedHolidayIndex, 1)
+    }
+    
+    func testGetDefaultHolidayIndexDayAfterNewYears() throws {
+        let currentDate = DateComponents(calendar: .current, year: 2024, month: 1, day: 2).date!
+        
+        let calculatedHolidayIndex = HolidaysUtils.getDefaultHolidayIndex(currentDate: currentDate)
+        XCTAssertEqual(calculatedHolidayIndex, 0)
     }
     
     func testPerformanceExample() throws {
