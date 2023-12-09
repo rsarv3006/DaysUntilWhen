@@ -12,6 +12,7 @@ struct DaysUntilApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .holidaysDataContainer(inMemory: false)
         }
     }
 }

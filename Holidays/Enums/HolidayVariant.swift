@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum HolidayVariant {
+enum HolidayVariant: String, CaseIterable, Codable {
     case christmas
     case newYears
+    case valentines
 }

@@ -8,6 +8,31 @@
 import Foundation
 
 struct HolidaysUtils {
+    static func getSelectedHoliday(holidays: [Holiday], date: Date) -> Holiday? {
+        let favoriteHoliday = holidays.first { holiday in
+            holiday.isFavorite == true
+        }
+        
+        if let favoriteHoliday {
+            return favoriteHoliday
+        }
+       
+        let sortedHolidays = holidays.sorted {
+          guard let date1 = $0.date, let date2 = $1.date else {
+            return false
+          }
+          return date1 < date2
+        }
+        
+        for holiday in sortedHolidays {
+          if let holidayDate = holiday.date, holidayDate > date {
+            return holiday
+          }
+        }
+        
+        return nil
+    }
+    
     static func daysUntil(_ startDate: Date, _ futureDate: Date?) -> Int? {
         guard let futureDate else { return nil }
         let calendar = Calendar.current
@@ -39,17 +64,5 @@ struct HolidaysUtils {
         } else {
             return DateComponents(calendar: .current, year: Date.currentYear + 1, month: holidayMonth, day: holidayDay).date
         }
-    }
-    
-    static func getDefaultHolidayIndex(currentDate: Date) -> Int {
-        let christmasDate = DateComponents(calendar: .current, year: Date.currentYear, month: 12, day: 25).date
-        let newYearsDate = DateComponents(calendar: .current, year: Date.currentYear + 1, month: 1, day: 1).date
-        
-        if HolidaysUtils.isHolidayInFuture(currentDate, christmasDate) {
-            return 0
-        } else if HolidaysUtils.isHolidayInFuture(currentDate, newYearsDate) {
-            return 1
-        }
-        return 0
     }
 }

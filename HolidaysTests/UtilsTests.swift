@@ -94,34 +94,6 @@ final class Utils: XCTestCase {
         XCTAssertEqual(holidayDate, calculatedHolidayDate)
     }
     
-    func testGetDefaultHolidayIndex() throws {
-        let currentDate = DateComponents(calendar: .current, year: 2023, month: 11, day: 25).date!
-        
-        let calculatedHolidayIndex = HolidaysUtils.getDefaultHolidayIndex(currentDate: currentDate)
-        XCTAssertEqual(calculatedHolidayIndex, 0)
-    }
-    
-    func testGetDefaultHolidayIndexChristmasDay() throws {
-        let currentDate = DateComponents(calendar: .current, year: 2023, month: 12, day: 25).date!
-        
-        let calculatedHolidayIndex = HolidaysUtils.getDefaultHolidayIndex(currentDate: currentDate)
-        XCTAssertEqual(calculatedHolidayIndex, 0)
-    }
-    
-    func testGetDefaultHolidayIndexDayAfterChristmas() throws {
-        let currentDate = DateComponents(calendar: .current, year: 2023, month: 12, day: 26).date!
-        
-        let calculatedHolidayIndex = HolidaysUtils.getDefaultHolidayIndex(currentDate: currentDate)
-        XCTAssertEqual(calculatedHolidayIndex, 1)
-    }
-    
-    func testGetDefaultHolidayIndexDayAfterNewYears() throws {
-        let currentDate = DateComponents(calendar: .current, year: 2024, month: 1, day: 2).date!
-        
-        let calculatedHolidayIndex = HolidaysUtils.getDefaultHolidayIndex(currentDate: currentDate)
-        XCTAssertEqual(calculatedHolidayIndex, 0)
-    }
-    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {

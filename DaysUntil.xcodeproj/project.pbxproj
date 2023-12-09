@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78284F9C2B212AD600AF0ED7 /* WidgetPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78284F9B2B212AD600AF0ED7 /* WidgetPreviewView.swift */; };
+		78284F9E2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78284F9D2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift */; };
 		789815A32B05D4F5002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
 		789815A72B071BCF002AF275 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A62B071BCF002AF275 /* DateExtensions.swift */; };
 		789815B22B086454002AF275 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB45292B049C57000EA9F5 /* WidgetKit.framework */; };
@@ -17,24 +19,14 @@
 		789815C02B086455002AF275 /* DaysUntilWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 789815B12B086454002AF275 /* DaysUntilWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		789815C42B08646C002AF275 /* DaysUntilWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45402B049E27000EA9F5 /* DaysUntilWidgetEntryView.swift */; };
 		789815C62B08649F002AF275 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
-		789815C72B0864A2002AF275 /* HolidaysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45572B049F31000EA9F5 /* HolidaysList.swift */; };
 		789815C82B0864A4002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
 		789815C92B0864A7002AF275 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A62B071BCF002AF275 /* DateExtensions.swift */; };
 		789815CC2B087AB1002AF275 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
-		789815CE2B087BD8002AF275 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815CD2B087BD8002AF275 /* UserDefaultsService.swift */; };
-		789815CF2B087BD8002AF275 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815CD2B087BD8002AF275 /* UserDefaultsService.swift */; };
-		789815D82B0ACD6C002AF275 /* SharedUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 789815D72B0ACD6C002AF275 /* SharedUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		789815DB2B0ACD6C002AF275 /* SharedUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789815D52B0ACD6C002AF275 /* SharedUI.framework */; };
-		789815DC2B0ACD6C002AF275 /* SharedUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 789815D52B0ACD6C002AF275 /* SharedUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		789815E12B0ACD84002AF275 /* BackgroundOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E02B0ACD84002AF275 /* BackgroundOption.swift */; };
 		789815E32B0BBE44002AF275 /* SharedUIAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */; };
 		789815E42B0BBE44002AF275 /* SharedUIAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */; };
-		789815E52B0BBE44002AF275 /* SharedUIAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */; };
-		789815E72B0BC340002AF275 /* TextOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E62B0BC340002AF275 /* TextOption.swift */; };
 		789815E82B0BF912002AF275 /* TextOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E62B0BC340002AF275 /* TextOption.swift */; };
 		789815EA2B0BF921002AF275 /* BackgroundOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E02B0ACD84002AF275 /* BackgroundOption.swift */; };
 		789815EC2B0C0F50002AF275 /* WidgetPickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815EB2B0C0F50002AF275 /* WidgetPickers.swift */; };
-		789815ED2B0C61F5002AF275 /* HolidaysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45572B049F31000EA9F5 /* HolidaysList.swift */; };
 		789815EE2B0C62B0002AF275 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
 		789815EF2B0C62D8002AF275 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
 		789815F02B0C6D13002AF275 /* DaysUntilWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45402B049E27000EA9F5 /* DaysUntilWidgetEntryView.swift */; };
@@ -47,13 +39,11 @@
 		789816022B0E3FF1002AF275 /* Holidays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB45472B049EA1000EA9F5 /* Holidays.framework */; };
 		789816092B0E4004002AF275 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816082B0E4004002AF275 /* UtilsTests.swift */; };
 		7898160A2B0E400D002AF275 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
-		7898160B2B0E4012002AF275 /* HolidaysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45572B049F31000EA9F5 /* HolidaysList.swift */; };
 		7898160C2B0E4012002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
 		7898160D2B0E4012002AF275 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A62B071BCF002AF275 /* DateExtensions.swift */; };
 		7898160E2B0E4012002AF275 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
 		789816122B0E5C7A002AF275 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816112B0E5C7A002AF275 /* AppGroup.swift */; };
 		789816132B0E5D70002AF275 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816112B0E5C7A002AF275 /* AppGroup.swift */; };
-		789816142B0E5DDA002AF275 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815CD2B087BD8002AF275 /* UserDefaultsService.swift */; };
 		789816152B0E5DE2002AF275 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816112B0E5C7A002AF275 /* AppGroup.swift */; };
 		78BB45162B047501000EA9F5 /* DaysUntilApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45152B047501000EA9F5 /* DaysUntilApp.swift */; };
 		78BB45182B047501000EA9F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45172B047501000EA9F5 /* ContentView.swift */; };
@@ -63,7 +53,24 @@
 		78BB454E2B049EA1000EA9F5 /* Holidays.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB45472B049EA1000EA9F5 /* Holidays.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		78BB45542B049EBD000EA9F5 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
 		78BB45562B049EFB000EA9F5 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
-		78BB45582B049F31000EA9F5 /* HolidaysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45572B049F31000EA9F5 /* HolidaysList.swift */; };
+		78FBCBC22B1AEEB40015D817 /* HolidayDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBC02B1AEEA10015D817 /* HolidayDisplayOptions.swift */; };
+		78FBCBC42B1AF3E80015D817 /* HolidayDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBC02B1AEEA10015D817 /* HolidayDisplayOptions.swift */; };
+		78FBCBC52B1C30A80015D817 /* TextOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E62B0BC340002AF275 /* TextOption.swift */; };
+		78FBCBC62B1C30B10015D817 /* BackgroundOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E02B0ACD84002AF275 /* BackgroundOption.swift */; };
+		78FBCBCB2B1C38210015D817 /* SharedUIAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */; };
+		78FBCBCC2B1C387B0015D817 /* HolidayDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBC02B1AEEA10015D817 /* HolidayDisplayOptions.swift */; };
+		78FBCBCE2B1C38F40015D817 /* DataLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBCD2B1C38F40015D817 /* DataLoading.swift */; };
+		78FBCBCF2B1C38F60015D817 /* DataLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBCD2B1C38F40015D817 /* DataLoading.swift */; };
+		78FBCBD02B1C38F70015D817 /* DataLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBCD2B1C38F40015D817 /* DataLoading.swift */; };
+		78FBCBD42B203E280015D817 /* DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBD32B203E280015D817 /* DataGeneration.swift */; };
+		78FBCBD62B203F1A0015D817 /* DataGenerationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBD52B203F1A0015D817 /* DataGenerationOptions.swift */; };
+		78FBCBD72B203FC60015D817 /* DataGenerationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBD52B203F1A0015D817 /* DataGenerationOptions.swift */; };
+		78FBCBD82B203FC60015D817 /* DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBD32B203E280015D817 /* DataGeneration.swift */; };
+		78FBCBD92B203FC70015D817 /* DataGenerationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBD52B203F1A0015D817 /* DataGenerationOptions.swift */; };
+		78FBCBDA2B203FC70015D817 /* DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBD32B203E280015D817 /* DataGeneration.swift */; };
+		78FBCBDC2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBDB2B20401F0015D817 /* HolidaysDataContainer.swift */; };
+		78FBCBDD2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBDB2B20401F0015D817 /* HolidaysDataContainer.swift */; };
+		78FBCBDE2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBDB2B20401F0015D817 /* HolidaysDataContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,13 +80,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 789815B02B086454002AF275;
 			remoteInfo = DaysUntilWidgetExtension;
-		};
-		789815D92B0ACD6C002AF275 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78BB450A2B047501000EA9F5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 789815D42B0ACD6C002AF275;
-			remoteInfo = SharedUI;
 		};
 		789816032B0E3FF1002AF275 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -116,7 +116,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				78BB454E2B049EA1000EA9F5 /* Holidays.framework in Embed Frameworks */,
-				789815DC2B0ACD6C002AF275 /* SharedUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +123,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		78284F9B2B212AD600AF0ED7 /* WidgetPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPreviewView.swift; sourceTree = "<group>"; };
+		78284F9D2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledBackgroundImageWidgetPreview.swift; sourceTree = "<group>"; };
 		789815A22B05D4F5002AF275 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		789815A62B071BCF002AF275 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		789815B12B086454002AF275 /* DaysUntilWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaysUntilWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,9 +132,6 @@
 		789815B72B086454002AF275 /* DaysUntilWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilWidgetLiveActivity.swift; sourceTree = "<group>"; };
 		789815B92B086454002AF275 /* DaysUntilWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilWidget.swift; sourceTree = "<group>"; };
 		789815BD2B086455002AF275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		789815CD2B087BD8002AF275 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
-		789815D52B0ACD6C002AF275 /* SharedUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		789815D72B0ACD6C002AF275 /* SharedUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedUI.h; sourceTree = "<group>"; };
 		789815E02B0ACD84002AF275 /* BackgroundOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundOption.swift; sourceTree = "<group>"; };
 		789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedUIAssets.xcassets; sourceTree = "<group>"; };
 		789815E62B0BC340002AF275 /* TextOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOption.swift; sourceTree = "<group>"; };
@@ -155,7 +153,11 @@
 		78BB45492B049EA1000EA9F5 /* Holidays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Holidays.h; sourceTree = "<group>"; };
 		78BB45532B049EBD000EA9F5 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayVariant.swift; sourceTree = "<group>"; };
-		78BB45572B049F31000EA9F5 /* HolidaysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysList.swift; sourceTree = "<group>"; };
+		78FBCBC02B1AEEA10015D817 /* HolidayDisplayOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDisplayOptions.swift; sourceTree = "<group>"; };
+		78FBCBCD2B1C38F40015D817 /* DataLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoading.swift; sourceTree = "<group>"; };
+		78FBCBD32B203E280015D817 /* DataGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGeneration.swift; sourceTree = "<group>"; };
+		78FBCBD52B203F1A0015D817 /* DataGenerationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGenerationOptions.swift; sourceTree = "<group>"; };
+		78FBCBDB2B20401F0015D817 /* HolidaysDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysDataContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,13 +167,6 @@
 			files = (
 				789815B32B086454002AF275 /* SwiftUI.framework in Frameworks */,
 				789815B22B086454002AF275 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		789815D22B0ACD6C002AF275 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +183,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				78BB454D2B049EA1000EA9F5 /* Holidays.framework in Frameworks */,
-				789815DB2B0ACD6C002AF275 /* SharedUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,17 +208,6 @@
 			path = DaysUntilWidget;
 			sourceTree = "<group>";
 		};
-		789815D62B0ACD6C002AF275 /* SharedUI */ = {
-			isa = PBXGroup;
-			children = (
-				789815D72B0ACD6C002AF275 /* SharedUI.h */,
-				789815E02B0ACD84002AF275 /* BackgroundOption.swift */,
-				789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */,
-				789815E62B0BC340002AF275 /* TextOption.swift */,
-			);
-			path = SharedUI;
-			sourceTree = "<group>";
-		};
 		789815FF2B0E3FF1002AF275 /* HolidaysTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,7 +224,6 @@
 				78BB45142B047501000EA9F5 /* DaysUntil */,
 				78BB45482B049EA1000EA9F5 /* Holidays */,
 				789815B42B086454002AF275 /* DaysUntilWidget */,
-				789815D62B0ACD6C002AF275 /* SharedUI */,
 				789815FF2B0E3FF1002AF275 /* HolidaysTests */,
 				78BB45282B049C57000EA9F5 /* Frameworks */,
 				78BB45132B047501000EA9F5 /* Products */,
@@ -254,7 +236,6 @@
 				78BB45122B047501000EA9F5 /* DaysUntil.app */,
 				78BB45472B049EA1000EA9F5 /* Holidays.framework */,
 				789815B12B086454002AF275 /* DaysUntilWidgetExtension.appex */,
-				789815D52B0ACD6C002AF275 /* SharedUI.framework */,
 				789815FE2B0E3FF1002AF275 /* HolidaysTests.xctest */,
 			);
 			name = Products;
@@ -267,9 +248,10 @@
 				78BB45152B047501000EA9F5 /* DaysUntilApp.swift */,
 				78BB45172B047501000EA9F5 /* ContentView.swift */,
 				78BB451B2B047503000EA9F5 /* Preview Content */,
-				789815CD2B087BD8002AF275 /* UserDefaultsService.swift */,
 				789815EB2B0C0F50002AF275 /* WidgetPickers.swift */,
 				789816112B0E5C7A002AF275 /* AppGroup.swift */,
+				78284F9B2B212AD600AF0ED7 /* WidgetPreviewView.swift */,
+				78284F9D2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift */,
 			);
 			path = DaysUntil;
 			sourceTree = "<group>";
@@ -294,27 +276,42 @@
 		78BB45482B049EA1000EA9F5 /* Holidays */ = {
 			isa = PBXGroup;
 			children = (
+				78FBCBD22B1C3A1B0015D817 /* Models */,
+				78FBCBD12B1C3A160015D817 /* Enums */,
+				789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */,
 				78BB45492B049EA1000EA9F5 /* Holidays.h */,
-				78BB45532B049EBD000EA9F5 /* Holiday.swift */,
-				78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */,
-				78BB45572B049F31000EA9F5 /* HolidaysList.swift */,
 				789815A22B05D4F5002AF275 /* Utils.swift */,
 				789815A62B071BCF002AF275 /* DateExtensions.swift */,
+				78FBCBCD2B1C38F40015D817 /* DataLoading.swift */,
+				78FBCBD52B203F1A0015D817 /* DataGenerationOptions.swift */,
+				78FBCBDB2B20401F0015D817 /* HolidaysDataContainer.swift */,
 			);
 			path = Holidays;
+			sourceTree = "<group>";
+		};
+		78FBCBD12B1C3A160015D817 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		78FBCBD22B1C3A1B0015D817 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78FBCBD32B203E280015D817 /* DataGeneration.swift */,
+				78BB45532B049EBD000EA9F5 /* Holiday.swift */,
+				78FBCBC02B1AEEA10015D817 /* HolidayDisplayOptions.swift */,
+				789815E62B0BC340002AF275 /* TextOption.swift */,
+				789815E02B0ACD84002AF275 /* BackgroundOption.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		789815D02B0ACD6C002AF275 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				789815D82B0ACD6C002AF275 /* SharedUI.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		78BB45422B049EA1000EA9F5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,24 +339,6 @@
 			productName = DaysUntilWidgetExtension;
 			productReference = 789815B12B086454002AF275 /* DaysUntilWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
-		};
-		789815D42B0ACD6C002AF275 /* SharedUI */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 789815DD2B0ACD6C002AF275 /* Build configuration list for PBXNativeTarget "SharedUI" */;
-			buildPhases = (
-				789815D02B0ACD6C002AF275 /* Headers */,
-				789815D12B0ACD6C002AF275 /* Sources */,
-				789815D22B0ACD6C002AF275 /* Frameworks */,
-				789815D32B0ACD6C002AF275 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SharedUI;
-			productName = SharedUI;
-			productReference = 789815D52B0ACD6C002AF275 /* SharedUI.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 		789815FD2B0E3FF1002AF275 /* HolidaysTests */ = {
 			isa = PBXNativeTarget;
@@ -394,7 +373,6 @@
 			dependencies = (
 				78BB454C2B049EA1000EA9F5 /* PBXTargetDependency */,
 				789815BF2B086455002AF275 /* PBXTargetDependency */,
-				789815DA2B0ACD6C002AF275 /* PBXTargetDependency */,
 			);
 			name = DaysUntil;
 			productName = DaysUntil;
@@ -432,10 +410,6 @@
 					789815B02B086454002AF275 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
-					789815D42B0ACD6C002AF275 = {
-						CreatedOnToolsVersion = 15.0.1;
-						LastSwiftMigration = 1500;
-					};
 					789815FD2B0E3FF1002AF275 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -464,7 +438,6 @@
 				78BB45112B047501000EA9F5 /* DaysUntil */,
 				789815B02B086454002AF275 /* DaysUntilWidgetExtension */,
 				78BB45462B049EA1000EA9F5 /* Holidays */,
-				789815D42B0ACD6C002AF275 /* SharedUI */,
 				789815FD2B0E3FF1002AF275 /* HolidaysTests */,
 			);
 		};
@@ -476,14 +449,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				789815E42B0BBE44002AF275 /* SharedUIAssets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		789815D32B0ACD6C002AF275 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				789815E52B0BBE44002AF275 /* SharedUIAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78FBCBCB2B1C38210015D817 /* SharedUIAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,27 +484,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				789815B82B086454002AF275 /* DaysUntilWidgetLiveActivity.swift in Sources */,
+				78FBCBD92B203FC70015D817 /* DataGenerationOptions.swift in Sources */,
 				789815C62B08649F002AF275 /* HolidayVariant.swift in Sources */,
-				789815C72B0864A2002AF275 /* HolidaysList.swift in Sources */,
 				789815F42B0D5EE8002AF275 /* TextOption.swift in Sources */,
 				789815CC2B087AB1002AF275 /* Holiday.swift in Sources */,
+				78FBCBDA2B203FC70015D817 /* DataGeneration.swift in Sources */,
 				789815BA2B086454002AF275 /* DaysUntilWidget.swift in Sources */,
 				789815C92B0864A7002AF275 /* DateExtensions.swift in Sources */,
 				789816132B0E5D70002AF275 /* AppGroup.swift in Sources */,
 				789815B62B086454002AF275 /* DaysUntilWidgetBundle.swift in Sources */,
 				789815C42B08646C002AF275 /* DaysUntilWidgetEntryView.swift in Sources */,
+				78FBCBCC2B1C387B0015D817 /* HolidayDisplayOptions.swift in Sources */,
+				78FBCBDD2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */,
 				789815F52B0D5EEC002AF275 /* BackgroundOption.swift in Sources */,
+				78FBCBD02B1C38F70015D817 /* DataLoading.swift in Sources */,
 				789815C82B0864A4002AF275 /* Utils.swift in Sources */,
-				789816142B0E5DDA002AF275 /* UserDefaultsService.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		789815D12B0ACD6C002AF275 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				789815E12B0ACD84002AF275 /* BackgroundOption.swift in Sources */,
-				789815E72B0BC340002AF275 /* TextOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,7 +510,6 @@
 				7898160C2B0E4012002AF275 /* Utils.swift in Sources */,
 				7898160A2B0E400D002AF275 /* Holiday.swift in Sources */,
 				789816012B0E3FF1002AF275 /* HolidaysTests.swift in Sources */,
-				7898160B2B0E4012002AF275 /* HolidaysList.swift in Sources */,
 				789816092B0E4004002AF275 /* UtilsTests.swift in Sources */,
 				7898160D2B0E4012002AF275 /* DateExtensions.swift in Sources */,
 			);
@@ -560,18 +519,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				789815CE2B087BD8002AF275 /* UserDefaultsService.swift in Sources */,
+				78FBCBDC2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */,
 				789815EC2B0C0F50002AF275 /* WidgetPickers.swift in Sources */,
 				789815EE2B0C62B0002AF275 /* Holiday.swift in Sources */,
 				789816122B0E5C7A002AF275 /* AppGroup.swift in Sources */,
+				78FBCBCF2B1C38F60015D817 /* DataLoading.swift in Sources */,
+				78284F9C2B212AD600AF0ED7 /* WidgetPreviewView.swift in Sources */,
+				78FBCBD82B203FC60015D817 /* DataGeneration.swift in Sources */,
 				789815E82B0BF912002AF275 /* TextOption.swift in Sources */,
-				789815ED2B0C61F5002AF275 /* HolidaysList.swift in Sources */,
 				789815F32B0C6D7F002AF275 /* Utils.swift in Sources */,
 				789815F22B0C6D5D002AF275 /* DateExtensions.swift in Sources */,
+				78FBCBD72B203FC60015D817 /* DataGenerationOptions.swift in Sources */,
 				789815F02B0C6D13002AF275 /* DaysUntilWidgetEntryView.swift in Sources */,
+				78284F9E2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift in Sources */,
 				789815EF2B0C62D8002AF275 /* HolidayVariant.swift in Sources */,
 				789815EA2B0BF921002AF275 /* BackgroundOption.swift in Sources */,
 				78BB45182B047501000EA9F5 /* ContentView.swift in Sources */,
+				78FBCBC42B1AF3E80015D817 /* HolidayDisplayOptions.swift in Sources */,
 				78BB45162B047501000EA9F5 /* DaysUntilApp.swift in Sources */,
 				789815F12B0C6D27002AF275 /* DaysUntilWidget.swift in Sources */,
 			);
@@ -581,12 +545,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				789815CF2B087BD8002AF275 /* UserDefaultsService.swift in Sources */,
+				78FBCBD42B203E280015D817 /* DataGeneration.swift in Sources */,
 				78BB45562B049EFB000EA9F5 /* HolidayVariant.swift in Sources */,
+				78FBCBC62B1C30B10015D817 /* BackgroundOption.swift in Sources */,
+				78FBCBD62B203F1A0015D817 /* DataGenerationOptions.swift in Sources */,
+				78FBCBCE2B1C38F40015D817 /* DataLoading.swift in Sources */,
+				78FBCBC22B1AEEB40015D817 /* HolidayDisplayOptions.swift in Sources */,
+				78FBCBC52B1C30A80015D817 /* TextOption.swift in Sources */,
+				78FBCBDE2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */,
 				789815A72B071BCF002AF275 /* DateExtensions.swift in Sources */,
 				789816152B0E5DE2002AF275 /* AppGroup.swift in Sources */,
 				78BB45542B049EBD000EA9F5 /* Holiday.swift in Sources */,
-				78BB45582B049F31000EA9F5 /* HolidaysList.swift in Sources */,
 				789815A32B05D4F5002AF275 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,11 +567,6 @@
 			isa = PBXTargetDependency;
 			target = 789815B02B086454002AF275 /* DaysUntilWidgetExtension */;
 			targetProxy = 789815BE2B086455002AF275 /* PBXContainerItemProxy */;
-		};
-		789815DA2B0ACD6C002AF275 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 789815D42B0ACD6C002AF275 /* SharedUI */;
-			targetProxy = 789815D92B0ACD6C002AF275 /* PBXContainerItemProxy */;
 		};
 		789816042B0E3FF1002AF275 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -670,75 +634,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		789815DE2B0ACD6C002AF275 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 4QGR522B9M;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.SharedUI;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		789815DF2B0ACD6C002AF275 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 4QGR522B9M;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.SharedUI;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1032,15 +927,6 @@
 			buildConfigurations = (
 				789815C22B086455002AF275 /* Debug */,
 				789815C32B086455002AF275 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		789815DD2B0ACD6C002AF275 /* Build configuration list for PBXNativeTarget "SharedUI" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				789815DE2B0ACD6C002AF275 /* Debug */,
-				789815DF2B0ACD6C002AF275 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

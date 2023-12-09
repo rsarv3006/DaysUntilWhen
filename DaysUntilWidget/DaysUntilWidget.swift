@@ -7,41 +7,54 @@
 
 import WidgetKit
 import SwiftUI
+import SwiftData
 
 struct Provider: TimelineProvider {
+    let modelContext = ModelContext(DataGeneration.container)
+   
+    init() {
+        DataGeneration.generateAllData(context: modelContext)
+    }
+    
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), holiday: HolidaysList[0], background: BackgroundOptionsList[0], text: TextOptionsList[0])
+        let holidays = try! modelContext.fetch(FetchDescriptor<Holiday>())
+        let displayOptions = try! modelContext.fetch(FetchDescriptor<HolidayDisplayOptions>())
+        
+        let selectedHoliday = HolidaysUtils.getSelectedHoliday(holidays: holidays, date: .now)
+        
+        let displayOption = displayOptions.first(where: { $0.id == selectedHoliday?.variant })
+        
+        return SimpleEntry(date: .now, holiday: selectedHoliday!, background: (displayOption?.backgroundOption)!, text: (displayOption?.textOption)!)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let holidayIndex = UserDefaultsService.integer(forKey: .selectedHolidayIndex)
-        let backgroundIndex = UserDefaultsService.integer(forKey: .selectedBackgroundIndex)
-        let textIndex = UserDefaultsService.integer(forKey: .selectedTextIndex)
+        let holidays = try! modelContext.fetch(FetchDescriptor<Holiday>())
+        let displayOptions = try! modelContext.fetch(FetchDescriptor<HolidayDisplayOptions>())
         
-        let selectedHoliday = HolidaysList[holidayIndex]
-        let selectedBackground = BackgroundOptionsList[backgroundIndex]
-        let selectedText = TextOptionsList[textIndex]
+        let selectedHoliday = HolidaysUtils.getSelectedHoliday(holidays: holidays, date: .now)
         
-        let entry = SimpleEntry(date: Date(), holiday: selectedHoliday, background: selectedBackground, text: selectedText)
+        let displayOption = displayOptions.first(where: { $0.id == selectedHoliday?.variant })
+        
+        let entry = SimpleEntry(date: .now, holiday: selectedHoliday!, background: (displayOption?.backgroundOption)!, text: (displayOption?.textOption)!)
         
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
-        let holidayIndex = UserDefaultsService.integer(forKey: .selectedHolidayIndex)
-        let backgroundIndex = UserDefaultsService.integer(forKey: .selectedBackgroundIndex)
-        let textIndex = UserDefaultsService.integer(forKey: .selectedTextIndex)
-        
-        let selectedHoliday = HolidaysList[holidayIndex]
-        let selectedBackground = BackgroundOptionsList[backgroundIndex]
-        let selectedText = TextOptionsList[textIndex]
+      
+        let holidays = try! modelContext.fetch(FetchDescriptor<Holiday>())
+        let displayOptions = try! modelContext.fetch(FetchDescriptor<HolidayDisplayOptions>())
         
         var entries: [SimpleEntry] = []
 
         let currentDate = Calendar.current.startOfDay(for: Date())
         for dayOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .day, value: dayOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, holiday: selectedHoliday, background: selectedBackground, text: selectedText)
+            let selectedHoliday = HolidaysUtils.getSelectedHoliday(holidays: holidays, date: entryDate)
+          
+            let displayOption = displayOptions.first(where: { $0.id == selectedHoliday?.variant })
+            
+            let entry = SimpleEntry(date: entryDate, holiday: selectedHoliday!, background: (displayOption?.backgroundOption)!, text: (displayOption?.textOption)!)
             entries.append(entry)
         }
 
@@ -72,14 +85,16 @@ struct DaysUntilWidget: Widget {
         }
         .configurationDisplayName("Days Until When")
         .description("Showing Days until a holiday!")
-        .supportedFamilies([.systemSmall, .systemLarge])
+//        .supportedFamilies([.systemSmall, .systemLarge])
     }
 }
 
 #Preview(as: .systemSmall) {
     DaysUntilWidget()
 } timeline: {
-    SimpleEntry(date: .now, holiday: HolidaysList[0], background: BackgroundOptionsList[0], text: TextOptionsList[0])
-    SimpleEntry(date: .tomorrow, holiday: HolidaysList[0], background: BackgroundOptionsList[0], text: TextOptionsList[0])
-    SimpleEntry(date: .dayAfterChristmas!, holiday: HolidaysList[0], background: BackgroundOptionsList[0], text: TextOptionsList[0])
+    SimpleEntry(date: .now, holiday: Holiday(id: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970, variant: .christmas, name: "Christmas", holidayDescription: "Christmas Day!", dayOfGreeting: "Merry Christmas"), background: BackgroundOption(id: .ChristmasBackground1, type: .image), text: TextOption(id: .ChristmasRed))
+    SimpleEntry(date: .tomorrow, holiday: Holiday(id: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970, variant: .christmas, name: "Christmas", holidayDescription: "Christmas Day!", dayOfGreeting: "Merry Christmas"), background: BackgroundOption(id: .ChristmasBackground1, type: .image), text: TextOption(id: .ChristmasRed))
+    SimpleEntry(date: .christmas!, holiday: Holiday(id: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970, variant: .christmas, name: "Christmas", holidayDescription: "Christmas Day!", dayOfGreeting: "Merry Christmas"), background: BackgroundOption(id: .ChristmasBackground1, type: .image), text: TextOption(id: .ChristmasRed))
+    SimpleEntry(date: .dayAfterChristmas!, holiday: createNewYearHolidayModel(newYearTimeInterval: DateComponents(calendar: .current, year: Date.currentYear + 1, month: 1, day: 1).date!.timeIntervalSince1970), background: BackgroundOption(id: .ChristmasBackground1, type: .image), text: TextOption(id: .ChristmasRed))
+    
 }

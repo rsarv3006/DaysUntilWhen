@@ -6,38 +6,44 @@
 //
 
 import SwiftUI
+import SwiftData
 
-enum BackgroundOptionId: String {
+enum BackgroundOptionId: String, Codable {
     case ChristmasBackground1
     case ChristmasRed
     case ChristmasWhite
     case ChristmasGreen
 }
 
-enum BackgroundOptionType {
+enum BackgroundOptionType: String, Codable {
     case image
     case color
 }
 
-struct BackgroundOption: Identifiable {
+@Model
+class BackgroundOption: Identifiable {
     let id: BackgroundOptionId
     let type: BackgroundOptionType
     let optionName: String
-    
+    let holidayFilter: [HolidayVariant]
+   
+    @Transient
     var image: Image? {
         guard type == .image else { return nil }
         return Image(id.rawValue)
     }
     
+    @Transient
     var color: Color? {
         guard type == .color else { return nil }
         return Color(id.rawValue)
     }
     
-    init(id: BackgroundOptionId, type: BackgroundOptionType, optionName: String = "") {
+    init(id: BackgroundOptionId, type: BackgroundOptionType, optionName: String = "", holidayFilter: [HolidayVariant] = []) {
         self.id = id
         self.type = type
         self.optionName = optionName.isEmpty ? id.rawValue : optionName
+        self.holidayFilter = holidayFilter
     }
 }
 
@@ -51,9 +57,3 @@ extension BackgroundOption: Hashable {
     }
 }
 
-let BackgroundOptionsList = [
-    BackgroundOption(id: .ChristmasBackground1, type: .image),
-    BackgroundOption(id: .ChristmasRed, type: .color),
-    BackgroundOption(id: .ChristmasWhite, type: .color),
-    BackgroundOption(id: .ChristmasGreen, type: .color)
-]

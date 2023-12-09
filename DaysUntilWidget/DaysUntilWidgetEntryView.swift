@@ -51,8 +51,8 @@ struct DaysUntilWidgetEntryView: View {
 #Preview(as: .systemSmall) {
     DaysUntilWidget()
 } timeline: {
-    SimpleEntry(date: .now, holiday: HolidaysList[0], background: BackgroundOptionsList[0], text: TextOptionsList[0])
-    SimpleEntry(date: .tomorrow, holiday: HolidaysList[0], background: BackgroundOptionsList[0], text: TextOptionsList[0])
-    SimpleEntry(date: .christmas!, holiday: HolidaysList[0], background: BackgroundOptionsList[0], text: TextOptionsList[0])
+    SimpleEntry(date: .now, holiday: createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970), background: BackgroundOption(id: .ChristmasBackground1, type: .image), text: TextOption(id: .ChristmasRed, optionName: "Christmas Red"))
+    SimpleEntry(date: .tomorrow, holiday: createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970), background: BackgroundOption(id: .ChristmasBackground1, type: .image), text: TextOption(id: .ChristmasRed, optionName: "Christmas Red"))
+    SimpleEntry(date: .christmas!, holiday: createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970), background: BackgroundOption(id: .ChristmasBackground1, type: .image), text: TextOption(id: .ChristmasRed, optionName: "Christmas Red"))
 }
 
