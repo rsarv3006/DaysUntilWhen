@@ -22,6 +22,12 @@ struct WidgetPreviewView: View {
             VStack {
                 VStack(alignment: .leading) {
                     WidgetPickers(selectedHoliday: $selectedHoliday, selectedBackground: $selectedBackground, selectedText: $selectedText)
+                        .onChange(of: selectedHoliday) { oldValue, newValue in
+                            if let displayOption = displayOptions.first(where: { $0.id == selectedHoliday.variant }), let backgroundOption = displayOption.backgroundOption, let textOption = displayOption.textOption {
+                                selectedBackground = backgroundOption
+                                selectedText = textOption
+                            }
+                        }
                 }
                 .padding(.horizontal)
                 .padding(.bottom, 30)

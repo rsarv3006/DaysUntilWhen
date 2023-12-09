@@ -74,10 +74,10 @@ func loadDisplayOptions(context: ModelContext) throws {
             })
         case .newYears:
             displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
-                backgroundOption.id == .ChristmasRed
+                backgroundOption.id == .ChristmasGreen
             })
             displayOptions.textOption = textOptions.first(where: { textOption in
-                textOption.id == .ChristmasWhite
+                textOption.id == .ChristmasRed
             })
         case .valentines:
             displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
@@ -92,7 +92,6 @@ func loadDisplayOptions(context: ModelContext) throws {
 }
 
 func loadInitialHolidays(context: ModelContext) throws {
-    print("HI THERE")
     let loadedHolidays = try context.fetch(FetchDescriptor<Holiday>())
    
     let christmasDate = try Date.christmasFor(year: Date.currentYear)
