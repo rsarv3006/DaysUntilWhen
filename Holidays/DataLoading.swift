@@ -22,13 +22,17 @@ private let BackgroundOptionsList = [
     BackgroundOption(id: .ChristmasBackground1, type: .image, holidayFilter: [.christmas]),
     BackgroundOption(id: .ChristmasRed, type: .color, holidayFilter: [.christmas]),
     BackgroundOption(id: .ChristmasWhite, type: .color, holidayFilter: [.christmas]),
-    BackgroundOption(id: .ChristmasGreen, type: .color, holidayFilter: [.christmas])
+    BackgroundOption(id: .ChristmasGreen, type: .color, holidayFilter: [.christmas]),
+    BackgroundOption(id: .GenericBlack, type: .color, holidayFilter: [.christmas, .newYears, .valentines]),
+    BackgroundOption(id: .GenericWhite, type: .color, holidayFilter: [.christmas, .newYears, .valentines]),
 ]
 
 private let TextOptionsList = [
     TextOption(id: .ChristmasRed, holidayFilter: [.christmas]),
     TextOption(id: .ChristmasWhite, holidayFilter: [.christmas]),
-    TextOption(id: .ChristmasGreen, holidayFilter: [.christmas])
+    TextOption(id: .ChristmasGreen, holidayFilter: [.christmas]),
+    TextOption(id: .GenericBlack, holidayFilter: [.christmas, .newYears, .valentines]),
+    TextOption(id: .GenericWhite, holidayFilter: [.christmas, .newYears, .valentines])
 ]
 
 func loadBackgroundOptions(modelContext: ModelContext) throws {

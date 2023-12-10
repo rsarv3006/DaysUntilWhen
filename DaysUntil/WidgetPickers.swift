@@ -38,7 +38,9 @@ struct WidgetPickers: View {
         HStack {
             Text("Background:")
             Picker("Selected Background", selection: $selectedBackground) {
-                ForEach(backgroundOptions, id: \.self) { background in
+                ForEach(backgroundOptions.filter({ option in
+                    option.holidayFilter.contains(selectedHoliday.variant)
+                }), id: \.self) { background in
                     Text(background.optionName)
                 }
             }
@@ -47,7 +49,9 @@ struct WidgetPickers: View {
         HStack {
             Text("Text:")
             Picker("Selected Text Color", selection: $selectedText) {
-                ForEach(textOptions, id: \.self) { text in
+                ForEach(textOptions.filter({ option in
+                    option.holidayFilter.contains(selectedHoliday.variant)
+                }), id: \.self) { text in
                     Text(text.optionName)
                 }
             }
