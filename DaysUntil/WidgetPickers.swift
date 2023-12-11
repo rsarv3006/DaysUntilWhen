@@ -62,7 +62,7 @@ struct WidgetPickers: View {
 #Preview {
     let holiday = createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970)
     let background = BackgroundOption(id: .ChristmasBackground1, type: .image)
-    let text = TextOption(id: .ChristmasRed, optionName: "Christmas Red")
+    let text = TextOption(id: TextOptionId.ChristmasRed.rawValue, optionName: "Christmas Red")
     
     return (
     WidgetPickers(selectedHoliday: .constant(holiday), selectedBackground: .constant(background), selectedText: .constant(text))

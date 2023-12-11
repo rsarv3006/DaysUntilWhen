@@ -15,7 +15,7 @@ struct WidgetPreviewView: View {
     
     @State private var selectedHoliday: Holiday = createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970)
     @State private var selectedBackground: BackgroundOption = BackgroundOption(id: .ChristmasBackground1, type: .image)
-    @State private var selectedText: TextOption = TextOption(id: .ChristmasRed)
+    @State private var selectedText: TextOption = TextOption(id: TextOptionId.ChristmasRed.rawValue)
     
     var body: some View {
         NavigationStack {

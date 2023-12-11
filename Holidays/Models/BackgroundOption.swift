@@ -58,4 +58,3 @@ extension BackgroundOption: Hashable {
         hasher.combine(id)
     }
 }
-

@@ -28,11 +28,11 @@ private let BackgroundOptionsList = [
 ]
 
 private let TextOptionsList = [
-    TextOption(id: .ChristmasRed, holidayFilter: [.christmas]),
-    TextOption(id: .ChristmasWhite, holidayFilter: [.christmas]),
-    TextOption(id: .ChristmasGreen, holidayFilter: [.christmas]),
-    TextOption(id: .GenericBlack, holidayFilter: [.christmas, .newYears, .valentines]),
-    TextOption(id: .GenericWhite, holidayFilter: [.christmas, .newYears, .valentines])
+    TextOption(id: TextOptionId.ChristmasRed.rawValue, holidayFilter: [.christmas]),
+    TextOption(id: TextOptionId.ChristmasWhite.rawValue, holidayFilter: [.christmas]),
+    TextOption(id: TextOptionId.ChristmasGreen.rawValue, holidayFilter: [.christmas]),
+    TextOption(id: TextOptionId.GenericBlack.rawValue, holidayFilter: [.christmas, .newYears, .valentines]),
+    TextOption(id: TextOptionId.GenericWhite.rawValue, holidayFilter: [.christmas, .newYears, .valentines])
 ]
 
 func loadBackgroundOptions(modelContext: ModelContext) throws {
@@ -74,21 +74,21 @@ func loadDisplayOptions(context: ModelContext) throws {
                 backgroundOption.id == .ChristmasBackground1
             })
             displayOptions.textOption = textOptions.first(where: { textOption in
-                textOption.id == .ChristmasRed
+                textOption.id == TextOptionId.ChristmasRed.rawValue
             })
         case .newYears:
             displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
                 backgroundOption.id == .ChristmasGreen
             })
             displayOptions.textOption = textOptions.first(where: { textOption in
-                textOption.id == .ChristmasRed
+                textOption.id == TextOptionId.ChristmasRed.rawValue
             })
         case .valentines:
             displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
                 backgroundOption.id == .ChristmasRed
             })
             displayOptions.textOption = textOptions.first(where: { textOption in
-                textOption.id == .ChristmasWhite
+                textOption.id == TextOptionId.ChristmasWhite.rawValue
             })
         }
         context.insert(displayOptions)

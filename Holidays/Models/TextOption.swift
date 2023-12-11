@@ -18,18 +18,18 @@ enum TextOptionId: String, Codable {
 
 @Model
 class TextOption: Identifiable {
-    let id: TextOptionId
+    @Attribute(.unique) let id: String
     let optionName: String
     let holidayFilter: [HolidayVariant]
     
     @Transient
     var color: Color? {
-        return Color(id.rawValue)
+        return Color(id)
     }
     
-    init(id: TextOptionId, optionName: String = "", holidayFilter: [HolidayVariant] = []) {
+    init(id: String, optionName: String = "", holidayFilter: [HolidayVariant] = []) {
         self.id = id
-        self.optionName = optionName.isEmpty ? id.rawValue : optionName
+        self.optionName = optionName.isEmpty ? id : optionName
         self.holidayFilter = holidayFilter
     }
 }
