@@ -24,7 +24,7 @@ enum BackgroundOptionType: String, Codable {
 
 @Model
 class BackgroundOption: Identifiable {
-    let id: BackgroundOptionId
+    @Attribute(.unique) let id: String
     let type: BackgroundOptionType
     let optionName: String
     let holidayFilter: [HolidayVariant]
@@ -32,19 +32,19 @@ class BackgroundOption: Identifiable {
     @Transient
     var image: Image? {
         guard type == .image else { return nil }
-        return Image(id.rawValue)
+        return Image(id)
     }
     
     @Transient
     var color: Color? {
         guard type == .color else { return nil }
-        return Color(id.rawValue)
+        return Color(id)
     }
     
-    init(id: BackgroundOptionId, type: BackgroundOptionType, optionName: String = "", holidayFilter: [HolidayVariant] = []) {
+    init(id: String, type: BackgroundOptionType, optionName: String = "", holidayFilter: [HolidayVariant] = []) {
         self.id = id
         self.type = type
-        self.optionName = optionName.isEmpty ? id.rawValue : optionName
+        self.optionName = optionName.isEmpty ? id : optionName
         self.holidayFilter = holidayFilter
     }
 }

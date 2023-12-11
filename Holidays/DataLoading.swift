@@ -19,12 +19,12 @@ enum HolidayLoadingError : Error {
 }
 
 private let BackgroundOptionsList = [
-    BackgroundOption(id: .ChristmasBackground1, type: .image, holidayFilter: [.christmas]),
-    BackgroundOption(id: .ChristmasRed, type: .color, holidayFilter: [.christmas]),
-    BackgroundOption(id: .ChristmasWhite, type: .color, holidayFilter: [.christmas]),
-    BackgroundOption(id: .ChristmasGreen, type: .color, holidayFilter: [.christmas]),
-    BackgroundOption(id: .GenericBlack, type: .color, holidayFilter: [.christmas, .newYears, .valentines]),
-    BackgroundOption(id: .GenericWhite, type: .color, holidayFilter: [.christmas, .newYears, .valentines]),
+    BackgroundOption(id: BackgroundOptionId.ChristmasBackground1.rawValue, type: .image, holidayFilter: [.christmas]),
+    BackgroundOption(id: BackgroundOptionId.ChristmasRed.rawValue, type: .color, holidayFilter: [.christmas]),
+    BackgroundOption(id: BackgroundOptionId.ChristmasWhite.rawValue, type: .color, holidayFilter: [.christmas]),
+    BackgroundOption(id: BackgroundOptionId.ChristmasGreen.rawValue, type: .color, holidayFilter: [.christmas]),
+    BackgroundOption(id: BackgroundOptionId.GenericBlack.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines]),
+    BackgroundOption(id: BackgroundOptionId.GenericWhite.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines]),
 ]
 
 private let TextOptionsList = [
@@ -71,21 +71,21 @@ func loadDisplayOptions(context: ModelContext) throws {
         switch variant {
         case .christmas:
             displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
-                backgroundOption.id == .ChristmasBackground1
+                backgroundOption.id == BackgroundOptionId.ChristmasBackground1.rawValue
             })
             displayOptions.textOption = textOptions.first(where: { textOption in
                 textOption.id == TextOptionId.ChristmasRed.rawValue
             })
         case .newYears:
             displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
-                backgroundOption.id == .ChristmasGreen
+                backgroundOption.id == BackgroundOptionId.ChristmasGreen.rawValue
             })
             displayOptions.textOption = textOptions.first(where: { textOption in
                 textOption.id == TextOptionId.ChristmasRed.rawValue
             })
         case .valentines:
             displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
-                backgroundOption.id == .ChristmasRed
+                backgroundOption.id == BackgroundOptionId.ChristmasRed.rawValue
             })
             displayOptions.textOption = textOptions.first(where: { textOption in
                 textOption.id == TextOptionId.ChristmasWhite.rawValue

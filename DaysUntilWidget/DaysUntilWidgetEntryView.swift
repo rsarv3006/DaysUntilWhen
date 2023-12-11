@@ -51,8 +51,8 @@ struct DaysUntilWidgetEntryView: View {
 #Preview(as: .systemSmall) {
     DaysUntilWidget()
 } timeline: {
-    SimpleEntry(date: .now, holiday: createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970), background: BackgroundOption(id: .ChristmasBackground1, type: .image), text: TextOption(id: TextOptionId.ChristmasRed.rawValue, optionName: "Christmas Red"))
-    SimpleEntry(date: .tomorrow, holiday: createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970), background: BackgroundOption(id: .ChristmasBackground1, type: .image), text: TextOption(id: TextOptionId.ChristmasRed.rawValue, optionName: "Christmas Red"))
-    SimpleEntry(date: .christmas!, holiday: createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970), background: BackgroundOption(id: .ChristmasBackground1, type: .image), text: TextOption(id: TextOptionId.ChristmasRed.rawValue, optionName: "Christmas Red"))
+    SimpleEntry(date: .now, holiday: createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970), background: BackgroundOption(id: BackgroundOptionId.ChristmasBackground1.rawValue, type: .image), text: TextOption(id: TextOptionId.ChristmasRed.rawValue, optionName: "Christmas Red"))
+    SimpleEntry(date: .tomorrow, holiday: createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970), background: BackgroundOption(id: BackgroundOptionId.ChristmasBackground1.rawValue, type: .image), text: TextOption(id: TextOptionId.ChristmasRed.rawValue, optionName: "Christmas Red"))
+    SimpleEntry(date: .christmas!, holiday: createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970), background: BackgroundOption(id: BackgroundOptionId.ChristmasBackground1.rawValue, type: .image), text: TextOption(id: TextOptionId.ChristmasRed.rawValue, optionName: "Christmas Red"))
 }
 
