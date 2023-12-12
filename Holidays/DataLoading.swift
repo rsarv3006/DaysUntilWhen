@@ -25,6 +25,8 @@ private let BackgroundOptionsList = [
     BackgroundOption(id: BackgroundOptionId.ChristmasGreen.rawValue, type: .color, holidayFilter: [.christmas]),
     BackgroundOption(id: BackgroundOptionId.GenericBlack.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines]),
     BackgroundOption(id: BackgroundOptionId.GenericWhite.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines]),
+    BackgroundOption(id: BackgroundOptionId.GenericGold.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines]),
+    BackgroundOption(id: BackgroundOptionId.NewYearsBackground1.rawValue, type: .image, holidayFilter: [.newYears])
 ]
 
 private let TextOptionsList = [
@@ -32,7 +34,8 @@ private let TextOptionsList = [
     TextOption(id: TextOptionId.ChristmasWhite.rawValue, holidayFilter: [.christmas]),
     TextOption(id: TextOptionId.ChristmasGreen.rawValue, holidayFilter: [.christmas]),
     TextOption(id: TextOptionId.GenericBlack.rawValue, holidayFilter: [.christmas, .newYears, .valentines]),
-    TextOption(id: TextOptionId.GenericWhite.rawValue, holidayFilter: [.christmas, .newYears, .valentines])
+    TextOption(id: TextOptionId.GenericWhite.rawValue, holidayFilter: [.christmas, .newYears, .valentines]),
+    TextOption(id: TextOptionId.GenericGold.rawValue, holidayFilter: [.christmas, .newYears, .valentines])
 ]
 
 func loadBackgroundOptions(modelContext: ModelContext) throws {
@@ -78,10 +81,10 @@ func loadDisplayOptions(context: ModelContext) throws {
             })
         case .newYears:
             displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
-                backgroundOption.id == BackgroundOptionId.ChristmasGreen.rawValue
+                backgroundOption.id == BackgroundOptionId.NewYearsBackground1.rawValue
             })
             displayOptions.textOption = textOptions.first(where: { textOption in
-                textOption.id == TextOptionId.ChristmasRed.rawValue
+                textOption.id == TextOptionId.GenericGold.rawValue
             })
         case .valentines:
             displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
