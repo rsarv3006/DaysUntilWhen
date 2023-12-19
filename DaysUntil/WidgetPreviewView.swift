@@ -10,6 +10,8 @@ import SwiftData
 import WidgetKit
 
 struct WidgetPreviewView: View {
+    @Environment(\.modelContext) private var modelContext
+    
     @Query var holidays: [Holiday]
     @Query var displayOptions: [HolidayDisplayOptions]
     
@@ -53,6 +55,8 @@ struct WidgetPreviewView: View {
                 
                 Button("Update Widget") {
                     updateWidget()
+                    try? modelContext.save()
+                    WidgetCenter.shared.reloadAllTimelines()
                 }
                 .padding(.top)
                 
@@ -91,8 +95,6 @@ struct WidgetPreviewView: View {
         let displayOption = displayOptions.first(where: { $0.id == selectedHoliday.variant })
         
         displayOption?.updateDisplayOptions(backgroundOption: selectedBackground, textOption: selectedText)
-        
-        WidgetCenter.shared.reloadAllTimelines()
     }
 }
 
