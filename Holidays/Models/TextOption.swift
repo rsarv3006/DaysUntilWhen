@@ -15,6 +15,8 @@ enum TextOptionId: String, Codable {
     case GenericBlack
     case GenericWhite
     case GenericGold
+    case ValentinesRed
+    case ValentinesPink
 }
 
 @Model

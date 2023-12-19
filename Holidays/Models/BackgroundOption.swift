@@ -17,6 +17,9 @@ enum BackgroundOptionId: String, Codable {
     case GenericWhite
     case GenericGold
     case NewYearsBackground1
+    case ValentinesBackground1
+    case ValentinesRed
+    case ValentinesPink
 }
 
 enum BackgroundOptionType: String, Codable {
