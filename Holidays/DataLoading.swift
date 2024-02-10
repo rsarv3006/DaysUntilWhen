@@ -12,6 +12,7 @@ enum HolidayLoadingError : Error {
     case invalidChristmasDate
     case invalidNewYearDate
     case invalidValentinesDate
+    case invalidEasterDate
     case failedToLoadBackgroundOptions
     case failedToLoadTextOptions
     case failedToLoadDisplayOptions
@@ -30,6 +31,10 @@ private let BackgroundOptionsList = [
     BackgroundOption(id: BackgroundOptionId.ValentinesBackground1.rawValue, type: .image, holidayFilter: [.valentines]),
     BackgroundOption(id: BackgroundOptionId.ValentinesRed.rawValue, type: .color, holidayFilter: [.valentines]),
     BackgroundOption(id: BackgroundOptionId.ValentinesPink.rawValue, type: .color, holidayFilter: [.valentines]),
+    BackgroundOption(id: BackgroundOptionId.EasterBackground1.rawValue, type: .image, holidayFilter: [.easter]),
+    BackgroundOption(id: BackgroundOptionId.EasterPurple.rawValue, type: .color, holidayFilter: [.easter]),
+    BackgroundOption(id: BackgroundOptionId.EasterOrange.rawValue, type: .color, holidayFilter: [.easter]),
+    BackgroundOption(id: BackgroundOptionId.EasterGreen.rawValue, type: .color, holidayFilter: [.easter]),
 ]
 
 private let TextOptionsList = [
@@ -41,6 +46,9 @@ private let TextOptionsList = [
     TextOption(id: TextOptionId.GenericGold.rawValue, holidayFilter: [.christmas, .newYears, .valentines]),
     TextOption(id: TextOptionId.ValentinesRed.rawValue, holidayFilter: [.valentines]),
     TextOption(id: TextOptionId.ValentinesPink.rawValue, holidayFilter: [.valentines]),
+    TextOption(id: TextOptionId.EasterPurple.rawValue, holidayFilter: [.easter]),
+    TextOption(id: TextOptionId.EasterOrange.rawValue, holidayFilter: [.easter]),
+    TextOption(id: TextOptionId.EasterGreen.rawValue, holidayFilter: [.easter]),
 ]
 
 func loadBackgroundOptions(modelContext: ModelContext) throws {
@@ -98,6 +106,13 @@ func loadDisplayOptions(context: ModelContext) throws {
             displayOptions.textOption = textOptions.first(where: { textOption in
                 textOption.id == TextOptionId.ValentinesRed.rawValue
             })
+        case .easter:
+            displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
+                backgroundOption.id == BackgroundOptionId.EasterBackground1.rawValue
+            })
+            displayOptions.textOption = textOptions.first(where: { textOption in
+                textOption.id == TextOptionId.EasterPurple.rawValue
+            })
         }
         context.insert(displayOptions)
     }
@@ -109,19 +124,23 @@ func loadInitialHolidays(context: ModelContext) throws {
     let christmasDate = try Date.christmasFor(year: Date.currentYear)
     let newYearDate = try Date.newYearsFor(year: Date.currentYear)
     let valentinesDate = try Date.valentinesFor(year: Date.currentYear)
+    let easterDate = try Date.easterFor(year: Date.currentYear)
     
     let christmasNextYearDate = try Date.christmasFor(year: Date.currentYear + 1)
     let newYearNextYearDate = try Date.newYearsFor(year: Date.currentYear + 1)
     let valentinesNextYearDate = try Date.valentinesFor(year: Date.currentYear + 1)
+    let easterNextYearDate = try Date.easterFor(year: Date.currentYear + 1)
  
     let holidaysToInsert = [
         createChristmasHolidayModel(christmasTimeInterval: christmasDate.timeIntervalSince1970),
         createNewYearHolidayModel(newYearTimeInterval: newYearDate.timeIntervalSince1970),
         createValentinesHolidayModel(valentinesTimerInterval: valentinesDate.timeIntervalSince1970),
+        createEasterHolidayModel(easterTimeInterval: easterDate.timeIntervalSince1970),
         
         createChristmasHolidayModel(christmasTimeInterval: christmasNextYearDate.timeIntervalSince1970),
         createNewYearHolidayModel(newYearTimeInterval: newYearNextYearDate.timeIntervalSince1970),
-        createValentinesHolidayModel(valentinesTimerInterval: valentinesNextYearDate.timeIntervalSince1970)
+        createValentinesHolidayModel(valentinesTimerInterval: valentinesNextYearDate.timeIntervalSince1970),
+        createEasterHolidayModel(easterTimeInterval: easterNextYearDate.timeIntervalSince1970)
     ]
     
     for holiday in holidaysToInsert {
@@ -161,4 +180,8 @@ func createNewYearHolidayModel(newYearTimeInterval: TimeInterval) -> Holiday {
 
 func createValentinesHolidayModel(valentinesTimerInterval: TimeInterval) -> Holiday {
     return Holiday(id: valentinesTimerInterval, variant: .valentines, name: "Valentines", holidayDescription: "Valentine's Day is a romantic holiday for couples to celebrate their love by exchanging cards, flowers, chocolates, and other gifts.", dayOfGreeting: "Happy Valentine's Day!")
+}
+
+func createEasterHolidayModel(easterTimeInterval: TimeInterval) -> Holiday {
+    return Holiday(id: easterTimeInterval, variant: .easter, name: "Easter", holidayDescription: "Easter is a Christian holiday that celebrates the resurrection of Jesus Christ from the dead.", dayOfGreeting: "Happy Easter!")
 }

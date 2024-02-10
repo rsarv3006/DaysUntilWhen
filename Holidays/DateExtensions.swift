@@ -39,10 +39,32 @@ extension Date {
         return valentines
     }
     
+    static func easterFor(year: Int) throws -> Date {
+        let c = year / 100
+        let n = year - 19 * (year / 19)
+        let k = (c - 17) / 25
+        var i = c - c / 4 - (c - k) / 3 + 19 * n + 15
+        i = i - 30 * (i / 30)
+        i = i - (i / 28) * (1 - (i / 28) * (29 / (i + 1)) * ((21 - n) / 11))
+        
+        var j = year + year / 4 + i + 2 - c + c / 4
+        j = j - 7 * (j / 7)
+        
+        let l = i - j
+        let m = 3 + (l + 40) / 44
+        let d = l + 28 - 31 * (m / 4)
+        
+        guard let easterDate = DateComponents(calendar: .current, year: year, month: m, day: d).date else { throw HolidayCreateErrors.invalidEasterDate }
+        
+        return easterDate
+        
+    }
+    
     enum HolidayCreateErrors : Error {
         case invalidChristmasDate
         case invalidNewYearsDate
         case invalidValentinesDate
+        case invalidEasterDate
     }
 }
 
