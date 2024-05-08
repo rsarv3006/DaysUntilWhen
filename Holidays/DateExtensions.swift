@@ -2,7 +2,7 @@
 //  DateExtensions.swift
 //  Holidays
 //
-//  Created by Robert J. Sarvis Jr on 11/16/23.
+//  Created by Robert J. Sarvis Jr on 4/3/24.
 //
 
 import Foundation
@@ -39,6 +39,32 @@ extension Date {
         return valentines
     }
     
+    static func mothersDayFor(year: Int) throws -> Date {
+        let calendar = Calendar.current
+        let components = DateComponents(year: year, month: 5, day: 1)
+         
+         guard let firstDayOfMay = calendar.date(from: components) else {
+             throw HolidayCreateErrors.invalidMothersDayDate
+         }
+         
+         let daysInMay = calendar.range(of: .day, in: .month, for: firstDayOfMay)?.count ?? 0
+         var currentDay = firstDayOfMay
+         var weekday = calendar.component(.weekday, from: currentDay)
+         
+         for _ in 1...daysInMay {
+             if weekday == 1 {
+                 currentDay = calendar.date(byAdding: .day, value: 7, to: currentDay)!
+                 break
+             } else {
+                 currentDay = calendar.date(byAdding: .day, value: 1, to: currentDay)!
+                 weekday = calendar.component(.weekday, from: currentDay)
+             }
+         }
+         
+         return currentDay
+    }
+    
+    
     static func easterFor(year: Int) throws -> Date {
         let c = year / 100
         let n = year - 19 * (year / 19)
@@ -65,6 +91,7 @@ extension Date {
         case invalidNewYearsDate
         case invalidValentinesDate
         case invalidEasterDate
+        case invalidMothersDayDate
     }
 }
 
@@ -94,3 +121,4 @@ extension Date {
         return Calendar.current.component(.minute, from: self)
     }
 }
+

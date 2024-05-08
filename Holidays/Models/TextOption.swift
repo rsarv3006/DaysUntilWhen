@@ -20,6 +20,8 @@ enum TextOptionId: String, Codable {
     case EasterPurple
     case EasterOrange
     case EasterGreen
+    case MothersDayGray
+    case MothersDayYellow
 }
 
 @Model

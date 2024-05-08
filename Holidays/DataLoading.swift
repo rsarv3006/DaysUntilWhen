@@ -35,6 +35,9 @@ private let BackgroundOptionsList = [
     BackgroundOption(id: BackgroundOptionId.EasterPurple.rawValue, type: .color, holidayFilter: [.easter]),
     BackgroundOption(id: BackgroundOptionId.EasterOrange.rawValue, type: .color, holidayFilter: [.easter]),
     BackgroundOption(id: BackgroundOptionId.EasterGreen.rawValue, type: .color, holidayFilter: [.easter]),
+    BackgroundOption(id: BackgroundOptionId.MothersDayBackground1.rawValue, type: .image, holidayFilter: [.mothersDay]),
+    BackgroundOption(id: BackgroundOptionId.MothersDayGray.rawValue, type: .color, holidayFilter: [.mothersDay]),
+    BackgroundOption(id: BackgroundOptionId.MothersDayYellow.rawValue, type: .color, holidayFilter: [.mothersDay])
 ]
 
 private let TextOptionsList = [
@@ -49,6 +52,8 @@ private let TextOptionsList = [
     TextOption(id: TextOptionId.EasterPurple.rawValue, holidayFilter: [.easter]),
     TextOption(id: TextOptionId.EasterOrange.rawValue, holidayFilter: [.easter]),
     TextOption(id: TextOptionId.EasterGreen.rawValue, holidayFilter: [.easter]),
+    TextOption(id: TextOptionId.MothersDayGray.rawValue, holidayFilter: [.mothersDay]),
+    TextOption(id: TextOptionId.MothersDayYellow.rawValue, holidayFilter: [.mothersDay])
 ]
 
 func loadBackgroundOptions(modelContext: ModelContext) throws {
@@ -113,6 +118,13 @@ func loadDisplayOptions(context: ModelContext) throws {
             displayOptions.textOption = textOptions.first(where: { textOption in
                 textOption.id == TextOptionId.EasterPurple.rawValue
             })
+        case .mothersDay:
+            displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
+                backgroundOption.id == BackgroundOptionId.MothersDayBackground1.rawValue
+            })
+            displayOptions.textOption = textOptions.first(where: { textOption in
+                textOption.id == TextOptionId.MothersDayYellow.rawValue
+            })
         }
         context.insert(displayOptions)
     }
@@ -125,22 +137,26 @@ func loadInitialHolidays(context: ModelContext) throws {
     let newYearDate = try Date.newYearsFor(year: Date.currentYear)
     let valentinesDate = try Date.valentinesFor(year: Date.currentYear)
     let easterDate = try Date.easterFor(year: Date.currentYear)
+    let mothersDayDate = try Date.mothersDayFor(year: Date.currentYear)
     
     let christmasNextYearDate = try Date.christmasFor(year: Date.currentYear + 1)
     let newYearNextYearDate = try Date.newYearsFor(year: Date.currentYear + 1)
     let valentinesNextYearDate = try Date.valentinesFor(year: Date.currentYear + 1)
     let easterNextYearDate = try Date.easterFor(year: Date.currentYear + 1)
+    let mothersDayNextYearDate = try Date.mothersDayFor(year: Date.currentYear + 1)
  
     let holidaysToInsert = [
         createChristmasHolidayModel(christmasTimeInterval: christmasDate.timeIntervalSince1970),
         createNewYearHolidayModel(newYearTimeInterval: newYearDate.timeIntervalSince1970),
         createValentinesHolidayModel(valentinesTimerInterval: valentinesDate.timeIntervalSince1970),
         createEasterHolidayModel(easterTimeInterval: easterDate.timeIntervalSince1970),
+        createMothersDayHolidayModel(mothersTimeInterval: mothersDayDate.timeIntervalSince1970),
         
         createChristmasHolidayModel(christmasTimeInterval: christmasNextYearDate.timeIntervalSince1970),
         createNewYearHolidayModel(newYearTimeInterval: newYearNextYearDate.timeIntervalSince1970),
         createValentinesHolidayModel(valentinesTimerInterval: valentinesNextYearDate.timeIntervalSince1970),
-        createEasterHolidayModel(easterTimeInterval: easterNextYearDate.timeIntervalSince1970)
+        createEasterHolidayModel(easterTimeInterval: easterNextYearDate.timeIntervalSince1970),
+        createMothersDayHolidayModel(mothersTimeInterval: mothersDayNextYearDate.timeIntervalSince1970)
     ]
     
     for holiday in holidaysToInsert {
@@ -184,4 +200,13 @@ func createValentinesHolidayModel(valentinesTimerInterval: TimeInterval) -> Holi
 
 func createEasterHolidayModel(easterTimeInterval: TimeInterval) -> Holiday {
     return Holiday(id: easterTimeInterval, variant: .easter, name: "Easter", holidayDescription: "Easter is a Christian holiday that celebrates the resurrection of Jesus Christ from the dead.", dayOfGreeting: "Happy Easter!")
+}
+
+func createMothersDayHolidayModel(mothersTimeInterval: TimeInterval) -> Holiday {
+    return Holiday(id: mothersTimeInterval,
+                   variant: .mothersDay,
+                   name: "Mother's Day",
+                   holidayDescription: "Mother's Day is a celebration honoring the mother of the family, as well as motherhood, maternal bonds, and the influence of mothers in society.",
+                   dayOfGreeting: "Happy Mother's Day!"
+                   )
 }

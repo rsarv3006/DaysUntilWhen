@@ -10,7 +10,6 @@
 		78284F9C2B212AD600AF0ED7 /* WidgetPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78284F9B2B212AD600AF0ED7 /* WidgetPreviewView.swift */; };
 		78284F9E2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78284F9D2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift */; };
 		789815A32B05D4F5002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
-		789815A72B071BCF002AF275 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A62B071BCF002AF275 /* DateExtensions.swift */; };
 		789815B22B086454002AF275 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB45292B049C57000EA9F5 /* WidgetKit.framework */; };
 		789815B32B086454002AF275 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB452B2B049C58000EA9F5 /* SwiftUI.framework */; };
 		789815B62B086454002AF275 /* DaysUntilWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815B52B086454002AF275 /* DaysUntilWidgetBundle.swift */; };
@@ -20,7 +19,6 @@
 		789815C42B08646C002AF275 /* DaysUntilWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45402B049E27000EA9F5 /* DaysUntilWidgetEntryView.swift */; };
 		789815C62B08649F002AF275 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
 		789815C82B0864A4002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
-		789815C92B0864A7002AF275 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A62B071BCF002AF275 /* DateExtensions.swift */; };
 		789815CC2B087AB1002AF275 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
 		789815E32B0BBE44002AF275 /* SharedUIAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */; };
 		789815E42B0BBE44002AF275 /* SharedUIAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */; };
@@ -31,7 +29,6 @@
 		789815EF2B0C62D8002AF275 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
 		789815F02B0C6D13002AF275 /* DaysUntilWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45402B049E27000EA9F5 /* DaysUntilWidgetEntryView.swift */; };
 		789815F12B0C6D27002AF275 /* DaysUntilWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815B92B086454002AF275 /* DaysUntilWidget.swift */; };
-		789815F22B0C6D5D002AF275 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A62B071BCF002AF275 /* DateExtensions.swift */; };
 		789815F32B0C6D7F002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
 		789815F42B0D5EE8002AF275 /* TextOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E62B0BC340002AF275 /* TextOption.swift */; };
 		789815F52B0D5EEC002AF275 /* BackgroundOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E02B0ACD84002AF275 /* BackgroundOption.swift */; };
@@ -40,7 +37,6 @@
 		789816092B0E4004002AF275 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816082B0E4004002AF275 /* UtilsTests.swift */; };
 		7898160A2B0E400D002AF275 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
 		7898160C2B0E4012002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
-		7898160D2B0E4012002AF275 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A62B071BCF002AF275 /* DateExtensions.swift */; };
 		7898160E2B0E4012002AF275 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
 		789816122B0E5C7A002AF275 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816112B0E5C7A002AF275 /* AppGroup.swift */; };
 		789816132B0E5D70002AF275 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816112B0E5C7A002AF275 /* AppGroup.swift */; };
@@ -53,6 +49,10 @@
 		78BB454E2B049EA1000EA9F5 /* Holidays.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB45472B049EA1000EA9F5 /* Holidays.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		78BB45542B049EBD000EA9F5 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
 		78BB45562B049EFB000EA9F5 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
+		78DE9FE62BBE51E800782A08 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE9FE52BBE51E800782A08 /* DateExtensions.swift */; };
+		78DE9FE72BBE528600782A08 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE9FE52BBE51E800782A08 /* DateExtensions.swift */; };
+		78DE9FE82BBE528600782A08 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE9FE52BBE51E800782A08 /* DateExtensions.swift */; };
+		78DE9FE92BBE528700782A08 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE9FE52BBE51E800782A08 /* DateExtensions.swift */; };
 		78FBCBC22B1AEEB40015D817 /* HolidayDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBC02B1AEEA10015D817 /* HolidayDisplayOptions.swift */; };
 		78FBCBC42B1AF3E80015D817 /* HolidayDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBC02B1AEEA10015D817 /* HolidayDisplayOptions.swift */; };
 		78FBCBC52B1C30A80015D817 /* TextOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E62B0BC340002AF275 /* TextOption.swift */; };
@@ -126,7 +126,6 @@
 		78284F9B2B212AD600AF0ED7 /* WidgetPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPreviewView.swift; sourceTree = "<group>"; };
 		78284F9D2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledBackgroundImageWidgetPreview.swift; sourceTree = "<group>"; };
 		789815A22B05D4F5002AF275 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		789815A62B071BCF002AF275 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		789815B12B086454002AF275 /* DaysUntilWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaysUntilWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		789815B52B086454002AF275 /* DaysUntilWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilWidgetBundle.swift; sourceTree = "<group>"; };
 		789815B72B086454002AF275 /* DaysUntilWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilWidgetLiveActivity.swift; sourceTree = "<group>"; };
@@ -153,6 +152,7 @@
 		78BB45492B049EA1000EA9F5 /* Holidays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Holidays.h; sourceTree = "<group>"; };
 		78BB45532B049EBD000EA9F5 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayVariant.swift; sourceTree = "<group>"; };
+		78DE9FE52BBE51E800782A08 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		78FBCBC02B1AEEA10015D817 /* HolidayDisplayOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDisplayOptions.swift; sourceTree = "<group>"; };
 		78FBCBCD2B1C38F40015D817 /* DataLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoading.swift; sourceTree = "<group>"; };
 		78FBCBD32B203E280015D817 /* DataGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGeneration.swift; sourceTree = "<group>"; };
@@ -281,10 +281,10 @@
 				789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */,
 				78BB45492B049EA1000EA9F5 /* Holidays.h */,
 				789815A22B05D4F5002AF275 /* Utils.swift */,
-				789815A62B071BCF002AF275 /* DateExtensions.swift */,
 				78FBCBCD2B1C38F40015D817 /* DataLoading.swift */,
 				78FBCBD52B203F1A0015D817 /* DataGenerationOptions.swift */,
 				78FBCBDB2B20401F0015D817 /* HolidaysDataContainer.swift */,
+				78DE9FE52BBE51E800782A08 /* DateExtensions.swift */,
 			);
 			path = Holidays;
 			sourceTree = "<group>";
@@ -490,13 +490,13 @@
 				789815CC2B087AB1002AF275 /* Holiday.swift in Sources */,
 				78FBCBDA2B203FC70015D817 /* DataGeneration.swift in Sources */,
 				789815BA2B086454002AF275 /* DaysUntilWidget.swift in Sources */,
-				789815C92B0864A7002AF275 /* DateExtensions.swift in Sources */,
 				789816132B0E5D70002AF275 /* AppGroup.swift in Sources */,
 				789815B62B086454002AF275 /* DaysUntilWidgetBundle.swift in Sources */,
 				789815C42B08646C002AF275 /* DaysUntilWidgetEntryView.swift in Sources */,
 				78FBCBCC2B1C387B0015D817 /* HolidayDisplayOptions.swift in Sources */,
 				78FBCBDD2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */,
 				789815F52B0D5EEC002AF275 /* BackgroundOption.swift in Sources */,
+				78DE9FE82BBE528600782A08 /* DateExtensions.swift in Sources */,
 				78FBCBD02B1C38F70015D817 /* DataLoading.swift in Sources */,
 				789815C82B0864A4002AF275 /* Utils.swift in Sources */,
 			);
@@ -511,7 +511,7 @@
 				7898160A2B0E400D002AF275 /* Holiday.swift in Sources */,
 				789816012B0E3FF1002AF275 /* HolidaysTests.swift in Sources */,
 				789816092B0E4004002AF275 /* UtilsTests.swift in Sources */,
-				7898160D2B0E4012002AF275 /* DateExtensions.swift in Sources */,
+				78DE9FE92BBE528700782A08 /* DateExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,10 +525,10 @@
 				789816122B0E5C7A002AF275 /* AppGroup.swift in Sources */,
 				78FBCBCF2B1C38F60015D817 /* DataLoading.swift in Sources */,
 				78284F9C2B212AD600AF0ED7 /* WidgetPreviewView.swift in Sources */,
+				78DE9FE72BBE528600782A08 /* DateExtensions.swift in Sources */,
 				78FBCBD82B203FC60015D817 /* DataGeneration.swift in Sources */,
 				789815E82B0BF912002AF275 /* TextOption.swift in Sources */,
 				789815F32B0C6D7F002AF275 /* Utils.swift in Sources */,
-				789815F22B0C6D5D002AF275 /* DateExtensions.swift in Sources */,
 				78FBCBD72B203FC60015D817 /* DataGenerationOptions.swift in Sources */,
 				789815F02B0C6D13002AF275 /* DaysUntilWidgetEntryView.swift in Sources */,
 				78284F9E2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift in Sources */,
@@ -550,10 +550,10 @@
 				78FBCBC62B1C30B10015D817 /* BackgroundOption.swift in Sources */,
 				78FBCBD62B203F1A0015D817 /* DataGenerationOptions.swift in Sources */,
 				78FBCBCE2B1C38F40015D817 /* DataLoading.swift in Sources */,
+				78DE9FE62BBE51E800782A08 /* DateExtensions.swift in Sources */,
 				78FBCBC22B1AEEB40015D817 /* HolidayDisplayOptions.swift in Sources */,
 				78FBCBC52B1C30A80015D817 /* TextOption.swift in Sources */,
 				78FBCBDE2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */,
-				789815A72B071BCF002AF275 /* DateExtensions.swift in Sources */,
 				789816152B0E5DE2002AF275 /* AppGroup.swift in Sources */,
 				78BB45542B049EBD000EA9F5 /* Holiday.swift in Sources */,
 				789815A32B05D4F5002AF275 /* Utils.swift in Sources */,
@@ -796,7 +796,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DaysUntil/DaysUntil.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"DaysUntil/Preview Content\"";
 				DEVELOPMENT_TEAM = 4QGR522B9M;
 				ENABLE_PREVIEWS = YES;
@@ -811,7 +811,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.DaysUntil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -828,7 +828,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DaysUntil/DaysUntil.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"DaysUntil/Preview Content\"";
 				DEVELOPMENT_TEAM = 4QGR522B9M;
 				ENABLE_PREVIEWS = YES;
@@ -843,7 +843,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.DaysUntil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

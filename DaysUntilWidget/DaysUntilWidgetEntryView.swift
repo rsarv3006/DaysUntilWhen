@@ -12,7 +12,7 @@ struct DaysUntilWidgetEntryView: View {
     var entry: Provider.Entry
    
     private var daysUntilHoliday: Int {
-        return HolidaysUtils.daysUntil(entry.date, entry.holiday.date) ?? 0
+        return  HolidaysUtils.daysUntil(entry.date, entry.holiday.date) ?? 0
     }
     
     var body: some View {
@@ -22,17 +22,19 @@ struct DaysUntilWidgetEntryView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundStyle(entry.text.color ?? .primary)
-                Text("Days until")
+                Text(daysUntilHoliday == 1 ? "Day until" : "Days until")
                     .foregroundStyle(entry.text.color ?? .primary)
                 Text(entry.holiday.name)
                     .font(.system(size: 25))
                     .fontWeight(.bold)
                     .foregroundStyle(entry.text.color ?? .primary)
+                    .multilineTextAlignment(.center)
             } else {
                 Text(entry.holiday.dayOfGreeting)
                     .font(.system(size: 24))
                     .fontWeight(.bold)
                     .foregroundStyle(entry.text.color ?? .primary)
+                    .multilineTextAlignment(.center)
             }
         }
         .containerBackground(for: .widget) {
@@ -51,6 +53,7 @@ struct DaysUntilWidgetEntryView: View {
 #Preview(as: .systemSmall) {
     DaysUntilWidget()
 } timeline: {
+    SimpleEntry(date: .now, holiday: createMothersDayHolidayModel(mothersTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970), background: BackgroundOption(id: BackgroundOptionId.ChristmasBackground1.rawValue, type: .image), text: TextOption(id: TextOptionId.ChristmasRed.rawValue, optionName: "Christmas Red"))
     SimpleEntry(date: .now, holiday: createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970), background: BackgroundOption(id: BackgroundOptionId.ChristmasBackground1.rawValue, type: .image), text: TextOption(id: TextOptionId.ChristmasRed.rawValue, optionName: "Christmas Red"))
     SimpleEntry(date: .tomorrow, holiday: createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970), background: BackgroundOption(id: BackgroundOptionId.ChristmasBackground1.rawValue, type: .image), text: TextOption(id: TextOptionId.ChristmasRed.rawValue, optionName: "Christmas Red"))
     SimpleEntry(date: .christmas!, holiday: createChristmasHolidayModel(christmasTimeInterval: Date.christmas?.timeIntervalSince1970 ?? Date().timeIntervalSince1970), background: BackgroundOption(id: BackgroundOptionId.ChristmasBackground1.rawValue, type: .image), text: TextOption(id: TextOptionId.ChristmasRed.rawValue, optionName: "Christmas Red"))

@@ -12,4 +12,5 @@ enum HolidayVariant: String, CaseIterable, Codable {
     case newYears
     case valentines
     case easter
+    case mothersDay
 }

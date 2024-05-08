@@ -24,6 +24,9 @@ enum BackgroundOptionId: String, Codable {
     case EasterPurple
     case EasterOrange
     case EasterGreen
+    case MothersDayBackground1
+    case MothersDayGray
+    case MothersDayYellow
 }
 
 enum BackgroundOptionType: String, Codable {
