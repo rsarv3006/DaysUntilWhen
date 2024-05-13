@@ -61,6 +61,20 @@ struct WidgetPreviewView: View {
                 .padding(.top)
                 
                 Spacer()
+               
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        if let url = URL(string: "https://shiner.rjs-app-dev.us/") {
+                           UIApplication.shared.open(url)
+                        }
+                    } label: {
+                        Image(systemName: "pawprint.circle")
+                    }
+                    .padding(.horizontal)
+                }
+
             }
             .navigationTitle("DaysUntilWhen")
             .navigationBarTitleDisplayMode(.inline)
