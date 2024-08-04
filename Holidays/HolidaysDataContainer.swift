@@ -1,10 +1,3 @@
-//
-//  HolidaysDataContainer.swift
-//  DaysUntil
-//
-//  Created by Robert J. Sarvis Jr on 12/5/23.
-//
-
 import SwiftUI
 import SwiftData
 

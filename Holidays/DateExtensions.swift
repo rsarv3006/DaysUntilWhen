@@ -1,10 +1,3 @@
-//
-//  DateExtensions.swift
-//  Holidays
-//
-//  Created by Robert J. Sarvis Jr on 4/3/24.
-//
-
 import Foundation
 
 extension Date {
@@ -37,6 +30,11 @@ extension Date {
     static func valentinesFor(year: Int) throws -> Date {
         guard let valentines = DateComponents(calendar: .current, year: year, month: 2, day: 14).date else { throw HolidayCreateErrors.invalidValentinesDate }
         return valentines
+    }
+    
+    static func halloweenFor(year: Int) throws -> Date {
+        guard let halloween = DateComponents(calendar: .current, year: year, month: 10, day: 31).date else { throw HolidayCreateErrors.invalidHalloween }
+        return halloween
     }
     
     static func mothersDayFor(year: Int) throws -> Date {
@@ -92,6 +90,7 @@ extension Date {
         case invalidValentinesDate
         case invalidEasterDate
         case invalidMothersDayDate
+        case invalidHalloween
     }
 }
 

@@ -1,10 +1,3 @@
-//
-//  DataLoading.swift
-//  Holidays
-//
-//  Created by Robert J. Sarvis Jr on 12/2/23.
-//
-
 import Foundation
 import SwiftData
 
@@ -24,8 +17,8 @@ private let BackgroundOptionsList = [
     BackgroundOption(id: BackgroundOptionId.ChristmasRed.rawValue, type: .color, holidayFilter: [.christmas]),
     BackgroundOption(id: BackgroundOptionId.ChristmasWhite.rawValue, type: .color, holidayFilter: [.christmas]),
     BackgroundOption(id: BackgroundOptionId.ChristmasGreen.rawValue, type: .color, holidayFilter: [.christmas]),
-    BackgroundOption(id: BackgroundOptionId.GenericBlack.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines]),
-    BackgroundOption(id: BackgroundOptionId.GenericWhite.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines]),
+    BackgroundOption(id: BackgroundOptionId.GenericBlack.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .halloween]),
+    BackgroundOption(id: BackgroundOptionId.GenericWhite.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .halloween]),
     BackgroundOption(id: BackgroundOptionId.GenericGold.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines]),
     BackgroundOption(id: BackgroundOptionId.NewYearsBackground1.rawValue, type: .image, holidayFilter: [.newYears]),
     BackgroundOption(id: BackgroundOptionId.ValentinesBackground1.rawValue, type: .image, holidayFilter: [.valentines]),
@@ -37,15 +30,22 @@ private let BackgroundOptionsList = [
     BackgroundOption(id: BackgroundOptionId.EasterGreen.rawValue, type: .color, holidayFilter: [.easter]),
     BackgroundOption(id: BackgroundOptionId.MothersDayBackground1.rawValue, type: .image, holidayFilter: [.mothersDay]),
     BackgroundOption(id: BackgroundOptionId.MothersDayGray.rawValue, type: .color, holidayFilter: [.mothersDay]),
-    BackgroundOption(id: BackgroundOptionId.MothersDayYellow.rawValue, type: .color, holidayFilter: [.mothersDay])
+    BackgroundOption(id: BackgroundOptionId.MothersDayYellow.rawValue, type: .color, holidayFilter: [.mothersDay]),
+    BackgroundOption(id: BackgroundOptionId.HalloweenOrange.rawValue, type: .color, holidayFilter: [.halloween]),
+    BackgroundOption(id: BackgroundOptionId.HalloweenGreen.rawValue, type: .color, holidayFilter: [.halloween]),
+    BackgroundOption(id: BackgroundOptionId.HalloweenPurple.rawValue, type: .color, holidayFilter: [.halloween])
 ]
 
 private let TextOptionsList = [
     TextOption(id: TextOptionId.ChristmasRed.rawValue, holidayFilter: [.christmas]),
     TextOption(id: TextOptionId.ChristmasWhite.rawValue, holidayFilter: [.christmas]),
     TextOption(id: TextOptionId.ChristmasGreen.rawValue, holidayFilter: [.christmas]),
-    TextOption(id: TextOptionId.GenericBlack.rawValue, holidayFilter: [.christmas, .newYears, .valentines]),
-    TextOption(id: TextOptionId.GenericWhite.rawValue, holidayFilter: [.christmas, .newYears, .valentines]),
+    TextOption(id: TextOptionId.GenericBlack.rawValue, holidayFilter: [
+        .christmas, .newYears, .valentines, .halloween
+    ]),
+    TextOption(id: TextOptionId.GenericWhite.rawValue, holidayFilter: [
+        .christmas, .newYears, .valentines, .halloween
+    ]),
     TextOption(id: TextOptionId.GenericGold.rawValue, holidayFilter: [.christmas, .newYears, .valentines]),
     TextOption(id: TextOptionId.ValentinesRed.rawValue, holidayFilter: [.valentines]),
     TextOption(id: TextOptionId.ValentinesPink.rawValue, holidayFilter: [.valentines]),
@@ -53,7 +53,11 @@ private let TextOptionsList = [
     TextOption(id: TextOptionId.EasterOrange.rawValue, holidayFilter: [.easter]),
     TextOption(id: TextOptionId.EasterGreen.rawValue, holidayFilter: [.easter]),
     TextOption(id: TextOptionId.MothersDayGray.rawValue, holidayFilter: [.mothersDay]),
-    TextOption(id: TextOptionId.MothersDayYellow.rawValue, holidayFilter: [.mothersDay])
+    TextOption(id: TextOptionId.MothersDayYellow.rawValue, holidayFilter: [.mothersDay]),
+    TextOption(id: TextOptionId.HalloweenOrange.rawValue, holidayFilter: [.halloween]),
+    TextOption(id: TextOptionId.HalloweenGreen.rawValue, holidayFilter: [.halloween]),
+    TextOption(id: TextOptionId.HalloweenPurple.rawValue, holidayFilter: [.halloween]),
+
 ]
 
 func loadBackgroundOptions(modelContext: ModelContext) throws {
@@ -125,6 +129,13 @@ func loadDisplayOptions(context: ModelContext) throws {
             displayOptions.textOption = textOptions.first(where: { textOption in
                 textOption.id == TextOptionId.MothersDayYellow.rawValue
             })
+        case .halloween:
+            displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
+                backgroundOption.id == BackgroundOptionId.HalloweenOrange.rawValue
+            })
+            displayOptions.textOption = textOptions.first(where: { textOption in
+                textOption.id == TextOptionId.HalloweenPurple.rawValue
+            })
         }
         context.insert(displayOptions)
     }
@@ -132,31 +143,35 @@ func loadDisplayOptions(context: ModelContext) throws {
 
 func loadInitialHolidays(context: ModelContext) throws {
     let loadedHolidays = try context.fetch(FetchDescriptor<Holiday>())
-   
+    
     let christmasDate = try Date.christmasFor(year: Date.currentYear)
     let newYearDate = try Date.newYearsFor(year: Date.currentYear)
     let valentinesDate = try Date.valentinesFor(year: Date.currentYear)
     let easterDate = try Date.easterFor(year: Date.currentYear)
     let mothersDayDate = try Date.mothersDayFor(year: Date.currentYear)
+    let halloweenDate = try Date.halloweenFor(year: Date.currentYear)
     
     let christmasNextYearDate = try Date.christmasFor(year: Date.currentYear + 1)
     let newYearNextYearDate = try Date.newYearsFor(year: Date.currentYear + 1)
     let valentinesNextYearDate = try Date.valentinesFor(year: Date.currentYear + 1)
     let easterNextYearDate = try Date.easterFor(year: Date.currentYear + 1)
     let mothersDayNextYearDate = try Date.mothersDayFor(year: Date.currentYear + 1)
- 
+    let halloweenNextYearDate = try Date.halloweenFor(year: Date.currentYear + 1)
+    
     let holidaysToInsert = [
         createChristmasHolidayModel(christmasTimeInterval: christmasDate.timeIntervalSince1970),
         createNewYearHolidayModel(newYearTimeInterval: newYearDate.timeIntervalSince1970),
         createValentinesHolidayModel(valentinesTimerInterval: valentinesDate.timeIntervalSince1970),
         createEasterHolidayModel(easterTimeInterval: easterDate.timeIntervalSince1970),
         createMothersDayHolidayModel(mothersTimeInterval: mothersDayDate.timeIntervalSince1970),
+        createHalloweenHolidayModel(halloweenTimeInterval: halloweenDate.timeIntervalSince1970),
         
         createChristmasHolidayModel(christmasTimeInterval: christmasNextYearDate.timeIntervalSince1970),
         createNewYearHolidayModel(newYearTimeInterval: newYearNextYearDate.timeIntervalSince1970),
         createValentinesHolidayModel(valentinesTimerInterval: valentinesNextYearDate.timeIntervalSince1970),
         createEasterHolidayModel(easterTimeInterval: easterNextYearDate.timeIntervalSince1970),
-        createMothersDayHolidayModel(mothersTimeInterval: mothersDayNextYearDate.timeIntervalSince1970)
+        createMothersDayHolidayModel(mothersTimeInterval: mothersDayNextYearDate.timeIntervalSince1970),
+        createHalloweenHolidayModel(halloweenTimeInterval: halloweenNextYearDate.timeIntervalSince1970)
     ]
     
     for holiday in holidaysToInsert {
@@ -167,8 +182,6 @@ func loadInitialHolidays(context: ModelContext) throws {
         }
     }
 }
-
-
 
 func deleteHolidaysInThePast(modelContext: ModelContext) throws {
     let currentTimeInterval = Date().timeIntervalSince1970
@@ -208,5 +221,9 @@ func createMothersDayHolidayModel(mothersTimeInterval: TimeInterval) -> Holiday 
                    name: "Mother's Day",
                    holidayDescription: "Mother's Day is a celebration honoring the mother of the family, as well as motherhood, maternal bonds, and the influence of mothers in society.",
                    dayOfGreeting: "Happy Mother's Day!"
-                   )
+    )
+}
+
+func createHalloweenHolidayModel(halloweenTimeInterval: TimeInterval) -> Holiday {
+    return Holiday(id: halloweenTimeInterval, variant: .halloween, name: "Halloween", holidayDescription: "Originally a pagan holiday. It is now a holiday celebrating all things spooky. Also candy, an egregious amount of candy.", dayOfGreeting: "Happy Halloween!")
 }
