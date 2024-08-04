@@ -32,7 +32,7 @@
 		789815F32B0C6D7F002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
 		789815F42B0D5EE8002AF275 /* TextOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E62B0BC340002AF275 /* TextOption.swift */; };
 		789815F52B0D5EEC002AF275 /* BackgroundOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E02B0ACD84002AF275 /* BackgroundOption.swift */; };
-		789816012B0E3FF1002AF275 /* HolidaysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816002B0E3FF1002AF275 /* HolidaysTests.swift */; };
+		789816012B0E3FF1002AF275 /* HolidaysTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816002B0E3FF1002AF275 /* HolidaysTest.swift */; };
 		789816022B0E3FF1002AF275 /* Holidays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB45472B049EA1000EA9F5 /* Holidays.framework */; };
 		789816092B0E4004002AF275 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816082B0E4004002AF275 /* UtilsTests.swift */; };
 		7898160A2B0E400D002AF275 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
@@ -136,7 +136,7 @@
 		789815E62B0BC340002AF275 /* TextOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOption.swift; sourceTree = "<group>"; };
 		789815EB2B0C0F50002AF275 /* WidgetPickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPickers.swift; sourceTree = "<group>"; };
 		789815FE2B0E3FF1002AF275 /* HolidaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HolidaysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		789816002B0E3FF1002AF275 /* HolidaysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysTests.swift; sourceTree = "<group>"; };
+		789816002B0E3FF1002AF275 /* HolidaysTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysTest.swift; sourceTree = "<group>"; };
 		789816082B0E4004002AF275 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		7898160F2B0E5BC6002AF275 /* DaysUntil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DaysUntil.entitlements; sourceTree = "<group>"; };
 		789816102B0E5BEA002AF275 /* DaysUntilWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DaysUntilWidgetExtension.entitlements; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 		789815FF2B0E3FF1002AF275 /* HolidaysTests */ = {
 			isa = PBXGroup;
 			children = (
-				789816002B0E3FF1002AF275 /* HolidaysTests.swift */,
+				789816002B0E3FF1002AF275 /* HolidaysTest.swift */,
 				789816082B0E4004002AF275 /* UtilsTests.swift */,
 			);
 			path = HolidaysTests;
@@ -509,7 +509,7 @@
 				7898160E2B0E4012002AF275 /* HolidayVariant.swift in Sources */,
 				7898160C2B0E4012002AF275 /* Utils.swift in Sources */,
 				7898160A2B0E400D002AF275 /* Holiday.swift in Sources */,
-				789816012B0E3FF1002AF275 /* HolidaysTests.swift in Sources */,
+				789816012B0E3FF1002AF275 /* HolidaysTest.swift in Sources */,
 				789816092B0E4004002AF275 /* UtilsTests.swift in Sources */,
 				78DE9FE92BBE528700782A08 /* DateExtensions.swift in Sources */,
 			);

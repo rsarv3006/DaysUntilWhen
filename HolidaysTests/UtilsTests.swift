@@ -71,11 +71,24 @@ final class Utils: XCTestCase {
     }
 
     func testGetHolidayDateHolidayInCurrentYearNotInPast() throws {
-        let currentDate = DateComponents(calendar: .current, year: 2023, month: 11, day: 25).date!
-        let holidayDate = DateComponents(calendar: .current, year: 2023, month: 12, day: 25).date!
+        let calendar = Calendar.current
+        let currentDate = Date() // Use the actual current date
+        
+        // Calculate the next Christmas date
+        var christmasComponents = DateComponents()
+        christmasComponents.month = 12
+        christmasComponents.day = 25
+        
+        guard let nextChristmas = calendar.nextDate(after: currentDate, matching: christmasComponents, matchingPolicy: .nextTime) else {
+            XCTFail("Failed to calculate next Christmas date")
+            return
+        }
         
         let calculatedHolidayDate = HolidaysUtils.getHolidayDate(currentDate, 12, 25)
-        XCTAssertEqual(holidayDate, calculatedHolidayDate)
+        XCTAssertEqual(nextChristmas, calculatedHolidayDate)
+        
+        // Additional assertion to ensure the calculated date is not in the past
+        XCTAssertGreaterThanOrEqual(calculatedHolidayDate!, currentDate, "Calculated holiday date should not be in the past")
     }
     
     func testGetHolidayDateCurrentDatePastYearHoliday() throws {
@@ -87,11 +100,24 @@ final class Utils: XCTestCase {
     }
     
     func testGetHolidayDateHolidayDayOf() throws {
-        let currentDate = DateComponents(calendar: .current, year: 2023, month: 12, day: 25).date!
-        let holidayDate = DateComponents(calendar: .current, year: 2023, month: 12, day: 25).date!
+        let calendar = Calendar.current
+        let currentYear = calendar.component(.year, from: Date())
         
-        let calculatedHolidayDate = HolidaysUtils.getHolidayDate(currentDate, 12, 25)
-        XCTAssertEqual(holidayDate, calculatedHolidayDate)
+        // Create a date for this year's Christmas
+        guard let christmasDate = calendar.date(from: DateComponents(year: currentYear, month: 12, day: 25)) else {
+            XCTFail("Failed to create Christmas date")
+            return
+        }
+        
+        let calculatedHolidayDate = HolidaysUtils.getHolidayDate(christmasDate, 12, 25)
+        
+        XCTAssertEqual(christmasDate, calculatedHolidayDate, "Calculated holiday date should be the same as the input date when it's the holiday")
+        
+        // Additional assertions to verify the date components
+        let components = calendar.dateComponents([.year, .month, .day], from: calculatedHolidayDate!)
+        XCTAssertEqual(components.year, currentYear, "Year should be the current year")
+        XCTAssertEqual(components.month, 12, "Month should be December")
+        XCTAssertEqual(components.day, 25, "Day should be the 25th")
     }
     
 
