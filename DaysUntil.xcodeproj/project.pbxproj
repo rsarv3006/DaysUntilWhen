@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		78284F9C2B212AD600AF0ED7 /* WidgetPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78284F9B2B212AD600AF0ED7 /* WidgetPreviewView.swift */; };
 		78284F9E2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78284F9D2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift */; };
+		786B50772C60F547008E2979 /* Bedrock in Frameworks */ = {isa = PBXBuildFile; productRef = 786B50762C60F547008E2979 /* Bedrock */; };
+		786B507A2C617DF7008E2979 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B50792C617DF7008E2979 /* config.swift */; };
+		786B507C2C617F19008E2979 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 786B507B2C617F19008E2979 /* Config.plist */; };
+		786B507F2C617FE2008E2979 /* versionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B507E2C617FE2008E2979 /* versionCheck.swift */; };
+		786B50802C618207008E2979 /* DefaultConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 786B507D2C617FBE008E2979 /* DefaultConfig.json */; };
 		789815A32B05D4F5002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
 		789815B22B086454002AF275 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB45292B049C57000EA9F5 /* WidgetKit.framework */; };
 		789815B32B086454002AF275 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB452B2B049C58000EA9F5 /* SwiftUI.framework */; };
@@ -125,6 +130,10 @@
 /* Begin PBXFileReference section */
 		78284F9B2B212AD600AF0ED7 /* WidgetPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPreviewView.swift; sourceTree = "<group>"; };
 		78284F9D2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledBackgroundImageWidgetPreview.swift; sourceTree = "<group>"; };
+		786B50792C617DF7008E2979 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		786B507B2C617F19008E2979 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		786B507D2C617FBE008E2979 /* DefaultConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DefaultConfig.json; sourceTree = "<group>"; };
+		786B507E2C617FE2008E2979 /* versionCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = versionCheck.swift; sourceTree = "<group>"; };
 		789815A22B05D4F5002AF275 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		789815B12B086454002AF275 /* DaysUntilWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaysUntilWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		789815B52B086454002AF275 /* DaysUntilWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilWidgetBundle.swift; sourceTree = "<group>"; };
@@ -183,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78BB454D2B049EA1000EA9F5 /* Holidays.framework in Frameworks */,
+				786B50772C60F547008E2979 /* Bedrock in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +206,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		786B50782C60F55A008E2979 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				786B50792C617DF7008E2979 /* config.swift */,
+				786B507E2C617FE2008E2979 /* versionCheck.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		789815B42B086454002AF275 /* DaysUntilWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +263,7 @@
 		78BB45142B047501000EA9F5 /* DaysUntil */ = {
 			isa = PBXGroup;
 			children = (
+				786B50782C60F55A008E2979 /* Services */,
 				7898160F2B0E5BC6002AF275 /* DaysUntil.entitlements */,
 				78BB45152B047501000EA9F5 /* DaysUntilApp.swift */,
 				78BB45172B047501000EA9F5 /* ContentView.swift */,
@@ -252,6 +272,8 @@
 				789816112B0E5C7A002AF275 /* AppGroup.swift */,
 				78284F9B2B212AD600AF0ED7 /* WidgetPreviewView.swift */,
 				78284F9D2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift */,
+				786B507D2C617FBE008E2979 /* DefaultConfig.json */,
+				786B507B2C617F19008E2979 /* Config.plist */,
 			);
 			path = DaysUntil;
 			sourceTree = "<group>";
@@ -375,6 +397,9 @@
 				789815BF2B086455002AF275 /* PBXTargetDependency */,
 			);
 			name = DaysUntil;
+			packageProductDependencies = (
+				786B50762C60F547008E2979 /* Bedrock */,
+			);
 			productName = DaysUntil;
 			productReference = 78BB45122B047501000EA9F5 /* DaysUntil.app */;
 			productType = "com.apple.product-type.application";
@@ -431,6 +456,9 @@
 				Base,
 			);
 			mainGroup = 78BB45092B047501000EA9F5;
+			packageReferences = (
+				786B50752C60F547008E2979 /* XCRemoteSwiftPackageReference "bedrock" */,
+			);
 			productRefGroup = 78BB45132B047501000EA9F5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -464,6 +492,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				78BB451D2B047503000EA9F5 /* Preview Assets.xcassets in Resources */,
+				786B50802C618207008E2979 /* DefaultConfig.json in Resources */,
+				786B507C2C617F19008E2979 /* Config.plist in Resources */,
 				789815E32B0BBE44002AF275 /* SharedUIAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,12 +556,14 @@
 				78FBCBCF2B1C38F60015D817 /* DataLoading.swift in Sources */,
 				78284F9C2B212AD600AF0ED7 /* WidgetPreviewView.swift in Sources */,
 				78DE9FE72BBE528600782A08 /* DateExtensions.swift in Sources */,
+				786B507F2C617FE2008E2979 /* versionCheck.swift in Sources */,
 				78FBCBD82B203FC60015D817 /* DataGeneration.swift in Sources */,
 				789815E82B0BF912002AF275 /* TextOption.swift in Sources */,
 				789815F32B0C6D7F002AF275 /* Utils.swift in Sources */,
 				78FBCBD72B203FC60015D817 /* DataGenerationOptions.swift in Sources */,
 				789815F02B0C6D13002AF275 /* DaysUntilWidgetEntryView.swift in Sources */,
 				78284F9E2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift in Sources */,
+				786B507A2C617DF7008E2979 /* config.swift in Sources */,
 				789815EF2B0C62D8002AF275 /* HolidayVariant.swift in Sources */,
 				789815EA2B0BF921002AF275 /* BackgroundOption.swift in Sources */,
 				78BB45182B047501000EA9F5 /* ContentView.swift in Sources */,
@@ -970,6 +1002,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		786B50752C60F547008E2979 /* XCRemoteSwiftPackageReference "bedrock" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rsarv3006/bedrock";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		786B50762C60F547008E2979 /* Bedrock */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 786B50752C60F547008E2979 /* XCRemoteSwiftPackageReference "bedrock" */;
+			productName = Bedrock;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 78BB450A2B047501000EA9F5 /* Project object */;
 }

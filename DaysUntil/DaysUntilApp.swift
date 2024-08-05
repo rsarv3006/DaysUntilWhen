@@ -13,6 +13,7 @@ struct DaysUntilApp: App {
         WindowGroup {
             ContentView()
                 .holidaysDataContainer(inMemory: false)
+                .checkAppVersion()
         }
     }
 }

@@ -1,0 +1,15 @@
+{
+  "originHash" : "7434a5f828c0e33377601aeb2cb50cecb0177648ed999c3c2ce8fdd543f97129",
+  "pins" : [
+    {
+      "identity" : "bedrock",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rsarv3006/bedrock",
+      "state" : {
+        "revision" : "aba24f03be59ab24febea6dcaaae46393d2b1e60",
+        "version" : "1.0.6"
+      }
+    }
+  ],
+  "version" : 3
+}
