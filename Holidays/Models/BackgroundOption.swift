@@ -1,10 +1,3 @@
-//
-//  BackgroundOption.swift
-//  SharedUI
-//
-//  Created by Robert J. Sarvis Jr on 11/19/23.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -30,6 +23,8 @@ enum BackgroundOptionId: String, Codable {
     case HalloweenOrange
     case HalloweenPurple
     case HalloweenGreen
+    case HalloweenBone
+    case HalloweenBackground1
 }
 
 enum BackgroundOptionType: String, Codable {

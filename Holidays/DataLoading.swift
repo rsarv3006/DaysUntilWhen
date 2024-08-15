@@ -33,7 +33,9 @@ private let BackgroundOptionsList = [
     BackgroundOption(id: BackgroundOptionId.MothersDayYellow.rawValue, type: .color, holidayFilter: [.mothersDay]),
     BackgroundOption(id: BackgroundOptionId.HalloweenOrange.rawValue, type: .color, holidayFilter: [.halloween]),
     BackgroundOption(id: BackgroundOptionId.HalloweenGreen.rawValue, type: .color, holidayFilter: [.halloween]),
-    BackgroundOption(id: BackgroundOptionId.HalloweenPurple.rawValue, type: .color, holidayFilter: [.halloween])
+    BackgroundOption(id: BackgroundOptionId.HalloweenPurple.rawValue, type: .color, holidayFilter: [.halloween]),
+    BackgroundOption(id: BackgroundOptionId.HalloweenBone.rawValue, type: .color, holidayFilter: [.halloween]),
+    BackgroundOption(id: BackgroundOptionId.HalloweenBackground1.rawValue, type: .image, holidayFilter: [.halloween])
 ]
 
 private let TextOptionsList = [
@@ -57,6 +59,7 @@ private let TextOptionsList = [
     TextOption(id: TextOptionId.HalloweenOrange.rawValue, holidayFilter: [.halloween]),
     TextOption(id: TextOptionId.HalloweenGreen.rawValue, holidayFilter: [.halloween]),
     TextOption(id: TextOptionId.HalloweenPurple.rawValue, holidayFilter: [.halloween]),
+    TextOption(id: TextOptionId.HalloweenBone.rawValue, holidayFilter: [.halloween])
 
 ]
 
@@ -131,10 +134,10 @@ func loadDisplayOptions(context: ModelContext) throws {
             })
         case .halloween:
             displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
-                backgroundOption.id == BackgroundOptionId.HalloweenOrange.rawValue
+                backgroundOption.id == BackgroundOptionId.HalloweenBackground1.rawValue
             })
             displayOptions.textOption = textOptions.first(where: { textOption in
-                textOption.id == TextOptionId.HalloweenPurple.rawValue
+                textOption.id == TextOptionId.HalloweenOrange.rawValue
             })
         }
         context.insert(displayOptions)
