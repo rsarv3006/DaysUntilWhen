@@ -1,10 +1,3 @@
-//
-//  DataGeneration.swift
-//  Holidays
-//
-//  Created by Robert J. Sarvis Jr on 12/5/23.
-//
-
 import Observation
 import SwiftData
 import OSLog
