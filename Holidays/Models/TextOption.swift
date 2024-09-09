@@ -26,6 +26,9 @@ enum TextOptionId: String, Codable {
     case HalloweenPurple
     case HalloweenGreen
     case HalloweenBone
+    case ThanksgivingSpicedPumpkin
+    case ThanksgivingGreen
+    case ThanksgivingWhite
 }
 
 @Model

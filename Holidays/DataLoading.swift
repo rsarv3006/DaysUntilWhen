@@ -36,6 +36,10 @@ private let BackgroundOptionsList = [
     BackgroundOption(id: BackgroundOptionId.HalloweenPurple.rawValue, type: .color, holidayFilter: [.halloween]),
     BackgroundOption(id: BackgroundOptionId.HalloweenBone.rawValue, type: .color, holidayFilter: [.halloween]),
     BackgroundOption(id: BackgroundOptionId.HalloweenBackground1.rawValue, type: .image, holidayFilter: [.halloween]),
+    BackgroundOption(id: BackgroundOptionId.ThanksgivingBackground1.rawValue, type: .image, holidayFilter: [.thanksgiving]),
+    BackgroundOption(id: BackgroundOptionId.ThanksgivingSpicedPumpkin.rawValue, type: .color, holidayFilter: [.thanksgiving]),
+    BackgroundOption(id: BackgroundOptionId.ThanksgivingGreen.rawValue, type: .color, holidayFilter: [.thanksgiving]),
+    BackgroundOption(id: BackgroundOptionId.ThanksgivingWhite.rawValue, type: .color, holidayFilter: [.thanksgiving]),
 ]
 
 private let TextOptionsList = [
@@ -60,6 +64,9 @@ private let TextOptionsList = [
     TextOption(id: TextOptionId.HalloweenGreen.rawValue, holidayFilter: [.halloween]),
     TextOption(id: TextOptionId.HalloweenPurple.rawValue, holidayFilter: [.halloween]),
     TextOption(id: TextOptionId.HalloweenBone.rawValue, holidayFilter: [.halloween]),
+    TextOption(id: TextOptionId.ThanksgivingSpicedPumpkin.rawValue, holidayFilter: [.thanksgiving]),
+    TextOption(id: TextOptionId.ThanksgivingGreen.rawValue, holidayFilter: [.thanksgiving]),
+    TextOption(id: TextOptionId.ThanksgivingWhite.rawValue, holidayFilter: [.thanksgiving]),
 ]
 
 func loadBackgroundOptions(modelContext: ModelContext) throws {
@@ -140,10 +147,10 @@ func loadDisplayOptions(context: ModelContext) throws {
             })
         case .thanksgiving:
             displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
-                backgroundOption.id == BackgroundOptionId.GenericWhite.rawValue
+                backgroundOption.id == BackgroundOptionId.ThanksgivingBackground1.rawValue
             })
             displayOptions.textOption = textOptions.first(where: { textOption in
-                textOption.id == TextOptionId.GenericGold.rawValue
+                textOption.id == TextOptionId.ThanksgivingSpicedPumpkin.rawValue
             })
         }
         context.insert(displayOptions)
