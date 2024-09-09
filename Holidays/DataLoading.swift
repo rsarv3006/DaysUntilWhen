@@ -1,7 +1,7 @@
 import Foundation
 import SwiftData
 
-enum HolidayLoadingError : Error {
+enum HolidayLoadingError: Error {
     case invalidChristmasDate
     case invalidNewYearDate
     case invalidValentinesDate
@@ -17,9 +17,9 @@ private let BackgroundOptionsList = [
     BackgroundOption(id: BackgroundOptionId.ChristmasRed.rawValue, type: .color, holidayFilter: [.christmas]),
     BackgroundOption(id: BackgroundOptionId.ChristmasWhite.rawValue, type: .color, holidayFilter: [.christmas]),
     BackgroundOption(id: BackgroundOptionId.ChristmasGreen.rawValue, type: .color, holidayFilter: [.christmas]),
-    BackgroundOption(id: BackgroundOptionId.GenericBlack.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .halloween]),
-    BackgroundOption(id: BackgroundOptionId.GenericWhite.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .halloween]),
-    BackgroundOption(id: BackgroundOptionId.GenericGold.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines]),
+    BackgroundOption(id: BackgroundOptionId.GenericBlack.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .halloween, .thanksgiving]),
+    BackgroundOption(id: BackgroundOptionId.GenericWhite.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .halloween, .thanksgiving]),
+    BackgroundOption(id: BackgroundOptionId.GenericGold.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .thanksgiving]),
     BackgroundOption(id: BackgroundOptionId.NewYearsBackground1.rawValue, type: .image, holidayFilter: [.newYears]),
     BackgroundOption(id: BackgroundOptionId.ValentinesBackground1.rawValue, type: .image, holidayFilter: [.valentines]),
     BackgroundOption(id: BackgroundOptionId.ValentinesRed.rawValue, type: .color, holidayFilter: [.valentines]),
@@ -35,7 +35,11 @@ private let BackgroundOptionsList = [
     BackgroundOption(id: BackgroundOptionId.HalloweenGreen.rawValue, type: .color, holidayFilter: [.halloween]),
     BackgroundOption(id: BackgroundOptionId.HalloweenPurple.rawValue, type: .color, holidayFilter: [.halloween]),
     BackgroundOption(id: BackgroundOptionId.HalloweenBone.rawValue, type: .color, holidayFilter: [.halloween]),
-    BackgroundOption(id: BackgroundOptionId.HalloweenBackground1.rawValue, type: .image, holidayFilter: [.halloween])
+    BackgroundOption(id: BackgroundOptionId.HalloweenBackground1.rawValue, type: .image, holidayFilter: [.halloween]),
+    BackgroundOption(id: BackgroundOptionId.ThanksgivingBackground1.rawValue, type: .image, holidayFilter: [.thanksgiving]),
+    BackgroundOption(id: BackgroundOptionId.ThanksgivingSpicedPumpkin.rawValue, type: .color, holidayFilter: [.thanksgiving]),
+    BackgroundOption(id: BackgroundOptionId.ThanksgivingGreen.rawValue, type: .color, holidayFilter: [.thanksgiving]),
+    BackgroundOption(id: BackgroundOptionId.ThanksgivingWhite.rawValue, type: .color, holidayFilter: [.thanksgiving]),
 ]
 
 private let TextOptionsList = [
@@ -43,12 +47,12 @@ private let TextOptionsList = [
     TextOption(id: TextOptionId.ChristmasWhite.rawValue, holidayFilter: [.christmas]),
     TextOption(id: TextOptionId.ChristmasGreen.rawValue, holidayFilter: [.christmas]),
     TextOption(id: TextOptionId.GenericBlack.rawValue, holidayFilter: [
-        .christmas, .newYears, .valentines, .halloween
+        .christmas, .newYears, .valentines, .halloween, .thanksgiving
     ]),
     TextOption(id: TextOptionId.GenericWhite.rawValue, holidayFilter: [
-        .christmas, .newYears, .valentines, .halloween
+        .christmas, .newYears, .valentines, .halloween, .thanksgiving
     ]),
-    TextOption(id: TextOptionId.GenericGold.rawValue, holidayFilter: [.christmas, .newYears, .valentines]),
+    TextOption(id: TextOptionId.GenericGold.rawValue, holidayFilter: [.christmas, .newYears, .valentines, .halloween, .thanksgiving]),
     TextOption(id: TextOptionId.ValentinesRed.rawValue, holidayFilter: [.valentines]),
     TextOption(id: TextOptionId.ValentinesPink.rawValue, holidayFilter: [.valentines]),
     TextOption(id: TextOptionId.EasterPurple.rawValue, holidayFilter: [.easter]),
@@ -59,14 +63,16 @@ private let TextOptionsList = [
     TextOption(id: TextOptionId.HalloweenOrange.rawValue, holidayFilter: [.halloween]),
     TextOption(id: TextOptionId.HalloweenGreen.rawValue, holidayFilter: [.halloween]),
     TextOption(id: TextOptionId.HalloweenPurple.rawValue, holidayFilter: [.halloween]),
-    TextOption(id: TextOptionId.HalloweenBone.rawValue, holidayFilter: [.halloween])
-
+    TextOption(id: TextOptionId.HalloweenBone.rawValue, holidayFilter: [.halloween]),
+    TextOption(id: TextOptionId.ThanksgivingSpicedPumpkin.rawValue, holidayFilter: [.thanksgiving]),
+    TextOption(id: TextOptionId.ThanksgivingGreen.rawValue, holidayFilter: [.thanksgiving]),
+    TextOption(id: TextOptionId.ThanksgivingWhite.rawValue, holidayFilter: [.thanksgiving]),
 ]
 
 func loadBackgroundOptions(modelContext: ModelContext) throws {
     let backgroundOptionsDescriptor = FetchDescriptor<BackgroundOption>()
     let loadedBackgroundOptions = try modelContext.fetch(backgroundOptionsDescriptor)
-    
+
     BackgroundOptionsList.forEach { option in
         guard !loadedBackgroundOptions.contains(option) else { return }
         modelContext.insert(option)
@@ -76,7 +82,7 @@ func loadBackgroundOptions(modelContext: ModelContext) throws {
 func loadTextOptions(context: ModelContext) throws {
     let textOptionsDescriptor = FetchDescriptor<TextOption>()
     let loadedTextOptions = try context.fetch(textOptionsDescriptor)
-    
+
     TextOptionsList.forEach { option in
         guard !loadedTextOptions.contains(option) else { return }
         context.insert(option)
@@ -85,14 +91,14 @@ func loadTextOptions(context: ModelContext) throws {
 
 func loadDisplayOptions(context: ModelContext) throws {
     let loadedDisplayOptions = try context.fetch(FetchDescriptor<HolidayDisplayOptions>())
-    
+
     let backgroundOptions = try context.fetch(FetchDescriptor<BackgroundOption>())
     let textOptions = try context.fetch(FetchDescriptor<TextOption>())
-    
+
     if backgroundOptions.isEmpty || textOptions.isEmpty {
         throw HolidayLoadingError.attemptedToLoadDisplayOptionsBeforeDependencies
     }
-    
+
     HolidayVariant.allCases.forEach { variant in
         guard !loadedDisplayOptions.contains(where: { $0.id == variant }) else { return }
         let displayOptions = HolidayDisplayOptions(id: variant)
@@ -139,6 +145,13 @@ func loadDisplayOptions(context: ModelContext) throws {
             displayOptions.textOption = textOptions.first(where: { textOption in
                 textOption.id == TextOptionId.HalloweenOrange.rawValue
             })
+        case .thanksgiving:
+            displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
+                backgroundOption.id == BackgroundOptionId.ThanksgivingBackground1.rawValue
+            })
+            displayOptions.textOption = textOptions.first(where: { textOption in
+                textOption.id == TextOptionId.ThanksgivingSpicedPumpkin.rawValue
+            })
         }
         context.insert(displayOptions)
     }
@@ -146,21 +159,23 @@ func loadDisplayOptions(context: ModelContext) throws {
 
 func loadInitialHolidays(context: ModelContext) throws {
     let loadedHolidays = try context.fetch(FetchDescriptor<Holiday>())
-    
+
     let christmasDate = try Date.christmasFor(year: Date.currentYear)
     let newYearDate = try Date.newYearsFor(year: Date.currentYear)
     let valentinesDate = try Date.valentinesFor(year: Date.currentYear)
     let easterDate = try Date.easterFor(year: Date.currentYear)
     let mothersDayDate = try Date.mothersDayFor(year: Date.currentYear)
     let halloweenDate = try Date.halloweenFor(year: Date.currentYear)
-    
+    let thanksgiving = try Date.thanksgivingFor(year: Date.currentYear)
+
     let christmasNextYearDate = try Date.christmasFor(year: Date.currentYear + 1)
     let newYearNextYearDate = try Date.newYearsFor(year: Date.currentYear + 1)
     let valentinesNextYearDate = try Date.valentinesFor(year: Date.currentYear + 1)
     let easterNextYearDate = try Date.easterFor(year: Date.currentYear + 1)
     let mothersDayNextYearDate = try Date.mothersDayFor(year: Date.currentYear + 1)
     let halloweenNextYearDate = try Date.halloweenFor(year: Date.currentYear + 1)
-    
+    let thanksgivingNextYearDate = try Date.thanksgivingFor(year: Date.currentYear + 1)
+
     let holidaysToInsert = [
         createChristmasHolidayModel(christmasTimeInterval: christmasDate.timeIntervalSince1970),
         createNewYearHolidayModel(newYearTimeInterval: newYearDate.timeIntervalSince1970),
@@ -168,18 +183,20 @@ func loadInitialHolidays(context: ModelContext) throws {
         createEasterHolidayModel(easterTimeInterval: easterDate.timeIntervalSince1970),
         createMothersDayHolidayModel(mothersTimeInterval: mothersDayDate.timeIntervalSince1970),
         createHalloweenHolidayModel(halloweenTimeInterval: halloweenDate.timeIntervalSince1970),
-        
+        createThanksgivingHolidayModel(thanksgivingTimeInterval: thanksgiving.timeIntervalSince1970),
+
         createChristmasHolidayModel(christmasTimeInterval: christmasNextYearDate.timeIntervalSince1970),
         createNewYearHolidayModel(newYearTimeInterval: newYearNextYearDate.timeIntervalSince1970),
         createValentinesHolidayModel(valentinesTimerInterval: valentinesNextYearDate.timeIntervalSince1970),
         createEasterHolidayModel(easterTimeInterval: easterNextYearDate.timeIntervalSince1970),
         createMothersDayHolidayModel(mothersTimeInterval: mothersDayNextYearDate.timeIntervalSince1970),
-        createHalloweenHolidayModel(halloweenTimeInterval: halloweenNextYearDate.timeIntervalSince1970)
+        createHalloweenHolidayModel(halloweenTimeInterval: halloweenNextYearDate.timeIntervalSince1970),
+        createThanksgivingHolidayModel(thanksgivingTimeInterval: thanksgivingNextYearDate.timeIntervalSince1970)
     ]
-    
+
     for holiday in holidaysToInsert {
         let isHolidayLoaded = loadedHolidays.contains(where: { $0.variant == holiday.variant && $0.id == holiday.id })
-        
+
         if !isHolidayLoaded {
             context.insert(holiday)
         }
@@ -188,14 +205,14 @@ func loadInitialHolidays(context: ModelContext) throws {
 
 func deleteHolidaysInThePast(modelContext: ModelContext) throws {
     let currentTimeInterval = Date().timeIntervalSince1970
-    
+
     let holidayPredicate = #Predicate<Holiday> { holiday in
-        return holiday.id < currentTimeInterval
+        holiday.id < currentTimeInterval
     }
     let pastHolidaysFetchDescriptor = FetchDescriptor<Holiday>(predicate: holidayPredicate)
     let pastHolidays = try modelContext.fetch(pastHolidaysFetchDescriptor)
-    
-    pastHolidays.forEach { holiday in
+
+    for holiday in pastHolidays {
         modelContext.delete(holiday)
     }
 }
@@ -223,10 +240,13 @@ func createMothersDayHolidayModel(mothersTimeInterval: TimeInterval) -> Holiday 
                    variant: .mothersDay,
                    name: "Mother's Day",
                    holidayDescription: "Mother's Day is a celebration honoring the mother of the family, as well as motherhood, maternal bonds, and the influence of mothers in society.",
-                   dayOfGreeting: "Happy Mother's Day!"
-    )
+                   dayOfGreeting: "Happy Mother's Day!")
 }
 
 func createHalloweenHolidayModel(halloweenTimeInterval: TimeInterval) -> Holiday {
     return Holiday(id: halloweenTimeInterval, variant: .halloween, name: "Halloween", holidayDescription: "Originally a pagan holiday. It is now a holiday celebrating all things spooky. Also candy, an egregious amount of candy.", dayOfGreeting: "Happy Halloween!")
+}
+
+func createThanksgivingHolidayModel(thanksgivingTimeInterval: TimeInterval) -> Holiday {
+    return Holiday(id: thanksgivingTimeInterval, variant: .thanksgiving, name: "Thanksgiving", holidayDescription: "A day to celebrate the harvest and the many blessings of the past year.", dayOfGreeting: "Happy Thanksgiving!")
 }

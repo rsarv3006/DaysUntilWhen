@@ -40,26 +40,30 @@ extension Date {
     static func mothersDayFor(year: Int) throws -> Date {
         let calendar = Calendar.current
         let components = DateComponents(year: year, month: 5, day: 1)
-         
-         guard let firstDayOfMay = calendar.date(from: components) else {
-             throw HolidayCreateErrors.invalidMothersDayDate
-         }
-         
-         let daysInMay = calendar.range(of: .day, in: .month, for: firstDayOfMay)?.count ?? 0
-         var currentDay = firstDayOfMay
-         var weekday = calendar.component(.weekday, from: currentDay)
-         
-         for _ in 1...daysInMay {
-             if weekday == 1 {
-                 currentDay = calendar.date(byAdding: .day, value: 7, to: currentDay)!
-                 break
-             } else {
-                 currentDay = calendar.date(byAdding: .day, value: 1, to: currentDay)!
-                 weekday = calendar.component(.weekday, from: currentDay)
-             }
-         }
-         
-         return currentDay
+        
+        guard let firstDayOfMay = calendar.date(from: components) else {
+            throw HolidayCreateErrors.invalidMothersDayDate
+        }
+        
+        let daysInMay = calendar.range(of: .day, in: .month, for: firstDayOfMay)?.count ?? 0
+        var currentDay = firstDayOfMay
+        var weekday = calendar.component(.weekday, from: currentDay)
+        
+        for _ in 1...daysInMay {
+            if weekday == 1 {
+                if let maybeDay = calendar.date(byAdding: .day, value: 7, to: currentDay) {
+                    currentDay = maybeDay
+                }
+                break
+            } else {
+                if let maybeDay = calendar.date(byAdding: .day, value: 1, to: currentDay) {
+                    currentDay = maybeDay
+                    weekday = calendar.component(.weekday, from: currentDay)
+                }
+            }
+        }
+        
+        return currentDay
     }
     
     
@@ -84,6 +88,23 @@ extension Date {
         
     }
     
+    static func thanksgivingFor(year: Int) throws -> Date {
+        let calendar = Calendar(identifier: .gregorian)
+        let november = DateComponents(year: year, month: 11)
+        
+        guard let nov1 = calendar.date(from: november) else {
+            throw HolidayCreateErrors.invalidThanksgiving
+        }
+        
+        let weekdayComponents = calendar.dateComponents([.weekday], from: nov1)
+        let daysUntilFirstThursday = (5 - (weekdayComponents.weekday ?? 1) + 7) % 7
+        
+        guard let thanksgivingDay = calendar.date(byAdding: .day, value: daysUntilFirstThursday + 21, to: nov1)
+        else { throw HolidayCreateErrors.invalidThanksgiving }
+        
+        return thanksgivingDay
+    }
+    
     enum HolidayCreateErrors : Error {
         case invalidChristmasDate
         case invalidNewYearsDate
@@ -91,6 +112,7 @@ extension Date {
         case invalidEasterDate
         case invalidMothersDayDate
         case invalidHalloween
+        case invalidThanksgiving
     }
 }
 

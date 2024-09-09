@@ -15,6 +15,11 @@ struct DaysUntilWidgetEntryView: View {
         return  HolidaysUtils.daysUntil(entry.date, entry.holiday.date) ?? 0
     }
     
+    private var isHolidayNameLong: Bool {
+        let val = entry.holiday.name.count > 10
+        return val
+    }
+    
     var body: some View {
         VStack {
             if daysUntilHoliday > 0 {
@@ -25,10 +30,11 @@ struct DaysUntilWidgetEntryView: View {
                 Text(daysUntilHoliday == 1 ? "Day until" : "Days until")
                     .foregroundStyle(entry.text.color ?? .primary)
                 Text(entry.holiday.name)
-                    .font(.system(size: 25))
+                    .font(.system(size: isHolidayNameLong ? 17 : 25))
                     .fontWeight(.bold)
                     .foregroundStyle(entry.text.color ?? .primary)
                     .multilineTextAlignment(.center)
+                    .padding(.bottom, isHolidayNameLong ? 24 : 0)
             } else {
                 Text(entry.holiday.dayOfGreeting)
                     .font(.system(size: 24))

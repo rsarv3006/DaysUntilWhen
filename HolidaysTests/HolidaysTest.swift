@@ -46,6 +46,23 @@ final class HolidaysTests: XCTestCase {
         XCTAssertEqual(halloween, DateComponents(calendar: .current, year: 2030, month: 10, day: 31).date)
     }
     
+    func testThanksgivingForYear() throws {
+        var thanksgiving = try Date.thanksgivingFor(year: 2023)
+        XCTAssertEqual(thanksgiving, DateComponents(calendar: .current, year: 2023, month: 11, day: 23).date)
+        
+        thanksgiving = try Date.thanksgivingFor(year: 2024)
+        XCTAssertEqual(thanksgiving, DateComponents(calendar: .current, year: 2024, month: 11, day: 28).date)
+        
+        thanksgiving = try Date.thanksgivingFor(year: 2025)
+        XCTAssertEqual(thanksgiving, DateComponents(calendar: .current, year: 2025, month: 11, day: 27).date)
+        
+        thanksgiving = try Date.thanksgivingFor(year: 2026)
+        XCTAssertEqual(thanksgiving, DateComponents(calendar: .current, year: 2026, month: 11, day: 26).date)
+        
+        thanksgiving = try Date.thanksgivingFor(year: 2030)
+        XCTAssertEqual(thanksgiving, DateComponents(calendar: .current, year: 2030, month: 11, day: 28).date)
+    }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {
