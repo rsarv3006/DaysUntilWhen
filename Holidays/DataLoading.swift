@@ -17,8 +17,8 @@ private let BackgroundOptionsList = [
     BackgroundOption(id: BackgroundOptionId.ChristmasRed.rawValue, type: .color, holidayFilter: [.christmas]),
     BackgroundOption(id: BackgroundOptionId.ChristmasWhite.rawValue, type: .color, holidayFilter: [.christmas]),
     BackgroundOption(id: BackgroundOptionId.ChristmasGreen.rawValue, type: .color, holidayFilter: [.christmas]),
-    BackgroundOption(id: BackgroundOptionId.GenericBlack.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .halloween, .thanksgiving]),
-    BackgroundOption(id: BackgroundOptionId.GenericWhite.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .halloween, .thanksgiving]),
+    BackgroundOption(id: BackgroundOptionId.GenericBlack.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .halloween, .thanksgiving, .fourthOfJuly, .fathersDay]),
+    BackgroundOption(id: BackgroundOptionId.GenericWhite.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .halloween, .thanksgiving, .fourthOfJuly, .fathersDay]),
     BackgroundOption(id: BackgroundOptionId.GenericGold.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .thanksgiving]),
     BackgroundOption(id: BackgroundOptionId.NewYearsBackground1.rawValue, type: .image, holidayFilter: [.newYears]),
     BackgroundOption(id: BackgroundOptionId.ValentinesBackground1.rawValue, type: .image, holidayFilter: [.valentines]),
@@ -40,6 +40,12 @@ private let BackgroundOptionsList = [
     BackgroundOption(id: BackgroundOptionId.ThanksgivingSpicedPumpkin.rawValue, type: .color, holidayFilter: [.thanksgiving]),
     BackgroundOption(id: BackgroundOptionId.ThanksgivingGreen.rawValue, type: .color, holidayFilter: [.thanksgiving]),
     BackgroundOption(id: BackgroundOptionId.ThanksgivingWhite.rawValue, type: .color, holidayFilter: [.thanksgiving]),
+    BackgroundOption(id: BackgroundOptionId.FathersDayBlue.rawValue, type: .color, holidayFilter: [.fathersDay]),
+    BackgroundOption(id: BackgroundOptionId.FathersDayYellow.rawValue, type: .color, holidayFilter: [.fathersDay]),
+    BackgroundOption(id: BackgroundOptionId.FathersDayBackground1.rawValue, type: .image, holidayFilter: [.fathersDay]),
+    BackgroundOption(id: BackgroundOptionId.FourthOfJulyRed.rawValue, type: .color, holidayFilter: [.fourthOfJuly]),
+    BackgroundOption(id: BackgroundOptionId.FourthOfJulyBlue.rawValue, type: .color, holidayFilter: [.fourthOfJuly]),
+    BackgroundOption(id: BackgroundOptionId.FourthOfJulyBackground1.rawValue, type: .image, holidayFilter: [.fourthOfJuly]),
 ]
 
 private let TextOptionsList = [
@@ -47,12 +53,12 @@ private let TextOptionsList = [
     TextOption(id: TextOptionId.ChristmasWhite.rawValue, holidayFilter: [.christmas]),
     TextOption(id: TextOptionId.ChristmasGreen.rawValue, holidayFilter: [.christmas]),
     TextOption(id: TextOptionId.GenericBlack.rawValue, holidayFilter: [
-        .christmas, .newYears, .valentines, .halloween, .thanksgiving
+        .christmas, .newYears, .valentines, .halloween, .thanksgiving, .fourthOfJuly, .fathersDay
     ]),
     TextOption(id: TextOptionId.GenericWhite.rawValue, holidayFilter: [
-        .christmas, .newYears, .valentines, .halloween, .thanksgiving
+        .christmas, .newYears, .valentines, .halloween, .thanksgiving, .fourthOfJuly, .fathersDay
     ]),
-    TextOption(id: TextOptionId.GenericGold.rawValue, holidayFilter: [.christmas, .newYears, .valentines, .halloween, .thanksgiving]),
+    TextOption(id: TextOptionId.GenericGold.rawValue, holidayFilter: [.christmas, .newYears, .valentines, .halloween, .thanksgiving, .fourthOfJuly, .fathersDay]),
     TextOption(id: TextOptionId.ValentinesRed.rawValue, holidayFilter: [.valentines]),
     TextOption(id: TextOptionId.ValentinesPink.rawValue, holidayFilter: [.valentines]),
     TextOption(id: TextOptionId.EasterPurple.rawValue, holidayFilter: [.easter]),
@@ -67,6 +73,10 @@ private let TextOptionsList = [
     TextOption(id: TextOptionId.ThanksgivingSpicedPumpkin.rawValue, holidayFilter: [.thanksgiving]),
     TextOption(id: TextOptionId.ThanksgivingGreen.rawValue, holidayFilter: [.thanksgiving]),
     TextOption(id: TextOptionId.ThanksgivingWhite.rawValue, holidayFilter: [.thanksgiving]),
+    TextOption(id: TextOptionId.FathersDayBlue.rawValue, holidayFilter: [.fathersDay]),
+    TextOption(id: TextOptionId.FathersDayYellow.rawValue, holidayFilter: [.fathersDay]),
+    TextOption(id: TextOptionId.FourthOfJulyRed.rawValue, holidayFilter: [.fourthOfJuly]),
+    TextOption(id: TextOptionId.FourthOfJulyBlue.rawValue, holidayFilter: [.fourthOfJuly]),
 ]
 
 func loadBackgroundOptions(modelContext: ModelContext) throws {
@@ -152,6 +162,21 @@ func loadDisplayOptions(context: ModelContext) throws {
             displayOptions.textOption = textOptions.first(where: { textOption in
                 textOption.id == TextOptionId.ThanksgivingSpicedPumpkin.rawValue
             })
+        case .fourthOfJuly:
+            displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
+                backgroundOption.id == BackgroundOptionId.FourthOfJulyBackground1.rawValue
+            })
+            displayOptions.textOption = textOptions.first(where: { textOption in
+                textOption.id == TextOptionId.FourthOfJulyRed.rawValue
+            })
+        case .fathersDay:
+            displayOptions.backgroundOption = backgroundOptions.first(where: { backgroundOption in
+                backgroundOption.id == BackgroundOptionId.FathersDayBackground1.rawValue
+            })
+            
+            displayOptions.textOption = textOptions.first(where: { textOption in
+                textOption.id == TextOptionId.FathersDayYellow.rawValue
+            })
         }
         context.insert(displayOptions)
     }
@@ -167,6 +192,9 @@ func loadInitialHolidays(context: ModelContext) throws {
     let mothersDayDate = try Date.mothersDayFor(year: Date.currentYear)
     let halloweenDate = try Date.halloweenFor(year: Date.currentYear)
     let thanksgiving = try Date.thanksgivingFor(year: Date.currentYear)
+    let memorialDay = try Date.memorialDayFor(year: Date.currentYear)
+    let fourthOfJuly = try Date.fourthOfJulyFor(year: Date.currentYear)
+    let fathersDay = try Date.fathersDayFor(year: Date.currentYear)
 
     let christmasNextYearDate = try Date.christmasFor(year: Date.currentYear + 1)
     let newYearNextYearDate = try Date.newYearsFor(year: Date.currentYear + 1)
@@ -175,6 +203,9 @@ func loadInitialHolidays(context: ModelContext) throws {
     let mothersDayNextYearDate = try Date.mothersDayFor(year: Date.currentYear + 1)
     let halloweenNextYearDate = try Date.halloweenFor(year: Date.currentYear + 1)
     let thanksgivingNextYearDate = try Date.thanksgivingFor(year: Date.currentYear + 1)
+    let memorialDayNextYearDate = try Date.memorialDayFor(year: Date.currentYear + 1)
+    let fourthOfJulyNextYearDate = try Date.fourthOfJulyFor(year: Date.currentYear + 1)
+    let fathersDayNextYearDate = try Date.fathersDayFor(year: Date.currentYear + 1)
 
     let holidaysToInsert = [
         createChristmasHolidayModel(christmasTimeInterval: christmasDate.timeIntervalSince1970),
@@ -184,6 +215,8 @@ func loadInitialHolidays(context: ModelContext) throws {
         createMothersDayHolidayModel(mothersTimeInterval: mothersDayDate.timeIntervalSince1970),
         createHalloweenHolidayModel(halloweenTimeInterval: halloweenDate.timeIntervalSince1970),
         createThanksgivingHolidayModel(thanksgivingTimeInterval: thanksgiving.timeIntervalSince1970),
+        createFourthOfJulyHolidayModel(fourthOfJulyTimeInterval: fourthOfJuly.timeIntervalSince1970),
+        createFathersDayHolidayModel(fathersDayTimeInterval: fathersDay.timeIntervalSince1970),
 
         createChristmasHolidayModel(christmasTimeInterval: christmasNextYearDate.timeIntervalSince1970),
         createNewYearHolidayModel(newYearTimeInterval: newYearNextYearDate.timeIntervalSince1970),
@@ -191,7 +224,9 @@ func loadInitialHolidays(context: ModelContext) throws {
         createEasterHolidayModel(easterTimeInterval: easterNextYearDate.timeIntervalSince1970),
         createMothersDayHolidayModel(mothersTimeInterval: mothersDayNextYearDate.timeIntervalSince1970),
         createHalloweenHolidayModel(halloweenTimeInterval: halloweenNextYearDate.timeIntervalSince1970),
-        createThanksgivingHolidayModel(thanksgivingTimeInterval: thanksgivingNextYearDate.timeIntervalSince1970)
+        createThanksgivingHolidayModel(thanksgivingTimeInterval: thanksgivingNextYearDate.timeIntervalSince1970),
+        createFourthOfJulyHolidayModel(fourthOfJulyTimeInterval: fourthOfJulyNextYearDate.timeIntervalSince1970),
+        createFathersDayHolidayModel(fathersDayTimeInterval: fathersDayNextYearDate.timeIntervalSince1970)
     ]
 
     for holiday in holidaysToInsert {
@@ -249,4 +284,16 @@ func createHalloweenHolidayModel(halloweenTimeInterval: TimeInterval) -> Holiday
 
 func createThanksgivingHolidayModel(thanksgivingTimeInterval: TimeInterval) -> Holiday {
     return Holiday(id: thanksgivingTimeInterval, variant: .thanksgiving, name: "Thanksgiving", holidayDescription: "A day to celebrate the harvest and the many blessings of the past year.", dayOfGreeting: "Happy Thanksgiving!")
+}
+
+//func createMemorialDayHolidayModel(memorialDayTimeInterval: TimeInterval) -> Holiday {
+//    return Holiday(id: memorialDayTimeInterval, variant: .memorialDay, name: "Memorial Day", holidayDescription: "A day to honor and remember the men and women who have died while serving in the United States military.", dayOfGreeting: "Happy Memorial Day")
+//}
+
+func createFourthOfJulyHolidayModel(fourthOfJulyTimeInterval: TimeInterval) -> Holiday {
+    return Holiday(id: fourthOfJulyTimeInterval, variant: .fourthOfJuly, name: "Fourth of July", holidayDescription: "A day to celebrate the birth of the United States of America.", dayOfGreeting: "Happy Fourth of July!")
+}
+
+func createFathersDayHolidayModel(fathersDayTimeInterval: TimeInterval) -> Holiday {
+    return Holiday(id: fathersDayTimeInterval, variant: .fathersDay, name: "Father's Day", holidayDescription: "A day to celebrate the men in our lives.", dayOfGreeting: "Happy Father's Day!")
 }

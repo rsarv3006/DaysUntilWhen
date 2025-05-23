@@ -29,6 +29,12 @@ enum BackgroundOptionId: String, Codable {
     case ThanksgivingSpicedPumpkin
     case ThanksgivingGreen
     case ThanksgivingWhite
+    case FathersDayBlue
+    case FathersDayYellow
+    case FathersDayBackground1
+    case FourthOfJulyRed
+    case FourthOfJulyBlue
+    case FourthOfJulyBackground1
 }
 
 enum BackgroundOptionType: String, Codable {

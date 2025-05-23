@@ -29,6 +29,10 @@ enum TextOptionId: String, Codable {
     case ThanksgivingSpicedPumpkin
     case ThanksgivingGreen
     case ThanksgivingWhite
+    case FathersDayBlue
+    case FathersDayYellow
+    case FourthOfJulyRed
+    case FourthOfJulyBlue
 }
 
 @Model

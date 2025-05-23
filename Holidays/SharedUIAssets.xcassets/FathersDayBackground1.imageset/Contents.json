@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "fathers_day_minified.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

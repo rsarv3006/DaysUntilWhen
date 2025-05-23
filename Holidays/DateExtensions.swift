@@ -105,6 +105,62 @@ extension Date {
         return thanksgivingDay
     }
     
+    static func fourthOfJulyFor(year: Int) throws -> Date {
+        let calendar = Calendar(identifier: .gregorian)
+        let july = DateComponents(year: year, month: 7)
+        
+        guard let july1 = calendar.date(from: july) else {
+            throw HolidayCreateErrors.invalidJuly4thDate
+        }
+        
+        guard let fourth = calendar.date(byAdding: .day, value: 4, to: july1) else {
+            throw HolidayCreateErrors.invalidJuly4thDate
+        }
+        
+        return fourth
+    }
+    
+    static func memorialDayFor(year: Int) throws -> Date {
+        let calendar = Calendar(identifier: .gregorian)
+        let may31 = DateComponents(year: year, month: 5, day: 31)
+        
+        guard let lastDayOfMay = calendar.date(from: may31) else {
+            throw HolidayCreateErrors.invalidMemorialDayDate
+        }
+        
+        var currentDate = lastDayOfMay
+        while calendar.component(.weekday, from: currentDate) != 2 {
+            currentDate = calendar.date(byAdding: .day, value: -1, to: currentDate)!
+        }
+        
+        return currentDate
+    }
+    
+    static func fathersDayFor(year: Int) throws -> Date {
+        let calendar = Calendar(identifier: .gregorian)
+        
+        // Create June 1st of the given year
+        let june1Components = DateComponents(year: year, month: 6, day: 1)
+        
+        guard let june1 = calendar.date(from: june1Components) else {
+            throw HolidayCreateErrors.invalidFathersDayDate
+        }
+        
+        // Find the first Sunday in June
+        var firstSunday = june1
+        let sunday = 1 // In Gregorian calendar, Sunday is 1
+        
+        // Move forward until we find the first Sunday
+        while calendar.component(.weekday, from: firstSunday) != sunday {
+            firstSunday = calendar.date(byAdding: .day, value: 1, to: firstSunday)!
+        }
+        
+        // Add 14 days (2 weeks) to the first Sunday to get the third Sunday
+        let fathersDay = calendar.date(byAdding: .day, value: 14, to: firstSunday)!
+        
+        return fathersDay
+    }
+    
     enum HolidayCreateErrors : Error {
         case invalidChristmasDate
         case invalidNewYearsDate
@@ -113,6 +169,9 @@ extension Date {
         case invalidMothersDayDate
         case invalidHalloween
         case invalidThanksgiving
+        case invalidJuly4thDate
+        case invalidMemorialDayDate
+        case invalidFathersDayDate
     }
 }
 
