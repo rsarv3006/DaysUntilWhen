@@ -10,11 +10,11 @@ import SwiftData
 
 @Model
 class Holiday: Identifiable {
-    let id: TimeInterval
-    let variant: HolidayVariant
-    let name: String
-    let holidayDescription: String
-    let dayOfGreeting: String
+    private(set) var id: TimeInterval
+    private(set) var variant: HolidayVariant
+    private(set) var name: String
+    private(set) var holidayDescription: String
+    private(set) var dayOfGreeting: String
     var isFavorite: Bool
     
     init(id: TimeInterval, variant: HolidayVariant, name: String, holidayDescription: String, dayOfGreeting: String) {

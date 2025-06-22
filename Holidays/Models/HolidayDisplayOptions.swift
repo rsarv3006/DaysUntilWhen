@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 class HolidayDisplayOptions {
-    let id: HolidayVariant
+    private(set) var id: HolidayVariant
     @Relationship var backgroundOption: BackgroundOption?
     @Relationship var textOption: TextOption?
     

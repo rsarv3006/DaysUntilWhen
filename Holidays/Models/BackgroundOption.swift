@@ -44,10 +44,10 @@ enum BackgroundOptionType: String, Codable {
 
 @Model
 class BackgroundOption: Identifiable {
-    @Attribute(.unique) let id: String
-    let type: BackgroundOptionType
-    let optionName: String
-    let holidayFilter: [HolidayVariant]
+    @Attribute(.unique) private(set) var id: String
+    private(set) var type: BackgroundOptionType
+    private(set) var optionName: String
+    private(set) var holidayFilter: [HolidayVariant]
    
     @Transient
     var image: Image? {

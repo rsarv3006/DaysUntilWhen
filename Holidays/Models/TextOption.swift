@@ -37,9 +37,9 @@ enum TextOptionId: String, Codable {
 
 @Model
 class TextOption: Identifiable {
-    @Attribute(.unique) let id: String
-    let optionName: String
-    let holidayFilter: [HolidayVariant]
+    @Attribute(.unique) private(set) var id: String
+    private(set) var optionName: String
+    private(set) var holidayFilter: [HolidayVariant]
     
     @Transient
     var color: Color? {
