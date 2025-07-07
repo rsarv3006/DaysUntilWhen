@@ -1,13 +1,7 @@
-//
-//  HolidayVariant.swift
-//  Holidays
-//
-//  Created by Robert J. Sarvis Jr on 11/15/23.
-//
-
 import Foundation
+import GRDB
 
-enum HolidayVariant: String, CaseIterable, Codable {
+public enum HolidayVariant: String, CaseIterable, Codable, DatabaseValueConvertible {
     case christmas
     case newYears
     case valentines
@@ -19,4 +13,7 @@ enum HolidayVariant: String, CaseIterable, Codable {
     
     case fourthOfJuly
     case fathersDay
+    
+//    case memorialDay
+//    case veteransDay
 }

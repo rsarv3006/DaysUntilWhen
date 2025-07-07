@@ -1,10 +1,3 @@
-//
-//  AppGroup.swift
-//  DaysUntil
-//
-//  Created by Robert J. Sarvis Jr on 11/22/23.
-//
-
 import Foundation
 
 public enum AppGroup: String {

@@ -53,21 +53,21 @@ final class Utils: XCTestCase {
          let currentDate = DateComponents(calendar: .current, year: 2023, month: 11, day: 25).date!
         let holiday = DateComponents(calendar: .current, year: 2023, month: 12, day: 25).date
         
-        XCTAssertTrue(HolidaysUtils.isHolidayInFuture(currentDate, holiday))
+        XCTAssertTrue(HolidaysUtils.isHolidayTodayOrInFuture(currentDate, holiday))
     }
     
     func testIsHolidayInFutureIfHolidayMatchesCurrentDate() throws {
         let currentDate = DateComponents(calendar: .current, year: 2023, month: 12, day: 25).date!
         let holiday = DateComponents(calendar: .current, year: 2023, month: 12, day: 25).date
         
-        XCTAssertTrue(HolidaysUtils.isHolidayInFuture(currentDate, holiday))
+        XCTAssertTrue(HolidaysUtils.isHolidayTodayOrInFuture(currentDate, holiday))
     }
     
     func testIsHolidayInFutureHolidayInPast() throws {
         let currentDate = DateComponents(calendar: .current, year: 2023, month: 12, day: 25).date!
         let holiday = DateComponents(calendar: .current, year: 2022, month: 12, day: 25).date
         
-        XCTAssertFalse(HolidaysUtils.isHolidayInFuture(currentDate, holiday))
+        XCTAssertFalse(HolidaysUtils.isHolidayTodayOrInFuture(currentDate, holiday))
     }
 
     func testGetHolidayDateHolidayInCurrentYearNotInPast() throws {

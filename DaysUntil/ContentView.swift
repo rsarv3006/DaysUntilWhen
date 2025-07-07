@@ -1,21 +1,28 @@
-//
-//  ContentView.swift
-//  DaysUntil
-//
-//  Created by Robert J. Sarvis Jr on 11/14/23.
-//
-
 import SwiftUI
 import WidgetKit
 import SwiftData
 
 struct ContentView: View {
     var body: some View {
-        WidgetPreviewView()
+        TabView {
+            WidgetPreviewView()
+                .tabItem {
+                    Image(systemName: "widget.small")
+                    Text("Widget")
+                }
+            
+            HolidayToggleListView()
+                .tabItem {
+                    Image(systemName: "calendar")
+                    Text("Holidays")
+                }
+            
+            // Example of additional tab you might add later
+            SettingsScreen()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
+        }
     }
-}
-
-#Preview {
-    ContentView()
-        .holidaysDataContainer()
 }

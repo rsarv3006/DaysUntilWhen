@@ -107,18 +107,15 @@ extension Date {
     
     static func fourthOfJulyFor(year: Int) throws -> Date {
         let calendar = Calendar(identifier: .gregorian)
-        let july = DateComponents(year: year, month: 7)
+        let julyFourth = DateComponents(year: year, month: 7, day: 4)
         
-        guard let july1 = calendar.date(from: july) else {
-            throw HolidayCreateErrors.invalidJuly4thDate
-        }
-        
-        guard let fourth = calendar.date(byAdding: .day, value: 4, to: july1) else {
+        guard let fourth = calendar.date(from: julyFourth) else {
             throw HolidayCreateErrors.invalidJuly4thDate
         }
         
         return fourth
     }
+
     
     static func memorialDayFor(year: Int) throws -> Date {
         let calendar = Calendar(identifier: .gregorian)
@@ -159,19 +156,6 @@ extension Date {
         let fathersDay = calendar.date(byAdding: .day, value: 14, to: firstSunday)!
         
         return fathersDay
-    }
-    
-    enum HolidayCreateErrors : Error {
-        case invalidChristmasDate
-        case invalidNewYearsDate
-        case invalidValentinesDate
-        case invalidEasterDate
-        case invalidMothersDayDate
-        case invalidHalloween
-        case invalidThanksgiving
-        case invalidJuly4thDate
-        case invalidMemorialDayDate
-        case invalidFathersDayDate
     }
 }
 

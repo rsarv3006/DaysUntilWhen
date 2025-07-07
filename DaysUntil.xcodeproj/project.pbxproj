@@ -3,12 +3,88 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		78284F9C2B212AD600AF0ED7 /* WidgetPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78284F9B2B212AD600AF0ED7 /* WidgetPreviewView.swift */; };
 		78284F9E2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78284F9D2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift */; };
+		7848988F2E079FAD0081203E /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 7848988E2E079FAD0081203E /* GRDB */; };
+		784898912E079FFF0081203E /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 784898902E079FFF0081203E /* GRDB */; };
+		784898932E08F7840081203E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898922E08F77F0081203E /* Persistence.swift */; };
+		784898942E08F7840081203E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898922E08F77F0081203E /* Persistence.swift */; };
+		784898952E08F7840081203E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898922E08F77F0081203E /* Persistence.swift */; };
+		784898982E08F8560081203E /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 784898972E08F8560081203E /* GRDB */; };
+		7848989A2E08F8C10081203E /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 784898992E08F8C10081203E /* GRDB */; };
+		7848989C2E08F8ED0081203E /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848989B2E08F8ED0081203E /* AppDatabase.swift */; };
+		7848989D2E08F8ED0081203E /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848989B2E08F8ED0081203E /* AppDatabase.swift */; };
+		7848989E2E08F8ED0081203E /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848989B2E08F8ED0081203E /* AppDatabase.swift */; };
+		784898A02E08FCCD0081203E /* TableNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848989F2E08FCCD0081203E /* TableNames.swift */; };
+		784898A12E08FCCD0081203E /* TableNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848989F2E08FCCD0081203E /* TableNames.swift */; };
+		784898A22E08FCCD0081203E /* TableNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848989F2E08FCCD0081203E /* TableNames.swift */; };
+		784898AA2E0988320081203E /* GRDBHoliday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898A92E0988320081203E /* GRDBHoliday.swift */; };
+		784898AB2E0988320081203E /* GRDBHoliday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898A92E0988320081203E /* GRDBHoliday.swift */; };
+		784898AC2E0988320081203E /* GRDBHoliday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898A92E0988320081203E /* GRDBHoliday.swift */; };
+		784898AE2E098E490081203E /* GRDBHolidayDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898AD2E098E490081203E /* GRDBHolidayDisplayOptions.swift */; };
+		784898AF2E098E490081203E /* GRDBHolidayDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898AD2E098E490081203E /* GRDBHolidayDisplayOptions.swift */; };
+		784898B02E098E490081203E /* GRDBHolidayDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898AD2E098E490081203E /* GRDBHolidayDisplayOptions.swift */; };
+		784898B22E0991E50081203E /* GRDBTextOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898B12E0991E50081203E /* GRDBTextOption.swift */; };
+		784898B32E0991E50081203E /* GRDBTextOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898B12E0991E50081203E /* GRDBTextOption.swift */; };
+		784898B42E0991E50081203E /* GRDBTextOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898B12E0991E50081203E /* GRDBTextOption.swift */; };
+		784898B72E09920D0081203E /* TextOptionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898B62E09920D0081203E /* TextOptionId.swift */; };
+		784898B82E09920D0081203E /* TextOptionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898B62E09920D0081203E /* TextOptionId.swift */; };
+		784898B92E09920D0081203E /* TextOptionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898B62E09920D0081203E /* TextOptionId.swift */; };
+		784898BA2E09920D0081203E /* TextOptionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898B62E09920D0081203E /* TextOptionId.swift */; };
+		784898BC2E0992290081203E /* BackgroundOptionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898BB2E0992290081203E /* BackgroundOptionId.swift */; };
+		784898BD2E0992290081203E /* BackgroundOptionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898BB2E0992290081203E /* BackgroundOptionId.swift */; };
+		784898BE2E0992290081203E /* BackgroundOptionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898BB2E0992290081203E /* BackgroundOptionId.swift */; };
+		784898BF2E0992290081203E /* BackgroundOptionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898BB2E0992290081203E /* BackgroundOptionId.swift */; };
+		784898C12E0992340081203E /* BackgroundOptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898C02E0992340081203E /* BackgroundOptionType.swift */; };
+		784898C22E0992340081203E /* BackgroundOptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898C02E0992340081203E /* BackgroundOptionType.swift */; };
+		784898C32E0992340081203E /* BackgroundOptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898C02E0992340081203E /* BackgroundOptionType.swift */; };
+		784898C42E0992340081203E /* BackgroundOptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898C02E0992340081203E /* BackgroundOptionType.swift */; };
+		784898C62E0992870081203E /* GRDBBackgroundOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898C52E0992870081203E /* GRDBBackgroundOption.swift */; };
+		784898C72E0992870081203E /* GRDBBackgroundOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898C52E0992870081203E /* GRDBBackgroundOption.swift */; };
+		784898C82E0992870081203E /* GRDBBackgroundOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898C52E0992870081203E /* GRDBBackgroundOption.swift */; };
+		784898D32E1611C80081203E /* BackgroundOptionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898D22E1611C00081203E /* BackgroundOptionsService.swift */; };
+		784898D42E1611C80081203E /* BackgroundOptionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898D22E1611C00081203E /* BackgroundOptionsService.swift */; };
+		784898D52E1611C80081203E /* BackgroundOptionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898D22E1611C00081203E /* BackgroundOptionsService.swift */; };
+		784898D72E172E910081203E /* GRDBUserEnabledHolidays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898D62E172E790081203E /* GRDBUserEnabledHolidays.swift */; };
+		784898D82E172E910081203E /* GRDBUserEnabledHolidays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898D62E172E790081203E /* GRDBUserEnabledHolidays.swift */; };
+		784898D92E172E910081203E /* GRDBUserEnabledHolidays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898D62E172E790081203E /* GRDBUserEnabledHolidays.swift */; };
+		784898DB2E1730A00081203E /* HolidayLoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898DA2E1730A00081203E /* HolidayLoadingError.swift */; };
+		784898DC2E1730A00081203E /* HolidayLoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898DA2E1730A00081203E /* HolidayLoadingError.swift */; };
+		784898DD2E1730A00081203E /* HolidayLoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898DA2E1730A00081203E /* HolidayLoadingError.swift */; };
+		784898DE2E1730A00081203E /* HolidayLoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898DA2E1730A00081203E /* HolidayLoadingError.swift */; };
+		784898E02E1731920081203E /* TextOptionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898DF2E1731920081203E /* TextOptionsService.swift */; };
+		784898E12E1731920081203E /* TextOptionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898DF2E1731920081203E /* TextOptionsService.swift */; };
+		784898E22E1731920081203E /* TextOptionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898DF2E1731920081203E /* TextOptionsService.swift */; };
+		784898E42E1731CA0081203E /* HolidayDisplayOptionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898E32E1731B60081203E /* HolidayDisplayOptionsService.swift */; };
+		784898E52E1731CA0081203E /* HolidayDisplayOptionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898E32E1731B60081203E /* HolidayDisplayOptionsService.swift */; };
+		784898E62E1731CA0081203E /* HolidayDisplayOptionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898E32E1731B60081203E /* HolidayDisplayOptionsService.swift */; };
+		784898E82E1828D90081203E /* HolidayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898E72E1828D60081203E /* HolidayService.swift */; };
+		784898E92E1828D90081203E /* HolidayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898E72E1828D60081203E /* HolidayService.swift */; };
+		784898EA2E1828D90081203E /* HolidayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898E72E1828D60081203E /* HolidayService.swift */; };
+		784898EC2E1851120081203E /* HolidayCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898EB2E18510D0081203E /* HolidayCreation.swift */; };
+		784898ED2E1851120081203E /* HolidayCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898EB2E18510D0081203E /* HolidayCreation.swift */; };
+		784898EE2E1851120081203E /* HolidayCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898EB2E18510D0081203E /* HolidayCreation.swift */; };
+		784898F02E185FAA0081203E /* HolidayCreateErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898EF2E185FAA0081203E /* HolidayCreateErrors.swift */; };
+		784898F12E185FAA0081203E /* HolidayCreateErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898EF2E185FAA0081203E /* HolidayCreateErrors.swift */; };
+		784898F22E185FAA0081203E /* HolidayCreateErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898EF2E185FAA0081203E /* HolidayCreateErrors.swift */; };
+		784898F32E185FAA0081203E /* HolidayCreateErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898EF2E185FAA0081203E /* HolidayCreateErrors.swift */; };
+		784898F62E186C650081203E /* GRDBQuery in Frameworks */ = {isa = PBXBuildFile; productRef = 784898F52E186C650081203E /* GRDBQuery */; };
+		784898F82E186C770081203E /* GRDBQuery in Frameworks */ = {isa = PBXBuildFile; productRef = 784898F72E186C770081203E /* GRDBQuery */; };
+		784898FA2E19C0D20081203E /* UserEnabledHolidaysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898F92E19C0C70081203E /* UserEnabledHolidaysService.swift */; };
+		784898FB2E19C0D20081203E /* UserEnabledHolidaysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898F92E19C0C70081203E /* UserEnabledHolidaysService.swift */; };
+		784898FC2E19C0D20081203E /* UserEnabledHolidaysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898F92E19C0C70081203E /* UserEnabledHolidaysService.swift */; };
+		784898FE2E1A22F20081203E /* HolidayErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898FD2E1A22ED0081203E /* HolidayErrors.swift */; };
+		784898FF2E1A22F20081203E /* HolidayErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898FD2E1A22ED0081203E /* HolidayErrors.swift */; };
+		784899002E1A22F20081203E /* HolidayErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898FD2E1A22ED0081203E /* HolidayErrors.swift */; };
+		784899012E1A22F20081203E /* HolidayErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784898FD2E1A22ED0081203E /* HolidayErrors.swift */; };
+		784899032E1A99190081203E /* HolidayToggleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784899022E1A99190081203E /* HolidayToggleListView.swift */; };
+		784899072E1BEE880081203E /* DaysUntilWhen.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 784899062E1BEE880081203E /* DaysUntilWhen.storekit */; };
+		7848990D2E1BEF230081203E /* StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784899042E1BEC330081203E /* StoreKit.swift */; };
+		7848990F2E1BEF640081203E /* AppBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848990E2E1BEF600081203E /* AppBackground.swift */; };
 		786B50772C60F547008E2979 /* Bedrock in Frameworks */ = {isa = PBXBuildFile; productRef = 786B50762C60F547008E2979 /* Bedrock */; };
 		786B507A2C617DF7008E2979 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B50792C617DF7008E2979 /* config.swift */; };
 		786B507C2C617F19008E2979 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 786B507B2C617F19008E2979 /* Config.plist */; };
@@ -24,23 +100,16 @@
 		789815C42B08646C002AF275 /* DaysUntilWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45402B049E27000EA9F5 /* DaysUntilWidgetEntryView.swift */; };
 		789815C62B08649F002AF275 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
 		789815C82B0864A4002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
-		789815CC2B087AB1002AF275 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
 		789815E32B0BBE44002AF275 /* SharedUIAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */; };
 		789815E42B0BBE44002AF275 /* SharedUIAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */; };
-		789815E82B0BF912002AF275 /* TextOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E62B0BC340002AF275 /* TextOption.swift */; };
-		789815EA2B0BF921002AF275 /* BackgroundOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E02B0ACD84002AF275 /* BackgroundOption.swift */; };
 		789815EC2B0C0F50002AF275 /* WidgetPickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815EB2B0C0F50002AF275 /* WidgetPickers.swift */; };
-		789815EE2B0C62B0002AF275 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
 		789815EF2B0C62D8002AF275 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
 		789815F02B0C6D13002AF275 /* DaysUntilWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45402B049E27000EA9F5 /* DaysUntilWidgetEntryView.swift */; };
 		789815F12B0C6D27002AF275 /* DaysUntilWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815B92B086454002AF275 /* DaysUntilWidget.swift */; };
 		789815F32B0C6D7F002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
-		789815F42B0D5EE8002AF275 /* TextOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E62B0BC340002AF275 /* TextOption.swift */; };
-		789815F52B0D5EEC002AF275 /* BackgroundOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E02B0ACD84002AF275 /* BackgroundOption.swift */; };
 		789816012B0E3FF1002AF275 /* HolidaysTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816002B0E3FF1002AF275 /* HolidaysTest.swift */; };
 		789816022B0E3FF1002AF275 /* Holidays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB45472B049EA1000EA9F5 /* Holidays.framework */; };
 		789816092B0E4004002AF275 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816082B0E4004002AF275 /* UtilsTests.swift */; };
-		7898160A2B0E400D002AF275 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
 		7898160C2B0E4012002AF275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815A22B05D4F5002AF275 /* Utils.swift */; };
 		7898160E2B0E4012002AF275 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
 		789816122B0E5C7A002AF275 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816112B0E5C7A002AF275 /* AppGroup.swift */; };
@@ -52,30 +121,12 @@
 		78BB454A2B049EA1000EA9F5 /* Holidays.h in Headers */ = {isa = PBXBuildFile; fileRef = 78BB45492B049EA1000EA9F5 /* Holidays.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78BB454D2B049EA1000EA9F5 /* Holidays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB45472B049EA1000EA9F5 /* Holidays.framework */; };
 		78BB454E2B049EA1000EA9F5 /* Holidays.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78BB45472B049EA1000EA9F5 /* Holidays.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		78BB45542B049EBD000EA9F5 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45532B049EBD000EA9F5 /* Holiday.swift */; };
 		78BB45562B049EFB000EA9F5 /* HolidayVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */; };
 		78DE9FE62BBE51E800782A08 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE9FE52BBE51E800782A08 /* DateExtensions.swift */; };
 		78DE9FE72BBE528600782A08 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE9FE52BBE51E800782A08 /* DateExtensions.swift */; };
 		78DE9FE82BBE528600782A08 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE9FE52BBE51E800782A08 /* DateExtensions.swift */; };
 		78DE9FE92BBE528700782A08 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE9FE52BBE51E800782A08 /* DateExtensions.swift */; };
-		78FBCBC22B1AEEB40015D817 /* HolidayDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBC02B1AEEA10015D817 /* HolidayDisplayOptions.swift */; };
-		78FBCBC42B1AF3E80015D817 /* HolidayDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBC02B1AEEA10015D817 /* HolidayDisplayOptions.swift */; };
-		78FBCBC52B1C30A80015D817 /* TextOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E62B0BC340002AF275 /* TextOption.swift */; };
-		78FBCBC62B1C30B10015D817 /* BackgroundOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789815E02B0ACD84002AF275 /* BackgroundOption.swift */; };
 		78FBCBCB2B1C38210015D817 /* SharedUIAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */; };
-		78FBCBCC2B1C387B0015D817 /* HolidayDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBC02B1AEEA10015D817 /* HolidayDisplayOptions.swift */; };
-		78FBCBCE2B1C38F40015D817 /* DataLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBCD2B1C38F40015D817 /* DataLoading.swift */; };
-		78FBCBCF2B1C38F60015D817 /* DataLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBCD2B1C38F40015D817 /* DataLoading.swift */; };
-		78FBCBD02B1C38F70015D817 /* DataLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBCD2B1C38F40015D817 /* DataLoading.swift */; };
-		78FBCBD42B203E280015D817 /* DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBD32B203E280015D817 /* DataGeneration.swift */; };
-		78FBCBD62B203F1A0015D817 /* DataGenerationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBD52B203F1A0015D817 /* DataGenerationOptions.swift */; };
-		78FBCBD72B203FC60015D817 /* DataGenerationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBD52B203F1A0015D817 /* DataGenerationOptions.swift */; };
-		78FBCBD82B203FC60015D817 /* DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBD32B203E280015D817 /* DataGeneration.swift */; };
-		78FBCBD92B203FC70015D817 /* DataGenerationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBD52B203F1A0015D817 /* DataGenerationOptions.swift */; };
-		78FBCBDA2B203FC70015D817 /* DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBD32B203E280015D817 /* DataGeneration.swift */; };
-		78FBCBDC2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBDB2B20401F0015D817 /* HolidaysDataContainer.swift */; };
-		78FBCBDD2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBDB2B20401F0015D817 /* HolidaysDataContainer.swift */; };
-		78FBCBDE2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FBCBDB2B20401F0015D817 /* HolidaysDataContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +181,30 @@
 /* Begin PBXFileReference section */
 		78284F9B2B212AD600AF0ED7 /* WidgetPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPreviewView.swift; sourceTree = "<group>"; };
 		78284F9D2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledBackgroundImageWidgetPreview.swift; sourceTree = "<group>"; };
+		784898922E08F77F0081203E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		7848989B2E08F8ED0081203E /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		7848989F2E08FCCD0081203E /* TableNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableNames.swift; sourceTree = "<group>"; };
+		784898A92E0988320081203E /* GRDBHoliday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDBHoliday.swift; sourceTree = "<group>"; };
+		784898AD2E098E490081203E /* GRDBHolidayDisplayOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDBHolidayDisplayOptions.swift; sourceTree = "<group>"; };
+		784898B12E0991E50081203E /* GRDBTextOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDBTextOption.swift; sourceTree = "<group>"; };
+		784898B62E09920D0081203E /* TextOptionId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOptionId.swift; sourceTree = "<group>"; };
+		784898BB2E0992290081203E /* BackgroundOptionId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundOptionId.swift; sourceTree = "<group>"; };
+		784898C02E0992340081203E /* BackgroundOptionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundOptionType.swift; sourceTree = "<group>"; };
+		784898C52E0992870081203E /* GRDBBackgroundOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDBBackgroundOption.swift; sourceTree = "<group>"; };
+		784898D22E1611C00081203E /* BackgroundOptionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundOptionsService.swift; sourceTree = "<group>"; };
+		784898D62E172E790081203E /* GRDBUserEnabledHolidays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDBUserEnabledHolidays.swift; sourceTree = "<group>"; };
+		784898DA2E1730A00081203E /* HolidayLoadingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayLoadingError.swift; sourceTree = "<group>"; };
+		784898DF2E1731920081203E /* TextOptionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOptionsService.swift; sourceTree = "<group>"; };
+		784898E32E1731B60081203E /* HolidayDisplayOptionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDisplayOptionsService.swift; sourceTree = "<group>"; };
+		784898E72E1828D60081203E /* HolidayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayService.swift; sourceTree = "<group>"; };
+		784898EB2E18510D0081203E /* HolidayCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayCreation.swift; sourceTree = "<group>"; };
+		784898EF2E185FAA0081203E /* HolidayCreateErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayCreateErrors.swift; sourceTree = "<group>"; };
+		784898F92E19C0C70081203E /* UserEnabledHolidaysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEnabledHolidaysService.swift; sourceTree = "<group>"; };
+		784898FD2E1A22ED0081203E /* HolidayErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayErrors.swift; sourceTree = "<group>"; };
+		784899022E1A99190081203E /* HolidayToggleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayToggleListView.swift; sourceTree = "<group>"; };
+		784899042E1BEC330081203E /* StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKit.swift; sourceTree = "<group>"; };
+		784899062E1BEE880081203E /* DaysUntilWhen.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = DaysUntilWhen.storekit; sourceTree = "<group>"; };
+		7848990E2E1BEF600081203E /* AppBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackground.swift; sourceTree = "<group>"; };
 		786B50792C617DF7008E2979 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		786B507B2C617F19008E2979 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		786B507D2C617FBE008E2979 /* DefaultConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DefaultConfig.json; sourceTree = "<group>"; };
@@ -140,9 +215,7 @@
 		789815B72B086454002AF275 /* DaysUntilWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilWidgetLiveActivity.swift; sourceTree = "<group>"; };
 		789815B92B086454002AF275 /* DaysUntilWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilWidget.swift; sourceTree = "<group>"; };
 		789815BD2B086455002AF275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		789815E02B0ACD84002AF275 /* BackgroundOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundOption.swift; sourceTree = "<group>"; };
 		789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedUIAssets.xcassets; sourceTree = "<group>"; };
-		789815E62B0BC340002AF275 /* TextOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOption.swift; sourceTree = "<group>"; };
 		789815EB2B0C0F50002AF275 /* WidgetPickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPickers.swift; sourceTree = "<group>"; };
 		789815FE2B0E3FF1002AF275 /* HolidaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HolidaysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		789816002B0E3FF1002AF275 /* HolidaysTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysTest.swift; sourceTree = "<group>"; };
@@ -159,21 +232,20 @@
 		78BB45402B049E27000EA9F5 /* DaysUntilWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilWidgetEntryView.swift; sourceTree = "<group>"; };
 		78BB45472B049EA1000EA9F5 /* Holidays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Holidays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78BB45492B049EA1000EA9F5 /* Holidays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Holidays.h; sourceTree = "<group>"; };
-		78BB45532B049EBD000EA9F5 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayVariant.swift; sourceTree = "<group>"; };
 		78DE9FE52BBE51E800782A08 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
-		78FBCBC02B1AEEA10015D817 /* HolidayDisplayOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDisplayOptions.swift; sourceTree = "<group>"; };
-		78FBCBCD2B1C38F40015D817 /* DataLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoading.swift; sourceTree = "<group>"; };
-		78FBCBD32B203E280015D817 /* DataGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGeneration.swift; sourceTree = "<group>"; };
-		78FBCBD52B203F1A0015D817 /* DataGenerationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGenerationOptions.swift; sourceTree = "<group>"; };
-		78FBCBDB2B20401F0015D817 /* HolidaysDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysDataContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		784899102E1BF9160081203E /* SettingsScreen */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SettingsScreen; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		789815AE2B086454002AF275 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7848989A2E08F8C10081203E /* GRDB in Frameworks */,
 				789815B32B086454002AF275 /* SwiftUI.framework in Frameworks */,
 				789815B22B086454002AF275 /* WidgetKit.framework in Frameworks */,
 			);
@@ -191,7 +263,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784898912E079FFF0081203E /* GRDB in Frameworks */,
 				78BB454D2B049EA1000EA9F5 /* Holidays.framework in Frameworks */,
+				784898F62E186C650081203E /* GRDBQuery in Frameworks */,
 				786B50772C60F547008E2979 /* Bedrock in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,12 +274,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7848988F2E079FAD0081203E /* GRDB in Frameworks */,
+				784898982E08F8560081203E /* GRDB in Frameworks */,
+				784898F82E186C770081203E /* GRDBQuery in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		784898962E08F78A0081203E /* GRDB */ = {
+			isa = PBXGroup;
+			children = (
+				784898D12E1611B80081203E /* Services */,
+				784898A82E0977D90081203E /* Models */,
+				7848989F2E08FCCD0081203E /* TableNames.swift */,
+				7848989B2E08F8ED0081203E /* AppDatabase.swift */,
+				784898922E08F77F0081203E /* Persistence.swift */,
+			);
+			path = GRDB;
+			sourceTree = "<group>";
+		};
+		784898A82E0977D90081203E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				784898D62E172E790081203E /* GRDBUserEnabledHolidays.swift */,
+				784898C52E0992870081203E /* GRDBBackgroundOption.swift */,
+				784898B12E0991E50081203E /* GRDBTextOption.swift */,
+				784898AD2E098E490081203E /* GRDBHolidayDisplayOptions.swift */,
+				784898A92E0988320081203E /* GRDBHoliday.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		784898D12E1611B80081203E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				784898F92E19C0C70081203E /* UserEnabledHolidaysService.swift */,
+				784898EB2E18510D0081203E /* HolidayCreation.swift */,
+				784898E72E1828D60081203E /* HolidayService.swift */,
+				784898E32E1731B60081203E /* HolidayDisplayOptionsService.swift */,
+				784898DF2E1731920081203E /* TextOptionsService.swift */,
+				784898D22E1611C00081203E /* BackgroundOptionsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		786B50782C60F55A008E2979 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +353,7 @@
 		78BB45092B047501000EA9F5 = {
 			isa = PBXGroup;
 			children = (
+				784899062E1BEE880081203E /* DaysUntilWhen.storekit */,
 				789816102B0E5BEA002AF275 /* DaysUntilWidgetExtension.entitlements */,
 				78BB45142B047501000EA9F5 /* DaysUntil */,
 				78BB45482B049EA1000EA9F5 /* Holidays */,
@@ -263,6 +378,8 @@
 		78BB45142B047501000EA9F5 /* DaysUntil */ = {
 			isa = PBXGroup;
 			children = (
+				784899102E1BF9160081203E /* SettingsScreen */,
+				784899022E1A99190081203E /* HolidayToggleListView.swift */,
 				786B50782C60F55A008E2979 /* Services */,
 				7898160F2B0E5BC6002AF275 /* DaysUntil.entitlements */,
 				78BB45152B047501000EA9F5 /* DaysUntilApp.swift */,
@@ -274,6 +391,8 @@
 				78284F9D2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift */,
 				786B507D2C617FBE008E2979 /* DefaultConfig.json */,
 				786B507B2C617F19008E2979 /* Config.plist */,
+				7848990E2E1BEF600081203E /* AppBackground.swift */,
+				784899042E1BEC330081203E /* StoreKit.swift */,
 			);
 			path = DaysUntil;
 			sourceTree = "<group>";
@@ -298,14 +417,12 @@
 		78BB45482B049EA1000EA9F5 /* Holidays */ = {
 			isa = PBXGroup;
 			children = (
+				784898962E08F78A0081203E /* GRDB */,
 				78FBCBD22B1C3A1B0015D817 /* Models */,
 				78FBCBD12B1C3A160015D817 /* Enums */,
 				789815E22B0BBE44002AF275 /* SharedUIAssets.xcassets */,
 				78BB45492B049EA1000EA9F5 /* Holidays.h */,
 				789815A22B05D4F5002AF275 /* Utils.swift */,
-				78FBCBCD2B1C38F40015D817 /* DataLoading.swift */,
-				78FBCBD52B203F1A0015D817 /* DataGenerationOptions.swift */,
-				78FBCBDB2B20401F0015D817 /* HolidaysDataContainer.swift */,
 				78DE9FE52BBE51E800782A08 /* DateExtensions.swift */,
 			);
 			path = Holidays;
@@ -314,6 +431,12 @@
 		78FBCBD12B1C3A160015D817 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				784898FD2E1A22ED0081203E /* HolidayErrors.swift */,
+				784898EF2E185FAA0081203E /* HolidayCreateErrors.swift */,
+				784898DA2E1730A00081203E /* HolidayLoadingError.swift */,
+				784898C02E0992340081203E /* BackgroundOptionType.swift */,
+				784898BB2E0992290081203E /* BackgroundOptionId.swift */,
+				784898B62E09920D0081203E /* TextOptionId.swift */,
 				78BB45552B049EFB000EA9F5 /* HolidayVariant.swift */,
 			);
 			path = Enums;
@@ -322,11 +445,6 @@
 		78FBCBD22B1C3A1B0015D817 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				78FBCBD32B203E280015D817 /* DataGeneration.swift */,
-				78BB45532B049EBD000EA9F5 /* Holiday.swift */,
-				78FBCBC02B1AEEA10015D817 /* HolidayDisplayOptions.swift */,
-				789815E62B0BC340002AF275 /* TextOption.swift */,
-				789815E02B0ACD84002AF275 /* BackgroundOption.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -396,9 +514,14 @@
 				78BB454C2B049EA1000EA9F5 /* PBXTargetDependency */,
 				789815BF2B086455002AF275 /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				784899102E1BF9160081203E /* SettingsScreen */,
+			);
 			name = DaysUntil;
 			packageProductDependencies = (
 				786B50762C60F547008E2979 /* Bedrock */,
+				784898902E079FFF0081203E /* GRDB */,
+				784898F52E186C650081203E /* GRDBQuery */,
 			);
 			productName = DaysUntil;
 			productReference = 78BB45122B047501000EA9F5 /* DaysUntil.app */;
@@ -458,6 +581,8 @@
 			mainGroup = 78BB45092B047501000EA9F5;
 			packageReferences = (
 				786B50752C60F547008E2979 /* XCRemoteSwiftPackageReference "bedrock" */,
+				7848988D2E079FAD0081203E /* XCRemoteSwiftPackageReference "GRDB" */,
+				784898F42E186C650081203E /* XCRemoteSwiftPackageReference "GRDBQuery" */,
 			);
 			productRefGroup = 78BB45132B047501000EA9F5 /* Products */;
 			projectDirPath = "";
@@ -495,6 +620,7 @@
 				786B50802C618207008E2979 /* DefaultConfig.json in Resources */,
 				786B507C2C617F19008E2979 /* Config.plist in Resources */,
 				789815E32B0BBE44002AF275 /* SharedUIAssets.xcassets in Resources */,
+				784899072E1BEE880081203E /* DaysUntilWhen.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,21 +639,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784898C22E0992340081203E /* BackgroundOptionType.swift in Sources */,
+				7848989E2E08F8ED0081203E /* AppDatabase.swift in Sources */,
 				789815B82B086454002AF275 /* DaysUntilWidgetLiveActivity.swift in Sources */,
-				78FBCBD92B203FC70015D817 /* DataGenerationOptions.swift in Sources */,
+				784898D92E172E910081203E /* GRDBUserEnabledHolidays.swift in Sources */,
+				784898942E08F7840081203E /* Persistence.swift in Sources */,
+				784898F22E185FAA0081203E /* HolidayCreateErrors.swift in Sources */,
+				784898A12E08FCCD0081203E /* TableNames.swift in Sources */,
 				789815C62B08649F002AF275 /* HolidayVariant.swift in Sources */,
-				789815F42B0D5EE8002AF275 /* TextOption.swift in Sources */,
-				789815CC2B087AB1002AF275 /* Holiday.swift in Sources */,
-				78FBCBDA2B203FC70015D817 /* DataGeneration.swift in Sources */,
+				784898B92E09920D0081203E /* TextOptionId.swift in Sources */,
+				784898FC2E19C0D20081203E /* UserEnabledHolidaysService.swift in Sources */,
+				784898EA2E1828D90081203E /* HolidayService.swift in Sources */,
+				784898EC2E1851120081203E /* HolidayCreation.swift in Sources */,
+				784898D52E1611C80081203E /* BackgroundOptionsService.swift in Sources */,
+				784898AC2E0988320081203E /* GRDBHoliday.swift in Sources */,
 				789815BA2B086454002AF275 /* DaysUntilWidget.swift in Sources */,
+				784898E62E1731CA0081203E /* HolidayDisplayOptionsService.swift in Sources */,
 				789816132B0E5D70002AF275 /* AppGroup.swift in Sources */,
 				789815B62B086454002AF275 /* DaysUntilWidgetBundle.swift in Sources */,
 				789815C42B08646C002AF275 /* DaysUntilWidgetEntryView.swift in Sources */,
-				78FBCBCC2B1C387B0015D817 /* HolidayDisplayOptions.swift in Sources */,
-				78FBCBDD2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */,
-				789815F52B0D5EEC002AF275 /* BackgroundOption.swift in Sources */,
+				784898B32E0991E50081203E /* GRDBTextOption.swift in Sources */,
+				784898FE2E1A22F20081203E /* HolidayErrors.swift in Sources */,
+				784898BC2E0992290081203E /* BackgroundOptionId.swift in Sources */,
+				784898AF2E098E490081203E /* GRDBHolidayDisplayOptions.swift in Sources */,
+				784898DD2E1730A00081203E /* HolidayLoadingError.swift in Sources */,
+				784898C82E0992870081203E /* GRDBBackgroundOption.swift in Sources */,
+				784898E22E1731920081203E /* TextOptionsService.swift in Sources */,
 				78DE9FE82BBE528600782A08 /* DateExtensions.swift in Sources */,
-				78FBCBD02B1C38F70015D817 /* DataLoading.swift in Sources */,
 				789815C82B0864A4002AF275 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,11 +675,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7898160E2B0E4012002AF275 /* HolidayVariant.swift in Sources */,
+				784898BF2E0992290081203E /* BackgroundOptionId.swift in Sources */,
 				7898160C2B0E4012002AF275 /* Utils.swift in Sources */,
-				7898160A2B0E400D002AF275 /* Holiday.swift in Sources */,
+				784898DC2E1730A00081203E /* HolidayLoadingError.swift in Sources */,
 				789816012B0E3FF1002AF275 /* HolidaysTest.swift in Sources */,
+				784898C12E0992340081203E /* BackgroundOptionType.swift in Sources */,
 				789816092B0E4004002AF275 /* UtilsTests.swift in Sources */,
+				784898F02E185FAA0081203E /* HolidayCreateErrors.swift in Sources */,
+				784898B72E09920D0081203E /* TextOptionId.swift in Sources */,
 				78DE9FE92BBE528700782A08 /* DateExtensions.swift in Sources */,
+				784898FF2E1A22F20081203E /* HolidayErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,27 +692,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78FBCBDC2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */,
 				789815EC2B0C0F50002AF275 /* WidgetPickers.swift in Sources */,
-				789815EE2B0C62B0002AF275 /* Holiday.swift in Sources */,
 				789816122B0E5C7A002AF275 /* AppGroup.swift in Sources */,
-				78FBCBCF2B1C38F60015D817 /* DataLoading.swift in Sources */,
 				78284F9C2B212AD600AF0ED7 /* WidgetPreviewView.swift in Sources */,
 				78DE9FE72BBE528600782A08 /* DateExtensions.swift in Sources */,
+				784898A22E08FCCD0081203E /* TableNames.swift in Sources */,
 				786B507F2C617FE2008E2979 /* versionCheck.swift in Sources */,
-				78FBCBD82B203FC60015D817 /* DataGeneration.swift in Sources */,
-				789815E82B0BF912002AF275 /* TextOption.swift in Sources */,
 				789815F32B0C6D7F002AF275 /* Utils.swift in Sources */,
-				78FBCBD72B203FC60015D817 /* DataGenerationOptions.swift in Sources */,
+				784898B82E09920D0081203E /* TextOptionId.swift in Sources */,
+				784898932E08F7840081203E /* Persistence.swift in Sources */,
+				784899032E1A99190081203E /* HolidayToggleListView.swift in Sources */,
+				784898DE2E1730A00081203E /* HolidayLoadingError.swift in Sources */,
+				7848990D2E1BEF230081203E /* StoreKit.swift in Sources */,
+				7848990F2E1BEF640081203E /* AppBackground.swift in Sources */,
 				789815F02B0C6D13002AF275 /* DaysUntilWidgetEntryView.swift in Sources */,
+				7848989C2E08F8ED0081203E /* AppDatabase.swift in Sources */,
 				78284F9E2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift in Sources */,
+				784898C62E0992870081203E /* GRDBBackgroundOption.swift in Sources */,
+				784898F32E185FAA0081203E /* HolidayCreateErrors.swift in Sources */,
+				784898B02E098E490081203E /* GRDBHolidayDisplayOptions.swift in Sources */,
+				784898D82E172E910081203E /* GRDBUserEnabledHolidays.swift in Sources */,
 				786B507A2C617DF7008E2979 /* config.swift in Sources */,
+				784898D42E1611C80081203E /* BackgroundOptionsService.swift in Sources */,
+				784898C32E0992340081203E /* BackgroundOptionType.swift in Sources */,
 				789815EF2B0C62D8002AF275 /* HolidayVariant.swift in Sources */,
-				789815EA2B0BF921002AF275 /* BackgroundOption.swift in Sources */,
+				784898B22E0991E50081203E /* GRDBTextOption.swift in Sources */,
 				78BB45182B047501000EA9F5 /* ContentView.swift in Sources */,
-				78FBCBC42B1AF3E80015D817 /* HolidayDisplayOptions.swift in Sources */,
+				784898E92E1828D90081203E /* HolidayService.swift in Sources */,
+				784898FB2E19C0D20081203E /* UserEnabledHolidaysService.swift in Sources */,
+				784898E12E1731920081203E /* TextOptionsService.swift in Sources */,
 				78BB45162B047501000EA9F5 /* DaysUntilApp.swift in Sources */,
+				784898EE2E1851120081203E /* HolidayCreation.swift in Sources */,
+				784899012E1A22F20081203E /* HolidayErrors.swift in Sources */,
 				789815F12B0C6D27002AF275 /* DaysUntilWidget.swift in Sources */,
+				784898AB2E0988320081203E /* GRDBHoliday.swift in Sources */,
+				784898E42E1731CA0081203E /* HolidayDisplayOptionsService.swift in Sources */,
+				784898BD2E0992290081203E /* BackgroundOptionId.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,18 +735,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78FBCBD42B203E280015D817 /* DataGeneration.swift in Sources */,
 				78BB45562B049EFB000EA9F5 /* HolidayVariant.swift in Sources */,
-				78FBCBC62B1C30B10015D817 /* BackgroundOption.swift in Sources */,
-				78FBCBD62B203F1A0015D817 /* DataGenerationOptions.swift in Sources */,
-				78FBCBCE2B1C38F40015D817 /* DataLoading.swift in Sources */,
+				784898B42E0991E50081203E /* GRDBTextOption.swift in Sources */,
+				784898D72E172E910081203E /* GRDBUserEnabledHolidays.swift in Sources */,
+				784898E82E1828D90081203E /* HolidayService.swift in Sources */,
+				784898D32E1611C80081203E /* BackgroundOptionsService.swift in Sources */,
+				784898AA2E0988320081203E /* GRDBHoliday.swift in Sources */,
+				784898ED2E1851120081203E /* HolidayCreation.swift in Sources */,
 				78DE9FE62BBE51E800782A08 /* DateExtensions.swift in Sources */,
-				78FBCBC22B1AEEB40015D817 /* HolidayDisplayOptions.swift in Sources */,
-				78FBCBC52B1C30A80015D817 /* TextOption.swift in Sources */,
-				78FBCBDE2B20401F0015D817 /* HolidaysDataContainer.swift in Sources */,
+				784898952E08F7840081203E /* Persistence.swift in Sources */,
+				784898DB2E1730A00081203E /* HolidayLoadingError.swift in Sources */,
+				784898E02E1731920081203E /* TextOptionsService.swift in Sources */,
+				7848989D2E08F8ED0081203E /* AppDatabase.swift in Sources */,
 				789816152B0E5DE2002AF275 /* AppGroup.swift in Sources */,
-				78BB45542B049EBD000EA9F5 /* Holiday.swift in Sources */,
+				784898C42E0992340081203E /* BackgroundOptionType.swift in Sources */,
+				784898F12E185FAA0081203E /* HolidayCreateErrors.swift in Sources */,
+				784898AE2E098E490081203E /* GRDBHolidayDisplayOptions.swift in Sources */,
+				784898A02E08FCCD0081203E /* TableNames.swift in Sources */,
+				784898BE2E0992290081203E /* BackgroundOptionId.swift in Sources */,
+				784899002E1A22F20081203E /* HolidayErrors.swift in Sources */,
+				784898BA2E09920D0081203E /* TextOptionId.swift in Sources */,
 				789815A32B05D4F5002AF275 /* Utils.swift in Sources */,
+				784898E52E1731CA0081203E /* HolidayDisplayOptionsService.swift in Sources */,
+				784898FA2E19C0D20081203E /* UserEnabledHolidaysService.swift in Sources */,
+				784898C72E0992870081203E /* GRDBBackgroundOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,7 +1014,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.DaysUntil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -878,7 +1048,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.DaysUntil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1008,6 +1178,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7848988D2E079FAD0081203E /* XCRemoteSwiftPackageReference "GRDB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		784898F42E186C650081203E /* XCRemoteSwiftPackageReference "GRDBQuery" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDBQuery.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.11.0;
+			};
+		};
 		786B50752C60F547008E2979 /* XCRemoteSwiftPackageReference "bedrock" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rsarv3006/bedrock";
@@ -1019,6 +1205,36 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7848988E2E079FAD0081203E /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7848988D2E079FAD0081203E /* XCRemoteSwiftPackageReference "GRDB" */;
+			productName = GRDB;
+		};
+		784898902E079FFF0081203E /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7848988D2E079FAD0081203E /* XCRemoteSwiftPackageReference "GRDB" */;
+			productName = GRDB;
+		};
+		784898972E08F8560081203E /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7848988D2E079FAD0081203E /* XCRemoteSwiftPackageReference "GRDB" */;
+			productName = GRDB;
+		};
+		784898992E08F8C10081203E /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7848988D2E079FAD0081203E /* XCRemoteSwiftPackageReference "GRDB" */;
+			productName = GRDB;
+		};
+		784898F52E186C650081203E /* GRDBQuery */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 784898F42E186C650081203E /* XCRemoteSwiftPackageReference "GRDBQuery" */;
+			productName = GRDBQuery;
+		};
+		784898F72E186C770081203E /* GRDBQuery */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 784898F42E186C650081203E /* XCRemoteSwiftPackageReference "GRDBQuery" */;
+			productName = GRDBQuery;
+		};
 		786B50762C60F547008E2979 /* Bedrock */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 786B50752C60F547008E2979 /* XCRemoteSwiftPackageReference "bedrock" */;

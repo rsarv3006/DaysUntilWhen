@@ -1,0 +1,35 @@
+public enum BackgroundOptionId: String, Codable {
+    case ChristmasBackground1
+    case ChristmasRed
+    case ChristmasWhite
+    case ChristmasGreen
+    case GenericBlack
+    case GenericWhite
+    case GenericGold
+    case NewYearsBackground1
+    case ValentinesBackground1
+    case ValentinesRed
+    case ValentinesPink
+    case EasterBackground1
+    case EasterPurple
+    case EasterOrange
+    case EasterGreen
+    case MothersDayBackground1
+    case MothersDayGray
+    case MothersDayYellow
+    case HalloweenOrange
+    case HalloweenPurple
+    case HalloweenGreen
+    case HalloweenBone
+    case HalloweenBackground1
+    case ThanksgivingBackground1
+    case ThanksgivingSpicedPumpkin
+    case ThanksgivingGreen
+    case ThanksgivingWhite
+    case FathersDayBlue
+    case FathersDayYellow
+    case FathersDayBackground1
+    case FourthOfJulyRed
+    case FourthOfJulyBlue
+    case FourthOfJulyBackground1
+}

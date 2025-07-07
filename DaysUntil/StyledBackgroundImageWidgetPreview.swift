@@ -1,10 +1,3 @@
-//
-//  StyledBackgroundImageWidgetPreview.swift
-//  DaysUntil
-//
-//  Created by Robert J. Sarvis Jr on 12/8/23.
-//
-
 import SwiftUI
 
 extension Image {

@@ -1,57 +1,51 @@
 import Foundation
 
-struct HolidaysUtils {
-    static func getSelectedHoliday(holidays: [Holiday], date: Date) -> Holiday? {
-        let favoriteHoliday = holidays.first { holiday in
-            holiday.isFavorite == true
-        }
-        
-        if let favoriteHoliday {
-            return favoriteHoliday
-        }
-       
+enum HolidaysUtils {
+    static func getSelectedHoliday(holidays: [GRDBHoliday], date: Date, userEnabledHolidays: [GRDBUserEnabledHolidays]) -> GRDBHoliday? {
         let sortedHolidays = holidays.sorted {
-          guard let date1 = $0.date, let date2 = $1.date else {
-            return false
-          }
-          return date1 < date2
+            guard let date1 = $0.date, let date2 = $1.date else {
+                return false
+            }
+            return date1 < date2
         }
-        
+
         for holiday in sortedHolidays {
-          if let holidayDate = holiday.date, holidayDate > date {
-            return holiday
-          }
+            let userEnabledHolidayEntity = userEnabledHolidays.first { $0.holidayVariant == holiday.variant}
+            
+            if let holidayDate = holiday.date, userEnabledHolidayEntity?.isEnabled ?? true, holidayDate > date {
+                return holiday
+            }
         }
-        
+
         return nil
     }
-    
+
     static func daysUntil(_ startDate: Date, _ futureDate: Date?) -> Int? {
         guard let futureDate else { return nil }
         let calendar = Calendar.current
-        
+
         let today = calendar.startOfDay(for: startDate)
         let futureDay = calendar.startOfDay(for: futureDate)
-        
+
         let components = calendar.dateComponents([.day], from: today, to: futureDay)
-        
+
         return components.day
     }
-    
-    static func isHolidayInFuture(_ currentDate: Date, _ holidayDate: Date?) -> Bool {
+
+    static func isHolidayTodayOrInFuture(_ currentDate: Date, _ holidayDate: Date?) -> Bool {
         guard let holidayDate else { return false }
         
-        if currentDate <= holidayDate {
-            return true
-        }
+        let calendar = Calendar.current
+        let currentDay = calendar.startOfDay(for: currentDate)
+        let holidayDay = calendar.startOfDay(for: holidayDate)
         
-        return false
+        return currentDay <= holidayDay
     }
-    
+
     static func getHolidayDate(_ currentDate: Date, _ holidayMonth: Int, _ holidayDay: Int) -> Date? {
         let holidayCurrentYear = DateComponents(calendar: .current, year: Date.currentYear, month: holidayMonth, day: holidayDay).date
-        let isHolidayCurrentYearInFuture = self.isHolidayInFuture(currentDate, holidayCurrentYear)
-        
+        let isHolidayCurrentYearInFuture = isHolidayTodayOrInFuture(currentDate, holidayCurrentYear)
+
         if isHolidayCurrentYearInFuture {
             return holidayCurrentYear
         } else {
