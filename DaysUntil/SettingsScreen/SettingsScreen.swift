@@ -27,23 +27,27 @@ struct SettingsScreen: View {
                                 iconColor: .green
                             )
                         } else {
-                            SettingsPurchaseRow(
-                                title: "Purchase Advanced Unlock",
-                                subtitle: "Unlock premium features and customization",
-                                icon: "star.circle.fill",
-                                iconColor: .yellow,
-                                price: "$1.99",
-                                isLoading: viewModel.isLoading
-                            ) {
-                                Task {
-                                    viewModel.isLoading = true
-                                    if let product = storekitStore.unlockAdvancedHolidayAlertsProduct {
-                                        await buy(product: product)
-                                    } else {
-                                        viewModel.showAlert(title: "Uh Oh", message: "Unable to complete purchase. Please try again later.")
+                            if let product = storekitStore.unlockAdvancedHolidayAlertsProduct {
+                                
+                                SettingsPurchaseRow(
+                                    title: "Purchase Advanced Unlock",
+                                    subtitle: "Unlock premium features and customization",
+                                    icon: "star.circle.fill",
+                                    iconColor: .yellow,
+                                    price: product.displayPrice,
+                                    isLoading: viewModel.isLoading
+                                ) {
+                                    Task {
+                                        viewModel.isLoading = true
+                                        if let product = storekitStore.unlockAdvancedHolidayAlertsProduct {
+                                            await buy(product: product)
+                                        } else {
+                                            viewModel.showAlert(title: "Uh Oh", message: "Unable to complete purchase. Please try again later.")
+                                        }
+                                        viewModel.isLoading = false
                                     }
-                                    viewModel.isLoading = false
                                 }
+                                
                             }
                         }
                         
