@@ -33,9 +33,7 @@ struct SettingsActionRow: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
             .background(Color(.systemBackground))
-            .border(Color.red)
         }
         .buttonStyle(PlainButtonStyle())
-        .border(Color.blue)
     }
 }
