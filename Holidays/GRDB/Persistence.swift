@@ -4,21 +4,21 @@ import GRDB
 public extension AppDatabase {
     /// The database for the application
     static let shared = makeShared()
-
+    
     private static func makeShared() -> AppDatabase {
         do {
             // Use App Group container for shared database access between app and widget
             let appGroup = AppGroup.daysUntilWhen
             let directoryURL = appGroup.containerURL.appendingPathComponent("Database", isDirectory: true)
-
+            
             // Support for tests: delete the database if requested
             if CommandLine.arguments.contains("-reset") {
                 try? FileManager.default.removeItem(at: directoryURL)
             }
-
+            
             // Create the database folder if needed
             try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
-
+            
             // Open or create the database
             let databaseURL = directoryURL.appendingPathComponent("db.sqlite")
             NSLog("Database stored at \(databaseURL.path)")
@@ -27,18 +27,12 @@ public extension AppDatabase {
                 // Use default AppDatabase configuration
                 configuration: AppDatabase.makeConfiguration()
             )
-
+            
             // Create the AppDatabase
             let appDatabase = try AppDatabase(dbPool)
-
-            try appDatabase.populateBackgroundOptions()
-            try appDatabase.populateTextOptions()
-            try appDatabase.populateDisplayOptions()
-            try appDatabase.populateInitialHolidays()
-            try appDatabase.populateUserEnabledHolidays()
             
-            try appDatabase.deleteHolidaysInThePast()
-
+            try loadDefaults(in: appDatabase)
+            
             return appDatabase
         } catch {
             // Replace this implementation with code to handle the error appropriately.
@@ -53,7 +47,7 @@ public extension AppDatabase {
             fatalError("Unresolved error \(error)")
         }
     }
-
+    
     /// Creates an empty database for SwiftUI previews
     static func empty() -> AppDatabase {
         // Connect to an in-memory database
@@ -61,17 +55,44 @@ public extension AppDatabase {
         let dbQueue = try! DatabaseQueue(configuration: AppDatabase.makeConfiguration())
         return try! AppDatabase(dbQueue)
     }
-
+    
     /// Creates a database full of random players for SwiftUI previews
     static func random() -> AppDatabase {
         let appDatabase = empty()
-
+        
         //        try! appDatabase.createConfig()
         //        try! appDatabase.createDefaultNotificationSchedules()
         //        try! appDatabase.createDefaultScheduleTemplate()
         //
         //        try! appDatabase.addBedtimesFromSchedule()
-
+        
         return appDatabase
+    }
+}
+
+extension AppDatabase {
+    func nuke() throws {
+        try dbWriter.write { db in
+            try GRDBUserEnabledHolidays.deleteAll(db)
+            try GRDBHoliday.deleteAll(db)
+            try GRDBHolidayDisplayOptions.deleteAll(db)
+            try GRDBTextOption.deleteAll(db)
+            try GRDBBackgroundOption.deleteAll(db)
+        }
+    }
+    
+    static func loadDefaults(in appDatabase: AppDatabase) throws {
+        try appDatabase.populateBackgroundOptions()
+        try appDatabase.populateTextOptions()
+        try appDatabase.populateDisplayOptions()
+        try appDatabase.populateInitialHolidays()
+        try appDatabase.populateUserEnabledHolidays()
+        
+        try appDatabase.deleteHolidaysInThePast()
+    }
+    
+    func reset() throws {
+        try nuke()
+        try AppDatabase.loadDefaults(in: self)
     }
 }

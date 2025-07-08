@@ -129,8 +129,6 @@ extension AppDatabase {
     }
 }
 
-extension AppDatabase {}
-
 extension AppDatabase {
     var reader: DatabaseReader {
         dbWriter

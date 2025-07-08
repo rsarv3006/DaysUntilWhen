@@ -1,5 +1,6 @@
 import SwiftUI
 import StoreKit
+import WidgetKit
 
 import Foundation
 
@@ -59,11 +60,7 @@ class SettingsViewModel: ObservableObject {
     }
     
     func confirmReset() {
-        // TODO: Implement actual app reset
-        // This would typically involve:
-        // - Clearing UserDefaults
-        // - Clearing Core Data/GRDB
-        // - Resetting to default state
+        WidgetCenter.shared.reloadAllTimelines()
         
         showAlert(
             title: "Reset Complete",

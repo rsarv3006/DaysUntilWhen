@@ -98,7 +98,6 @@ struct HolidayToggleListView: View {
     @EnvironmentObject() private var storekitStore: StorekitStore
     
     var body: some View {
-        NavigationView {
             VStack(spacing: 0) {
                 ZStack {
                     ScrollView {
@@ -260,7 +259,6 @@ struct HolidayToggleListView: View {
             .onAppear {
                 viewModel.loadHolidays()
             }
-        }
     }
 }
 
