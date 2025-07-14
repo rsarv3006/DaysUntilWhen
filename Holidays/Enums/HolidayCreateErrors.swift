@@ -9,4 +9,5 @@ enum HolidayCreateErrors : Error {
         case invalidJuly4thDate
         case invalidMemorialDayDate
         case invalidFathersDayDate
+        case invalidTexasIndependenceDayDate
     }

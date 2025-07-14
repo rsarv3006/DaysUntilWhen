@@ -52,4 +52,8 @@ struct HolidayCreation {
 //        return GRDBHoliday.new(id: veteransDayTimeInterval, variant: .veteransDay, name: "Veterans Day", holidayDescription: "A day to honor and remember the men and women who have served in the United States military.", dayOfGreeting: "Happy Veterans Day!")
 //    }
     
+    static func createTexasIndependenceDayHolidayModel(texasIndependenceDayTimeInterval: TimeInterval) -> GRDBHoliday {
+        return GRDBHoliday.new(id: texasIndependenceDayTimeInterval, variant: .texasIndependenceDay, name: "Texas Independence Day", holidayDescription: "A day to celebrate the independence of Texas.", dayOfGreeting: "Happy Texas Independence Day!", icon: "sun.max")
+    }
+    
 }

@@ -17,7 +17,6 @@ struct ContentView: View {
                     Text("Holidays")
                 }
             
-            // Example of additional tab you might add later
             SettingsScreen()
                 .tabItem {
                     Image(systemName: "gear")

@@ -6,12 +6,12 @@ private let TextOptionsList = [
     GRDBTextOption.new(id: TextOptionId.ChristmasWhite.rawValue, holidayFilter: [.christmas]),
     GRDBTextOption.new(id: TextOptionId.ChristmasGreen.rawValue, holidayFilter: [.christmas]),
     GRDBTextOption.new(id: TextOptionId.GenericBlack.rawValue, holidayFilter: [
-        .christmas, .newYears, .valentines, .halloween, .thanksgiving, .fourthOfJuly, .fathersDay,
+        .christmas, .newYears, .valentines, .halloween, .thanksgiving, .fourthOfJuly, .fathersDay, .texasIndependenceDay,
     ]),
     GRDBTextOption.new(id: TextOptionId.GenericWhite.rawValue, holidayFilter: [
-        .christmas, .newYears, .valentines, .halloween, .thanksgiving, .fourthOfJuly, .fathersDay,
+        .christmas, .newYears, .valentines, .halloween, .thanksgiving, .fourthOfJuly, .fathersDay, .texasIndependenceDay,
     ]),
-    GRDBTextOption.new(id: TextOptionId.GenericGold.rawValue, holidayFilter: [.christmas, .newYears, .valentines, .halloween, .thanksgiving, .fourthOfJuly, .fathersDay]),
+    GRDBTextOption.new(id: TextOptionId.GenericGold.rawValue, holidayFilter: [.christmas, .newYears, .valentines, .halloween, .thanksgiving, .fourthOfJuly, .fathersDay, .texasIndependenceDay,]),
     GRDBTextOption.new(id: TextOptionId.ValentinesRed.rawValue, holidayFilter: [.valentines]),
     GRDBTextOption.new(id: TextOptionId.ValentinesPink.rawValue, holidayFilter: [.valentines]),
     GRDBTextOption.new(id: TextOptionId.EasterPurple.rawValue, holidayFilter: [.easter]),
@@ -35,14 +35,8 @@ private let TextOptionsList = [
 public extension AppDatabase {
     func populateTextOptions() throws {
         try dbWriter.write { db in
-            let allOptionIds = try GRDBTextOption.all().fetchAll(db).map { option in
-                option.id
-            }
-
             for option in TextOptionsList {
-                if !allOptionIds.contains(option.id) {
-                    try option.insert(db)
-                }
+                try option.upsert(db)
             }
         }
     }

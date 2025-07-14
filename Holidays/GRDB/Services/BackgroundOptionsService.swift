@@ -6,9 +6,42 @@ private let BackgroundOptionsList = [
     GRDBBackgroundOption.new(id: BackgroundOptionId.ChristmasRed.rawValue, type: .color, holidayFilter: [.christmas]),
     GRDBBackgroundOption.new(id: BackgroundOptionId.ChristmasWhite.rawValue, type: .color, holidayFilter: [.christmas]),
     GRDBBackgroundOption.new(id: BackgroundOptionId.ChristmasGreen.rawValue, type: .color, holidayFilter: [.christmas]),
-    GRDBBackgroundOption.new(id: BackgroundOptionId.GenericBlack.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .halloween, .thanksgiving, .fourthOfJuly, .fathersDay]),
-    GRDBBackgroundOption.new(id: BackgroundOptionId.GenericWhite.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .halloween, .thanksgiving, .fourthOfJuly, .fathersDay]),
-    GRDBBackgroundOption.new(id: BackgroundOptionId.GenericGold.rawValue, type: .color, holidayFilter: [.christmas, .newYears, .valentines, .thanksgiving]),
+    GRDBBackgroundOption.new(
+        id: BackgroundOptionId.GenericBlack.rawValue,
+        type: .color,
+        holidayFilter: [
+            .christmas,
+            .newYears,
+            .valentines,
+            .halloween,
+            .thanksgiving,
+            .fourthOfJuly,
+            .fathersDay,
+            .texasIndependenceDay,
+        ]),
+    GRDBBackgroundOption.new(
+        id: BackgroundOptionId.GenericWhite.rawValue,
+        type: .color,
+        holidayFilter: [
+            .christmas,
+            .newYears,
+            .valentines,
+            .halloween,
+            .thanksgiving,
+            .fourthOfJuly,
+            .fathersDay,
+            .texasIndependenceDay,
+        ]),
+    GRDBBackgroundOption.new(
+        id: BackgroundOptionId.GenericGold.rawValue,
+        type: .color,
+        holidayFilter: [
+            .christmas,
+            .newYears,
+            .valentines,
+            .thanksgiving,
+            .texasIndependenceDay
+        ]),
     GRDBBackgroundOption.new(id: BackgroundOptionId.NewYearsBackground1.rawValue, type: .image, holidayFilter: [.newYears]),
     GRDBBackgroundOption.new(id: BackgroundOptionId.ValentinesBackground1.rawValue, type: .image, holidayFilter: [.valentines]),
     GRDBBackgroundOption.new(id: BackgroundOptionId.ValentinesRed.rawValue, type: .color, holidayFilter: [.valentines]),
@@ -35,19 +68,14 @@ private let BackgroundOptionsList = [
     GRDBBackgroundOption.new(id: BackgroundOptionId.FourthOfJulyRed.rawValue, type: .color, holidayFilter: [.fourthOfJuly]),
     GRDBBackgroundOption.new(id: BackgroundOptionId.FourthOfJulyBlue.rawValue, type: .color, holidayFilter: [.fourthOfJuly]),
     GRDBBackgroundOption.new(id: BackgroundOptionId.FourthOfJulyBackground1.rawValue, type: .image, holidayFilter: [.fourthOfJuly]),
+    GRDBBackgroundOption.new(id: BackgroundOptionId.TexasIndependenceDayBackground1.rawValue, type: .image, holidayFilter: [.texasIndependenceDay])
 ]
 
 public extension AppDatabase {
     func populateBackgroundOptions() throws {
         try dbWriter.write { db in
-            let allOptions = try GRDBBackgroundOption.all().fetchAll(db).map { option in
-                option.id
-            }
-
             for option in BackgroundOptionsList {
-                if !allOptions.contains(option.id) {
-                    try option.insert(db)
-                }
+                try option.upsert(db)
             }
         }
     }

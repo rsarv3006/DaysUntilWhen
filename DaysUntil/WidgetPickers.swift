@@ -39,6 +39,7 @@ struct WidgetPickers: View {
                     ForEach(allHolidays, id: \.self) { holiday in
                         Text(buildHolidayListDisplayString(holiday))
                             .font(.body)
+                            .tag(buildHolidayListDisplayString(holiday))
                     }
                 }
                 .pickerStyle(.menu)
@@ -71,6 +72,7 @@ struct WidgetPickers: View {
                     }), id: \.self) { background in
                         Text(background.optionName)
                             .font(.body)
+                            .tag(background.optionName)
                     }
                 }
                 .pickerStyle(.menu)
@@ -103,6 +105,7 @@ struct WidgetPickers: View {
                     }), id: \.self) { text in
                         Text(text.optionName)
                             .font(.body)
+                            .tag(text.optionName)
                     }
                 }
                 .pickerStyle(.menu)

@@ -102,27 +102,11 @@ extension AppDatabase {
             try db.create(index: "idx_enabled_holidays", on: TableNames.userEnabledHolidays.rawValue, columns: ["isEnabled"])
         }
 
-        // Migrations for future application versions will be inserted here:
-        // migrator.registerMigration(...) { db in
-        //     ...
-        // }
-
-        migrator.registerMigration("20240811:1 - Add Status Notification Schedule - update default") { _ in
-//            try db.alter(table: TableNames.notificationSchedule.rawValue) { t in
-//                t.add(column: "status", .text).notNull().defaults(to: "inactive")
-//            }
-//
-//            try db.execute(sql: """
-//                UPDATE notificationSchedule
-//                SET status = 'active'
-//                WHERE name = 'Default' OR name = 'Standard'
-//            """)
-//
-//            try db.execute(literal: """
-//                UPDATE notificationSchedule
-//                SET name = 'Standard'
-//                WHERE name = 'Default' OR name = 'Standard'
-//            """)
+        migrator.registerMigration("20250713:1 - Add FTUE Events table") { db in
+            try db.create(table: TableNames.ftueEvents.rawValue) { t in
+                t.primaryKey("id", .text).notNull()
+                t.column("hasCompleted", .boolean)
+            }
         }
 
         return migrator

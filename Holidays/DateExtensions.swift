@@ -157,6 +157,11 @@ extension Date {
         
         return fathersDay
     }
+    
+    static func texasIndependenceDayFor(year: Int) throws -> Date {
+        guard let newYears = DateComponents(calendar: .current, year: year, month: 3, day: 2).date else { throw HolidayCreateErrors.invalidTexasIndependenceDayDate}
+        return newYears
+    }
 }
 
 // MARK: - Date Components

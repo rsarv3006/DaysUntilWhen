@@ -67,9 +67,11 @@ extension AppDatabase {
                     displayOptions.updateDisplayOptions(backgroundOptionId: BackgroundOptionId.FourthOfJulyBackground1.rawValue, textOptionId: TextOptionId.FourthOfJulyRed.rawValue)
                 case .fathersDay:
                     displayOptions.updateDisplayOptions(backgroundOptionId: BackgroundOptionId.FathersDayBackground1.rawValue, textOptionId: TextOptionId.FathersDayYellow.rawValue)
+                case .texasIndependenceDay:
+                    displayOptions.updateDisplayOptions(backgroundOptionId: BackgroundOptionId.TexasIndependenceDayBackground1.rawValue, textOptionId: TextOptionId.GenericGold.rawValue)
                 }
 
-                try displayOptions.insert(db)
+                try displayOptions.upsert(db)
             }
         }
     }

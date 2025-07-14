@@ -1,4 +1,3 @@
-
 import Foundation
 import GRDB
 
@@ -40,6 +39,7 @@ extension AppDatabase {
             let memorialDay = try Date.memorialDayFor(year: Date.currentYear)
             let fourthOfJuly = try Date.fourthOfJulyFor(year: Date.currentYear)
             let fathersDay = try Date.fathersDayFor(year: Date.currentYear)
+            let texasIndependenceDay = try Date.texasIndependenceDayFor(year: Date.currentYear)
 
             let christmasNextYearDate = try Date.christmasFor(year: Date.currentYear + 1)
             let newYearNextYearDate = try Date.newYearsFor(year: Date.currentYear + 1)
@@ -51,6 +51,7 @@ extension AppDatabase {
             let memorialDayNextYearDate = try Date.memorialDayFor(year: Date.currentYear + 1)
             let fourthOfJulyNextYearDate = try Date.fourthOfJulyFor(year: Date.currentYear + 1)
             let fathersDayNextYearDate = try Date.fathersDayFor(year: Date.currentYear + 1)
+            let texasIndependenceDayNextYearDate = try Date.texasIndependenceDayFor(year: Date.currentYear + 1)
 
             let holidaysToInsert = [
                 HolidayCreation.createChristmasHolidayModel(christmasTimeInterval: christmasDate.timeIntervalSince1970),
@@ -62,6 +63,7 @@ extension AppDatabase {
                 HolidayCreation.createThanksgivingHolidayModel(thanksgivingTimeInterval: thanksgiving.timeIntervalSince1970),
                 HolidayCreation.createFourthOfJulyHolidayModel(fourthOfJulyTimeInterval: fourthOfJuly.timeIntervalSince1970),
                 HolidayCreation.createFathersDayHolidayModel(fathersDayTimeInterval: fathersDay.timeIntervalSince1970),
+                HolidayCreation.createTexasIndependenceDayHolidayModel(texasIndependenceDayTimeInterval: texasIndependenceDay.timeIntervalSince1970),
 
                 HolidayCreation.createChristmasHolidayModel(christmasTimeInterval: christmasNextYearDate.timeIntervalSince1970),
                 HolidayCreation.createNewYearHolidayModel(newYearTimeInterval: newYearNextYearDate.timeIntervalSince1970),
@@ -72,6 +74,7 @@ extension AppDatabase {
                 HolidayCreation.createThanksgivingHolidayModel(thanksgivingTimeInterval: thanksgivingNextYearDate.timeIntervalSince1970),
                 HolidayCreation.createFourthOfJulyHolidayModel(fourthOfJulyTimeInterval: fourthOfJulyNextYearDate.timeIntervalSince1970),
                 HolidayCreation.createFathersDayHolidayModel(fathersDayTimeInterval: fathersDayNextYearDate.timeIntervalSince1970),
+                HolidayCreation.createTexasIndependenceDayHolidayModel(texasIndependenceDayTimeInterval: texasIndependenceDayNextYearDate.timeIntervalSince1970)
             ]
 
             for holiday in holidaysToInsert {

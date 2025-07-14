@@ -28,12 +28,16 @@ struct DaysUntilWidgetEntryView: View {
                     .foregroundStyle(entry.text?.color ?? .primary)
                     .multilineTextAlignment(.center)
                     .padding(.bottom, isHolidayNameLong ? 24 : 0)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.7)
             } else {
                 Text(entry.holiday?.dayOfGreeting ?? "UH OH No Holiday Found :(")
                     .font(.system(size: 24))
                     .fontWeight(.bold)
                     .foregroundStyle(entry.text?.color ?? .primary)
                     .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.7)
             }
         }
         .containerBackground(for: .widget) {

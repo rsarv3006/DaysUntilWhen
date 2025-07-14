@@ -32,4 +32,5 @@ public enum BackgroundOptionId: String, Codable {
     case FourthOfJulyRed
     case FourthOfJulyBlue
     case FourthOfJulyBackground1
+    case TexasIndependenceDayBackground1
 }

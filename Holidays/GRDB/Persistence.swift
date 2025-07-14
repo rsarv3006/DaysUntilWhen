@@ -82,6 +82,8 @@ extension AppDatabase {
     }
     
     static func loadDefaults(in appDatabase: AppDatabase) throws {
+        try appDatabase.createFtueEvents()
+        
         try appDatabase.populateBackgroundOptions()
         try appDatabase.populateTextOptions()
         try appDatabase.populateDisplayOptions()

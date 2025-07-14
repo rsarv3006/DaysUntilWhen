@@ -85,6 +85,12 @@
 		784899072E1BEE880081203E /* DaysUntilWhen.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 784899062E1BEE880081203E /* DaysUntilWhen.storekit */; };
 		7848990D2E1BEF230081203E /* StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784899042E1BEC330081203E /* StoreKit.swift */; };
 		7848990F2E1BEF640081203E /* AppBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848990E2E1BEF600081203E /* AppBackground.swift */; };
+		786931492E244AD8005A9CF6 /* GRDBFtueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786931482E244AD5005A9CF6 /* GRDBFtueEvent.swift */; };
+		7869314A2E244AD8005A9CF6 /* GRDBFtueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786931482E244AD5005A9CF6 /* GRDBFtueEvent.swift */; };
+		7869314B2E244AD8005A9CF6 /* GRDBFtueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786931482E244AD5005A9CF6 /* GRDBFtueEvent.swift */; };
+		7869314D2E244BD0005A9CF6 /* FtueEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7869314C2E244BCB005A9CF6 /* FtueEventService.swift */; };
+		7869314E2E244BD0005A9CF6 /* FtueEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7869314C2E244BCB005A9CF6 /* FtueEventService.swift */; };
+		7869314F2E244BD0005A9CF6 /* FtueEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7869314C2E244BCB005A9CF6 /* FtueEventService.swift */; };
 		786B50772C60F547008E2979 /* Bedrock in Frameworks */ = {isa = PBXBuildFile; productRef = 786B50762C60F547008E2979 /* Bedrock */; };
 		786B507A2C617DF7008E2979 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B50792C617DF7008E2979 /* config.swift */; };
 		786B507C2C617F19008E2979 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 786B507B2C617F19008E2979 /* Config.plist */; };
@@ -205,6 +211,8 @@
 		784899042E1BEC330081203E /* StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKit.swift; sourceTree = "<group>"; };
 		784899062E1BEE880081203E /* DaysUntilWhen.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = DaysUntilWhen.storekit; sourceTree = "<group>"; };
 		7848990E2E1BEF600081203E /* AppBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackground.swift; sourceTree = "<group>"; };
+		786931482E244AD5005A9CF6 /* GRDBFtueEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDBFtueEvent.swift; sourceTree = "<group>"; };
+		7869314C2E244BCB005A9CF6 /* FtueEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FtueEventService.swift; sourceTree = "<group>"; };
 		786B50792C617DF7008E2979 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		786B507B2C617F19008E2979 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		786B507D2C617FBE008E2979 /* DefaultConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DefaultConfig.json; sourceTree = "<group>"; };
@@ -298,6 +306,7 @@
 		784898A82E0977D90081203E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				786931482E244AD5005A9CF6 /* GRDBFtueEvent.swift */,
 				784898D62E172E790081203E /* GRDBUserEnabledHolidays.swift */,
 				784898C52E0992870081203E /* GRDBBackgroundOption.swift */,
 				784898B12E0991E50081203E /* GRDBTextOption.swift */,
@@ -310,6 +319,7 @@
 		784898D12E1611B80081203E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7869314C2E244BCB005A9CF6 /* FtueEventService.swift */,
 				784898F92E19C0C70081203E /* UserEnabledHolidaysService.swift */,
 				784898EB2E18510D0081203E /* HolidayCreation.swift */,
 				784898E72E1828D60081203E /* HolidayService.swift */,
@@ -643,9 +653,11 @@
 				7848989E2E08F8ED0081203E /* AppDatabase.swift in Sources */,
 				789815B82B086454002AF275 /* DaysUntilWidgetLiveActivity.swift in Sources */,
 				784898D92E172E910081203E /* GRDBUserEnabledHolidays.swift in Sources */,
+				786931492E244AD8005A9CF6 /* GRDBFtueEvent.swift in Sources */,
 				784898942E08F7840081203E /* Persistence.swift in Sources */,
 				784898F22E185FAA0081203E /* HolidayCreateErrors.swift in Sources */,
 				784898A12E08FCCD0081203E /* TableNames.swift in Sources */,
+				7869314D2E244BD0005A9CF6 /* FtueEventService.swift in Sources */,
 				789815C62B08649F002AF275 /* HolidayVariant.swift in Sources */,
 				784898B92E09920D0081203E /* TextOptionId.swift in Sources */,
 				784898FC2E19C0D20081203E /* UserEnabledHolidaysService.swift in Sources */,
@@ -710,6 +722,7 @@
 				78284F9E2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift in Sources */,
 				784898C62E0992870081203E /* GRDBBackgroundOption.swift in Sources */,
 				784898F32E185FAA0081203E /* HolidayCreateErrors.swift in Sources */,
+				7869314B2E244AD8005A9CF6 /* GRDBFtueEvent.swift in Sources */,
 				784898B02E098E490081203E /* GRDBHolidayDisplayOptions.swift in Sources */,
 				784898D82E172E910081203E /* GRDBUserEnabledHolidays.swift in Sources */,
 				786B507A2C617DF7008E2979 /* config.swift in Sources */,
@@ -722,6 +735,7 @@
 				784898FB2E19C0D20081203E /* UserEnabledHolidaysService.swift in Sources */,
 				784898E12E1731920081203E /* TextOptionsService.swift in Sources */,
 				78BB45162B047501000EA9F5 /* DaysUntilApp.swift in Sources */,
+				7869314F2E244BD0005A9CF6 /* FtueEventService.swift in Sources */,
 				784898EE2E1851120081203E /* HolidayCreation.swift in Sources */,
 				784899012E1A22F20081203E /* HolidayErrors.swift in Sources */,
 				789815F12B0C6D27002AF275 /* DaysUntilWidget.swift in Sources */,
@@ -737,10 +751,12 @@
 			files = (
 				78BB45562B049EFB000EA9F5 /* HolidayVariant.swift in Sources */,
 				784898B42E0991E50081203E /* GRDBTextOption.swift in Sources */,
+				7869314E2E244BD0005A9CF6 /* FtueEventService.swift in Sources */,
 				784898D72E172E910081203E /* GRDBUserEnabledHolidays.swift in Sources */,
 				784898E82E1828D90081203E /* HolidayService.swift in Sources */,
 				784898D32E1611C80081203E /* BackgroundOptionsService.swift in Sources */,
 				784898AA2E0988320081203E /* GRDBHoliday.swift in Sources */,
+				7869314A2E244AD8005A9CF6 /* GRDBFtueEvent.swift in Sources */,
 				784898ED2E1851120081203E /* HolidayCreation.swift in Sources */,
 				78DE9FE62BBE51E800782A08 /* DateExtensions.swift in Sources */,
 				784898952E08F7840081203E /* Persistence.swift in Sources */,
@@ -1014,7 +1030,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.DaysUntil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1048,7 +1064,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.DaysUntil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
