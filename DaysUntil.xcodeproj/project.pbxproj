@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7806EE622E2D470B000C2D79 /* HolidayToggleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7806EE612E2D470B000C2D79 /* HolidayToggleViewModel.swift */; };
+		7806EE642E2D4737000C2D79 /* HolidayToggleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7806EE632E2D4737000C2D79 /* HolidayToggleRow.swift */; };
+		7806EE662E2D474A000C2D79 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7806EE652E2D474A000C2D79 /* CustomToggle.swift */; };
+		7806EE682E2D47EB000C2D79 /* PremiumFeatureOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7806EE672E2D47EB000C2D79 /* PremiumFeatureOverlayView.swift */; };
+		7806EE6B2E2D49D5000C2D79 /* PageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7806EE6A2E2D49CD000C2D79 /* PageHeader.swift */; };
 		78284F9C2B212AD600AF0ED7 /* WidgetPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78284F9B2B212AD600AF0ED7 /* WidgetPreviewView.swift */; };
 		78284F9E2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78284F9D2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift */; };
 		7848988F2E079FAD0081203E /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 7848988E2E079FAD0081203E /* GRDB */; };
@@ -91,6 +96,7 @@
 		7869314D2E244BD0005A9CF6 /* FtueEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7869314C2E244BCB005A9CF6 /* FtueEventService.swift */; };
 		7869314E2E244BD0005A9CF6 /* FtueEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7869314C2E244BCB005A9CF6 /* FtueEventService.swift */; };
 		7869314F2E244BD0005A9CF6 /* FtueEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7869314C2E244BCB005A9CF6 /* FtueEventService.swift */; };
+		7869316E2E252AB6005A9CF6 /* CustomDateScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7869316D2E252AB6005A9CF6 /* CustomDateScreen.swift */; };
 		786B50772C60F547008E2979 /* Bedrock in Frameworks */ = {isa = PBXBuildFile; productRef = 786B50762C60F547008E2979 /* Bedrock */; };
 		786B507A2C617DF7008E2979 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B50792C617DF7008E2979 /* config.swift */; };
 		786B507C2C617F19008E2979 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 786B507B2C617F19008E2979 /* Config.plist */; };
@@ -185,6 +191,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7806EE612E2D470B000C2D79 /* HolidayToggleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayToggleViewModel.swift; sourceTree = "<group>"; };
+		7806EE632E2D4737000C2D79 /* HolidayToggleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayToggleRow.swift; sourceTree = "<group>"; };
+		7806EE652E2D474A000C2D79 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
+		7806EE672E2D47EB000C2D79 /* PremiumFeatureOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumFeatureOverlayView.swift; sourceTree = "<group>"; };
+		7806EE6A2E2D49CD000C2D79 /* PageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHeader.swift; sourceTree = "<group>"; };
 		78284F9B2B212AD600AF0ED7 /* WidgetPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPreviewView.swift; sourceTree = "<group>"; };
 		78284F9D2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledBackgroundImageWidgetPreview.swift; sourceTree = "<group>"; };
 		784898922E08F77F0081203E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -213,6 +224,7 @@
 		7848990E2E1BEF600081203E /* AppBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackground.swift; sourceTree = "<group>"; };
 		786931482E244AD5005A9CF6 /* GRDBFtueEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDBFtueEvent.swift; sourceTree = "<group>"; };
 		7869314C2E244BCB005A9CF6 /* FtueEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FtueEventService.swift; sourceTree = "<group>"; };
+		7869316D2E252AB6005A9CF6 /* CustomDateScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateScreen.swift; sourceTree = "<group>"; };
 		786B50792C617DF7008E2979 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		786B507B2C617F19008E2979 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		786B507D2C617FBE008E2979 /* DefaultConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DefaultConfig.json; sourceTree = "<group>"; };
@@ -291,6 +303,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7806EE602E2D46F2000C2D79 /* HolidayToggleListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7806EE652E2D474A000C2D79 /* CustomToggle.swift */,
+				7806EE632E2D4737000C2D79 /* HolidayToggleRow.swift */,
+				7806EE612E2D470B000C2D79 /* HolidayToggleViewModel.swift */,
+				784899022E1A99190081203E /* HolidayToggleListView.swift */,
+			);
+			path = HolidayToggleListScreen;
+			sourceTree = "<group>";
+		};
+		7806EE692E2D49A8000C2D79 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7806EE6A2E2D49CD000C2D79 /* PageHeader.swift */,
+				7806EE672E2D47EB000C2D79 /* PremiumFeatureOverlayView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		784898962E08F78A0081203E /* GRDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +360,14 @@
 				784898D22E1611C00081203E /* BackgroundOptionsService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		7869316C2E252A9A005A9CF6 /* CustomDateScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7869316D2E252AB6005A9CF6 /* CustomDateScreen.swift */,
+			);
+			path = CustomDateScreen;
 			sourceTree = "<group>";
 		};
 		786B50782C60F55A008E2979 /* Services */ = {
@@ -388,8 +428,10 @@
 		78BB45142B047501000EA9F5 /* DaysUntil */ = {
 			isa = PBXGroup;
 			children = (
+				7806EE692E2D49A8000C2D79 /* Common */,
+				7806EE602E2D46F2000C2D79 /* HolidayToggleListScreen */,
+				7869316C2E252A9A005A9CF6 /* CustomDateScreen */,
 				784899102E1BF9160081203E /* SettingsScreen */,
-				784899022E1A99190081203E /* HolidayToggleListView.swift */,
 				786B50782C60F55A008E2979 /* Services */,
 				7898160F2B0E5BC6002AF275 /* DaysUntil.entitlements */,
 				78BB45152B047501000EA9F5 /* DaysUntilApp.swift */,
@@ -705,13 +747,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				789815EC2B0C0F50002AF275 /* WidgetPickers.swift in Sources */,
+				7806EE662E2D474A000C2D79 /* CustomToggle.swift in Sources */,
+				7806EE642E2D4737000C2D79 /* HolidayToggleRow.swift in Sources */,
 				789816122B0E5C7A002AF275 /* AppGroup.swift in Sources */,
 				78284F9C2B212AD600AF0ED7 /* WidgetPreviewView.swift in Sources */,
 				78DE9FE72BBE528600782A08 /* DateExtensions.swift in Sources */,
 				784898A22E08FCCD0081203E /* TableNames.swift in Sources */,
 				786B507F2C617FE2008E2979 /* versionCheck.swift in Sources */,
 				789815F32B0C6D7F002AF275 /* Utils.swift in Sources */,
+				7806EE622E2D470B000C2D79 /* HolidayToggleViewModel.swift in Sources */,
 				784898B82E09920D0081203E /* TextOptionId.swift in Sources */,
+				7869316E2E252AB6005A9CF6 /* CustomDateScreen.swift in Sources */,
 				784898932E08F7840081203E /* Persistence.swift in Sources */,
 				784899032E1A99190081203E /* HolidayToggleListView.swift in Sources */,
 				784898DE2E1730A00081203E /* HolidayLoadingError.swift in Sources */,
@@ -737,6 +783,8 @@
 				78BB45162B047501000EA9F5 /* DaysUntilApp.swift in Sources */,
 				7869314F2E244BD0005A9CF6 /* FtueEventService.swift in Sources */,
 				784898EE2E1851120081203E /* HolidayCreation.swift in Sources */,
+				7806EE682E2D47EB000C2D79 /* PremiumFeatureOverlayView.swift in Sources */,
+				7806EE6B2E2D49D5000C2D79 /* PageHeader.swift in Sources */,
 				784899012E1A22F20081203E /* HolidayErrors.swift in Sources */,
 				789815F12B0C6D27002AF275 /* DaysUntilWidget.swift in Sources */,
 				784898AB2E0988320081203E /* GRDBHoliday.swift in Sources */,

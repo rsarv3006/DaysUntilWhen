@@ -17,6 +17,12 @@ struct ContentView: View {
                     Text("Holidays")
                 }
             
+            CustomDateScreen()
+                .tabItem {
+                    Image(systemName: "calendar.badge.plus")
+                    Text("Add Custom Date")
+                }
+            
             SettingsScreen()
                 .tabItem {
                     Image(systemName: "gear")

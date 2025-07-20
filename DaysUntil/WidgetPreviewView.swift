@@ -18,7 +18,7 @@ struct WidgetPreviewView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            ScrollView {
                 VStack(alignment: .leading) {
                     WidgetPickers(
                         allHolidays: $allHolidays,
