@@ -7,9 +7,9 @@ import WidgetKit
 class HolidayToggleViewModel: ObservableObject {
     private var appDatabase: AppDatabase
     
-    @Published var holidayDisplayValuesByVariant: [HolidayVariant: String] = [:]
-    @Published var holidayIconsByVariant: [HolidayVariant: String] = [:]
-    @Published var textOptionsByVariant: [HolidayVariant: GRDBTextOption] = [:]
+    @Published var holidayDisplayValuesByVariant: [String: String] = [:]
+    @Published var holidayIconsByVariant: [String: String] = [:]
+    @Published var textOptionsByVariant: [String: GRDBTextOption] = [:]
     @Published var userEnabledHolidayEntities: [GRDBUserEnabledHolidays] = []
     @Published var isSaving: Bool = false
     @Published var errorMessage: String? = nil
@@ -18,6 +18,14 @@ class HolidayToggleViewModel: ObservableObject {
     
     public init(appDatabase: AppDatabase = .shared) {
         self.appDatabase = appDatabase
+    }
+    
+    func key(for holiday: GRDBHoliday) -> String {
+        if holiday.variant == .custom {
+            return "custom_\(holiday.name)_\(Int(holiday.id))"
+        } else {
+            return holiday.variant.rawValue
+        }
     }
     
     var hasChanges: Bool {
@@ -31,8 +39,9 @@ class HolidayToggleViewModel: ObservableObject {
             try appDatabase.reader.read { db in
                 let allHolidays = try appDatabase.getAllHolidays(in: db)
                 for holiday in allHolidays {
-                    holidayDisplayValuesByVariant[holiday.variant] = holiday.name
-                    holidayIconsByVariant[holiday.variant] = holiday.icon
+                    let key = self.key(for: holiday)
+                    holidayDisplayValuesByVariant[key] = holiday.name
+                    holidayIconsByVariant[key] = holiday.icon
                 }
                 
                 userEnabledHolidayEntities = try appDatabase.getAllUserEnableHolidayEntities(in: db)
@@ -41,7 +50,7 @@ class HolidayToggleViewModel: ObservableObject {
                 
                 let allDisplayOptions = try appDatabase.getAllDisplayOptions(in: db)
                 for option in allDisplayOptions {
-                    textOptionsByVariant[option.id] = allTextOptions.first(where: { $0.id == option.textOptionId })
+                    textOptionsByVariant[option.id.rawValue] = allTextOptions.first(where: { $0.id == option.textOptionId })
                 }
                 
                 originalStates = userEnabledHolidayEntities.reduce(into: [:]) { result, holiday in
@@ -82,12 +91,12 @@ class HolidayToggleViewModel: ObservableObject {
         }
     }
     
-    public func getHolidayIcon(for holidayVariant: HolidayVariant) -> String {
-        return holidayIconsByVariant[holidayVariant] ?? "calendar"
+    public func getHolidayIcon(forKey key: String) -> String {
+        return holidayIconsByVariant[key] ?? "calendar"
     }
     
-    public func getHolidayColor(for holidayVariant: HolidayVariant) -> Color {
-        return textOptionsByVariant[holidayVariant]?.color ??
+    public func getHolidayColor(forKey key: String) -> Color {
+        return textOptionsByVariant[key]?.color ??
             .gray
     }
 }

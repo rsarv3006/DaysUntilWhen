@@ -18,4 +18,5 @@ public enum HolidayVariant: String, CaseIterable, Codable, DatabaseValueConverti
 //    case veteransDay
     
     case texasIndependenceDay
+    case custom
 }

@@ -43,7 +43,7 @@ struct HolidayToggleListView: View {
                             // Holiday List
                             LazyVStack(spacing: 12) {
                                 ForEach($viewModel.userEnabledHolidayEntities) { $holiday in
-                                    if let holidayDisplayName = viewModel.holidayDisplayValuesByVariant[holiday.holidayVariant] {
+                                    if let holidayDisplayName = viewModel.holidayDisplayValuesByVariant[holiday.holidayVariant.rawValue] {
                                         HolidayToggleRow(
                                             holiday: $holiday,
                                             displayName: holidayDisplayName,

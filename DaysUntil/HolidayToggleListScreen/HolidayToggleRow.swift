@@ -9,11 +9,11 @@ struct HolidayToggleRow: View {
     let viewModel: HolidayToggleViewModel
     
     private var holidayIcon: String {
-        viewModel.getHolidayIcon(for: holiday.holidayVariant)
+        viewModel.getHolidayIcon(forKey: holiday.holidayVariant.rawValue)
     }
     
     private var holidayColor: Color {
-        viewModel.getHolidayColor(for: holiday.holidayVariant)
+        viewModel.getHolidayColor(forKey: holiday.holidayVariant.rawValue)
     }
     
     var body: some View {

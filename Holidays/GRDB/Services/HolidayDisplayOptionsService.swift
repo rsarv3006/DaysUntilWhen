@@ -69,6 +69,9 @@ extension AppDatabase {
                     displayOptions.updateDisplayOptions(backgroundOptionId: BackgroundOptionId.FathersDayBackground1.rawValue, textOptionId: TextOptionId.FathersDayYellow.rawValue)
                 case .texasIndependenceDay:
                     displayOptions.updateDisplayOptions(backgroundOptionId: BackgroundOptionId.TexasIndependenceDayBackground1.rawValue, textOptionId: TextOptionId.GenericGold.rawValue)
+                case .custom:
+                    // No default display options for custom holidays
+                    break
                 }
 
                 try displayOptions.upsert(db)

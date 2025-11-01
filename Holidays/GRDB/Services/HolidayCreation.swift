@@ -1,4 +1,3 @@
-
 import Foundation
 
 struct HolidayCreation {
@@ -54,6 +53,10 @@ struct HolidayCreation {
     
     static func createTexasIndependenceDayHolidayModel(texasIndependenceDayTimeInterval: TimeInterval) -> GRDBHoliday {
         return GRDBHoliday.new(id: texasIndependenceDayTimeInterval, variant: .texasIndependenceDay, name: "Texas Independence Day", holidayDescription: "A day to celebrate the independence of Texas.", dayOfGreeting: "Happy Texas Independence Day!", icon: "sun.max")
+    }
+    
+    static func createCustomHolidayModel(id: TimeInterval, name: String, description: String, greeting: String, icon: String) -> GRDBHoliday {
+        return GRDBHoliday.new(id: id, variant: .custom, name: name, holidayDescription: description, dayOfGreeting: greeting, icon: icon)
     }
     
 }
