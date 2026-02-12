@@ -17,10 +17,10 @@ struct ContentView: View {
                     Text("Holidays")
                 }
             
-            CustomDateScreen()
+            CustomDatesListView(appDatabase: AppDatabase.shared)
                 .tabItem {
-                    Image(systemName: "calendar.badge.plus")
-                    Text("Add Custom Date")
+                    Image(systemName: "list.bullet")
+                    Text("Custom Dates")
                 }
             
             SettingsScreen()

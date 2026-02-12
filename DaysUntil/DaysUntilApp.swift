@@ -7,7 +7,7 @@ struct DaysUntilApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.appDatabase, .shared)
+                .environment(\.appDatabase, AppDatabase.shared)
                 .checkAppVersion()
                 .environmentObject(storekitStore)
                 .onAppear {

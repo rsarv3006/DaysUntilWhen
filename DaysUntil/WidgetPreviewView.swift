@@ -131,7 +131,9 @@ struct WidgetPreviewView: View {
             let _ = observation.start(in: databasePool) { _ in
                 print("UH OH it's busted - observation shenanigans or some such fiddle faddle")
             } onChange: { (_: Database) in
-                loadState()
+                Task { @MainActor in
+                    loadState()
+                }
             }
         }
     }

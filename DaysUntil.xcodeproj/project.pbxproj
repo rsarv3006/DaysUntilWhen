@@ -127,6 +127,11 @@
 		789816122B0E5C7A002AF275 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816112B0E5C7A002AF275 /* AppGroup.swift */; };
 		789816132B0E5D70002AF275 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816112B0E5C7A002AF275 /* AppGroup.swift */; };
 		789816152B0E5DE2002AF275 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789816112B0E5C7A002AF275 /* AppGroup.swift */; };
+		78A8F7B92EDCE01400387A30 /* CustomDatesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A8F7B72EDCE01400387A30 /* CustomDatesListView.swift */; };
+		78A8F7BD2EDF832400387A30 /* CustomDateScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7869316D2E252AB6005A9CF6 /* CustomDateScreen.swift */; };
+		78A8F7BE2EDF833400387A30 /* StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784899042E1BEC330081203E /* StoreKit.swift */; };
+		78A8F7BF2EDF833400387A30 /* StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784899042E1BEC330081203E /* StoreKit.swift */; };
+		78A8F7C02EDF833400387A30 /* StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784899042E1BEC330081203E /* StoreKit.swift */; };
 		78BB45162B047501000EA9F5 /* DaysUntilApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45152B047501000EA9F5 /* DaysUntilApp.swift */; };
 		78BB45182B047501000EA9F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB45172B047501000EA9F5 /* ContentView.swift */; };
 		78BB451D2B047503000EA9F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78BB451C2B047503000EA9F5 /* Preview Assets.xcassets */; };
@@ -243,6 +248,7 @@
 		7898160F2B0E5BC6002AF275 /* DaysUntil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DaysUntil.entitlements; sourceTree = "<group>"; };
 		789816102B0E5BEA002AF275 /* DaysUntilWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DaysUntilWidgetExtension.entitlements; sourceTree = "<group>"; };
 		789816112B0E5C7A002AF275 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		78A8F7B72EDCE01400387A30 /* CustomDatesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatesListView.swift; sourceTree = "<group>"; };
 		78BB45122B047501000EA9F5 /* DaysUntil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaysUntil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78BB45152B047501000EA9F5 /* DaysUntilApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilApp.swift; sourceTree = "<group>"; };
 		78BB45172B047501000EA9F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -344,6 +350,7 @@
 				784898B12E0991E50081203E /* GRDBTextOption.swift */,
 				784898AD2E098E490081203E /* GRDBHolidayDisplayOptions.swift */,
 				784898A92E0988320081203E /* GRDBHoliday.swift */,
+				78A8F7B72EDCE01400387A30 /* CustomDatesListView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -694,6 +701,7 @@
 				784898C22E0992340081203E /* BackgroundOptionType.swift in Sources */,
 				7848989E2E08F8ED0081203E /* AppDatabase.swift in Sources */,
 				789815B82B086454002AF275 /* DaysUntilWidgetLiveActivity.swift in Sources */,
+				78A8F7BE2EDF833400387A30 /* StoreKit.swift in Sources */,
 				784898D92E172E910081203E /* GRDBUserEnabledHolidays.swift in Sources */,
 				786931492E244AD8005A9CF6 /* GRDBFtueEvent.swift in Sources */,
 				784898942E08F7840081203E /* Persistence.swift in Sources */,
@@ -738,7 +746,9 @@
 				784898F02E185FAA0081203E /* HolidayCreateErrors.swift in Sources */,
 				784898B72E09920D0081203E /* TextOptionId.swift in Sources */,
 				78DE9FE92BBE528700782A08 /* DateExtensions.swift in Sources */,
+				78A8F7BD2EDF832400387A30 /* CustomDateScreen.swift in Sources */,
 				784898FF2E1A22F20081203E /* HolidayErrors.swift in Sources */,
+				78A8F7C02EDF833400387A30 /* StoreKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +773,7 @@
 				784898DE2E1730A00081203E /* HolidayLoadingError.swift in Sources */,
 				7848990D2E1BEF230081203E /* StoreKit.swift in Sources */,
 				7848990F2E1BEF640081203E /* AppBackground.swift in Sources */,
+				78A8F7B92EDCE01400387A30 /* CustomDatesListView.swift in Sources */,
 				789815F02B0C6D13002AF275 /* DaysUntilWidgetEntryView.swift in Sources */,
 				7848989C2E08F8ED0081203E /* AppDatabase.swift in Sources */,
 				78284F9E2B23B17400AF0ED7 /* StyledBackgroundImageWidgetPreview.swift in Sources */,
@@ -812,6 +823,7 @@
 				784898E02E1731920081203E /* TextOptionsService.swift in Sources */,
 				7848989D2E08F8ED0081203E /* AppDatabase.swift in Sources */,
 				789816152B0E5DE2002AF275 /* AppGroup.swift in Sources */,
+				78A8F7BF2EDF833400387A30 /* StoreKit.swift in Sources */,
 				784898C42E0992340081203E /* BackgroundOptionType.swift in Sources */,
 				784898F12E185FAA0081203E /* HolidayCreateErrors.swift in Sources */,
 				784898AE2E098E490081203E /* GRDBHolidayDisplayOptions.swift in Sources */,
